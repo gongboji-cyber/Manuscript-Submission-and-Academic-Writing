@@ -20,6 +20,7 @@ description: Evidence-grounded pre-submission auditing and academic language pol
 
 - 开始诊断读取 [完整检查清单](references/checklist.md)。限定章节只覆盖相关模块；全稿审查逐项覆盖全部模块。
 - 确定类型、核查期刊和判定状态时读取 [适用范围与裁决](references/routing-and-verdict.md)。
+- 需要起草、修订或组装补充材料时，可配合write-manuscript-supplement的正文分工、材料台账与SUP清单；没有该skill时仍按本skill的S/F/X模块处理。仅核查补充时不自动扩展为补充写作；合并重复问题并保留关联ID，不把105项与SUP项机械累加评分。
 - 修改文字前读取 [润色与复核规则](references/polishing.md)，执行保护台账与五遍编辑，按W01—W12留下核查依据。
 - 查阅融合规则的出处、修改范围与许可时读取 [来源与改编说明](references/sources-and-adaptations.md)；这些来源不替代官方期刊指南。
 - 撰写或检查cover letter时读取 [投稿附信规则](references/cover-letter.md)；完整投稿包审查覆盖L模块，未提供附信时标无法核实，不自动代作者生成或发送。
