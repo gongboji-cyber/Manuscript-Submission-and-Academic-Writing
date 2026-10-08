@@ -1,0 +1,26 @@
+{
+  "profile_kind": "internal_default_not_journal_standard",
+  "body": {
+    "font_size_pt": 12,
+    "latin_font": "Times New Roman",
+    "east_asian_font": "SimSun",
+    "alignment": "justify",
+    "line_spacing_multiple": 1.5,
+    "space_before_pt": 0,
+    "space_after_pt": 0,
+    "zh_first_line_chars": 2,
+    "en_first_line_inches": 0.5
+  },
+  "table": {
+    "style": "three_line",
+    "top_bottom_pt": 1,
+    "header_bottom_pt": 0.5,
+    "default_header_rows": 1,
+    "line_spacing_multiple": 1.0,
+    "fixed_row_height": false
+  },
+  "page": {
+    "existing_document": "preserve_sections_and_geometry",
+    "new_document": "follow_document_tool_default_unless_overridden"
+  }
+}
