@@ -11,6 +11,7 @@ description: Format and audit academic Word/DOCX manuscripts, reports and journa
 - 使用 [默认配置](assets/default-profile.json) 作为无指定规则时的内部默认，不声称是任何期刊标准。
 - 按需导入 [格式辅助函数](scripts/word_format_helpers.py) 设置正文段落、样式字体与三线表；函数不负责识别段落角色或验证期刊合规。
 - 操作DOCX时使用环境提供的documents技能及其渲染工作流。在其他环境可用等效工具，但仍须实际渲染检查；本skill不强制特定机器路径。
+- 同时授权润色与排版时，先用audit-and-polish-manuscript（正文）或draft-journal-cover-letter（附信）完成语言编辑及保真，再以锁定副本排版；缺少其他skill时按授权完成等效编辑。只要求格式时保持原文。排版后的内容对照须以已核对的润色稿为基准，保留作者查询与修订，不把语言变化归因于格式处理。
 
 ## 1. 确认适用规则
 

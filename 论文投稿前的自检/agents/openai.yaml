@@ -1,7 +1,7 @@
 interface:
   display_name: 投稿前自查与润色
-  short_description: 逐项核查论文证据、章节逻辑、图表与投稿要求，完成有依据的润色和复核
-  default_prompt: 使用 $audit-and-polish-manuscript 检查这份稿件，先给出有依据的投稿前清单，再完成证据范围内的润色并复核。
+  short_description: 用105项诊断核查论文，逐节改善医学学术表达并保护数字、引用与证据边界
+  default_prompt: 使用 $audit-and-polish-manuscript 检查并润色这份稿件，按适用清单诊断，建立保护台账，完成五遍医学学术表达编辑并逐句复核。
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:
