@@ -1,0 +1,13 @@
+interface:
+  display_name: Cover letter书写
+  short_description: 核实编辑与期刊信息，准确说明贡献、读者兴趣和启发，完成附信与自查
+  default_prompt: 使用 $draft-journal-cover-letter 为这份稿件撰写投稿附信，核实编辑与期刊要求，并交付12项自查和待确认事项。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
