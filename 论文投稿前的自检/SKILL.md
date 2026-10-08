@@ -1,6 +1,6 @@
 ---
 name: audit-and-polish-manuscript
-description: Evidence-grounded pre-submission auditing and polishing for medical, biomedical, bioinformatics, and computational manuscripts. Use for 投稿前自查、论文诊断、checklist/check list、逐节审稿、证据与主张核对、全文润色、投稿文件一致性核验 or revising a manuscript before journal submission. Cover all manuscript sections, figures, supplements, references, declarations and journal requirements; distinguish reporting omissions, unverifiable assertions and demonstrated scientific defects. Adapt to original research, research letters, correspondence and methodological audits. Do not use for journal recommendation alone or as a substitute for missing experiments.
+description: Evidence-grounded pre-submission auditing and polishing for medical, biomedical, bioinformatics, and computational manuscripts. Use for 投稿前自查、论文诊断、checklist/check list、逐节审稿、证据与主张核对、全文润色、投稿文件一致性核验、cover letter/投稿附信撰写与自查 or revising a manuscript before journal submission. Cover all manuscript sections, figures, supplements, references, declarations, editorial cover letters and journal requirements; distinguish reporting omissions, unverifiable assertions and demonstrated scientific defects. Adapt to original research, research letters, correspondence and methodological audits. Do not use for journal recommendation alone or as a substitute for missing experiments.
 ---
 
 # 投稿前自查与润色
@@ -20,6 +20,7 @@ description: Evidence-grounded pre-submission auditing and polishing for medical
 - 开始诊断读取 [完整检查清单](references/checklist.md)。限定章节只覆盖相关模块；全稿审查逐项覆盖全部模块。
 - 确定类型、核查期刊和判定状态时读取 [适用范围与裁决](references/routing-and-verdict.md)。
 - 修改文字前读取 [润色与复核规则](references/polishing.md)。
+- 撰写或检查cover letter时读取 [投稿附信规则](references/cover-letter.md)；完整投稿包审查覆盖L模块，未提供附信时标无法核实，不自动代作者生成或发送。
 - 完整报告使用 [报告模板](assets/audit-report-template.md)；精简任务沿用字段而缩短输出。
 
 ## 1. 确认输入与范围
@@ -76,6 +77,7 @@ description: Evidence-grounded pre-submission auditing and polishing for medical
 - 核查新颖性、文献断言和引文支持时阅读原始来源，标实际读取范围；优先原始研究和官方资料，不捏造DOI/作者。
 - 目标期刊指定格式优先；无指定时遵循用户引文偏好。优先自己概述，引用须忠实并标归属。
 - 检查伦理、同意、注册、数据许可和作者声明的适用性及报告完整性；不替作者承诺未知事实。
+- 附信必须核实当前编辑身份/称呼、期刊范围和投稿要求；无法确认收信编辑时采用Dear Editor等中性称呼。区分编辑部负责人和实际处理编辑，不猜测分配。将研究背景、前人启发、贡献、期刊匹配、读者兴趣与适用的实践/后续科研启发压缩为有依据的论证，不照搬摘要。
 
 ## 5. 修改并复核
 
@@ -93,6 +95,7 @@ description: Evidence-grounded pre-submission auditing and polishing for medical
 - 按P0→P1→P2给具体问题与下一步，区分已证实错误与待核事项。
 - 交付已填清单及核心主张对应表，不只给泛泛建议；精简任务可缩短。
 - 授权润色时交付修订稿/完整段落及修改记录，否则给建议。
+- 授权撰写附信时交付完整可编辑信及编辑/期刊核查依据；声明未获作者确认时单列待确认，正文不伪造承诺。写信或保存到仓库不等于授权发送邮件或提交稿件。
 - 说明实际完成的复核、开放项与解除条件，不使用总分、录用保证或虚假的全部PASS。
 
 材料不足时注明“仅完成所提供材料范围的审查”，不认证全文或整个研究。期刊未知只影响期刊合规裁决。继续任务时接续未完成项，不重复未变化的已核查内容。
