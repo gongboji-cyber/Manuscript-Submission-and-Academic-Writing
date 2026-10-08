@@ -1,0 +1,13 @@
+interface:
+  display_name: 投稿前自查与润色
+  short_description: 逐项核查论文证据、章节逻辑、图表与投稿要求，完成有依据的润色和复核
+  default_prompt: 使用 $audit-and-polish-manuscript 检查这份稿件，先给出有依据的投稿前清单，再完成证据范围内的润色并复核。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
