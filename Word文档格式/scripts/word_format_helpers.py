@@ -4,6 +4,7 @@ Import these helpers after deciding paragraph roles and table header boundaries.
 Requires python-docx. Does not classify, resize columns, update fields or render.
 """
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.table import _Cell
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Inches, Pt
@@ -62,23 +63,48 @@ def border(parent, edge, width_pt=None):
 
 def three_line_table(table, header_rows=1, outer_pt=1.0, header_pt=0.5,
                      line_spacing=1.0, padding_pt=2.0):
-    """Set top/header-bottom/bottom rules; handle complex merges manually.
+    """Format a classified data table, then render and inspect every page.
 
-    Caller must inspect merged headers, especially vertical merges crossing the
-    header/body boundary. Existing horizontal cell alignment is preserved.
+    Horizontal merges and vertical merges within the header/body are preserved.
+    Reject nested tables, omitted grid cells and merges crossing the header/body
+    boundary before changing anything. Existing horizontal alignment is preserved.
+    Clears cell paragraph keep-next so inherited styles cannot chain a long table.
+    Long rows and special grouping rules still require individual layout review.
     """
     if not isinstance(header_rows, int) or not 1 <= header_rows < len(table.rows):
         raise ValueError("Need at least one header and one body row")
     if outer_pt <= 0 or header_pt <= 0 or line_spacing <= 0 or padding_pt < 0:
         raise ValueError("Rule widths and line spacing must be positive")
+    rows = list(table._tbl.tr_lst)
+    for row in rows:
+        if row.trPr is not None and any(
+                row.trPr.find(qn(tag)) is not None
+                for tag in ("w:gridBefore", "w:gridAfter")):
+            raise ValueError("Omitted grid cells require manual layout review")
+        for tc in row.tc_lst:
+            if tc.find(qn("w:tbl")) is not None:
+                raise ValueError("Nested tables require manual layout review")
+    if any(tc.vMerge == "continue" for tc in rows[header_rows].tc_lst):
+        raise ValueError("Vertical merge crosses the header/body boundary")
     tb = child(table._tbl.tblPr, "w:tblBorders")
     edges = ("top", "bottom", "left", "right", "start", "end", "insideH", "insideV")
     for edge in edges:
         border(tb, edge)
-    seen = set()
-    for index, row in enumerate(table.rows):
-        trpr = row._tr.get_or_add_trPr()
-        for flag in list(trpr.findall(qn("w:tblHeader"))):
+    spacing = child(table._tbl.tblPr, "w:tblCellSpacing")
+    spacing.set(qn("w:w"), "0")
+    spacing.set(qn("w:type"), "dxa")
+    for index, row in enumerate(rows):
+        # Row exceptions can otherwise revive inherited grid borders/spacing.
+        exceptions = row.find(qn("w:tblPrEx"))
+        if exceptions is not None:
+            for edge in edges:
+                border(child(exceptions, "w:tblBorders"), edge)
+            spacing = child(exceptions, "w:tblCellSpacing")
+            spacing.set(qn("w:w"), "0")
+            spacing.set(qn("w:type"), "dxa")
+        trpr = row.get_or_add_trPr()
+        flags = list(trpr.findall(qn("w:tblHeader")))
+        for flag in flags[1:] if index < header_rows else flags:
             trpr.remove(flag)
         if index < header_rows:
             child(trpr, "w:tblHeader").set(qn("w:val"), "1")
@@ -86,17 +112,18 @@ def three_line_table(table, header_rows=1, outer_pt=1.0, header_pt=0.5,
         for height in trpr.findall(qn("w:trHeight")):
             if height.get(qn("w:hRule")) == "exact":
                 height.set(qn("w:hRule"), "atLeast")
-        for cell in row.cells:
-            if cell._tc in seen:
-                continue
-            seen.add(cell._tc)
-            tcpr = cell._tc.get_or_add_tcPr()
+        # row.cells aliases a vertical continuation to the restart cell. Use
+        # physical XML cells so header-bottom rules reach the actual last row.
+        for tc in row.tc_lst:
+            cell = _Cell(tc, table)
+            tcpr = tc.get_or_add_tcPr()
             cb = child(tcpr, "w:tcBorders")
-            for edge in edges:
+            for edge in edges + ("tl2br", "tr2bl"):
                 border(cb, edge)
-            for shading in list(tcpr.findall(qn("w:shd"))):
+            for shading in list(tcpr.findall(qn("w:shd")))[1:]:
                 tcpr.remove(shading)
             shading = child(tcpr, "w:shd")
+            shading.attrib.clear()
             shading.set(qn("w:val"), "clear")
             shading.set(qn("w:fill"), "FFFFFF")
             shading.set(qn("w:color"), "auto")
@@ -111,12 +138,13 @@ def three_line_table(table, header_rows=1, outer_pt=1.0, header_pt=0.5,
                 pf.space_before = Pt(0)
                 pf.space_after = Pt(0)
                 pf.line_spacing = float(line_spacing)
+                pf.keep_with_next = False
                 ind = child(paragraph._p.get_or_add_pPr(), "w:ind")
                 for attr in ("firstLineChars", "hanging", "hangingChars"):
                     ind.attrib.pop(qn("w:" + attr), None)
-    for cell in table.rows[0].cells:
-        border(child(cell._tc.get_or_add_tcPr(), "w:tcBorders"), "top", outer_pt)
-    for cell in table.rows[header_rows - 1].cells:
-        border(child(cell._tc.get_or_add_tcPr(), "w:tcBorders"), "bottom", header_pt)
-    for cell in table.rows[-1].cells:
-        border(child(cell._tc.get_or_add_tcPr(), "w:tcBorders"), "bottom", outer_pt)
+    for tc in rows[0].tc_lst:
+        border(child(tc.get_or_add_tcPr(), "w:tcBorders"), "top", outer_pt)
+    for tc in rows[header_rows - 1].tc_lst:
+        border(child(tc.get_or_add_tcPr(), "w:tcBorders"), "bottom", header_pt)
+    for tc in rows[-1].tc_lst:
+        border(child(tc.get_or_add_tcPr(), "w:tcBorders"), "bottom", outer_pt)
