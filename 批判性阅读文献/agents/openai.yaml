@@ -1,0 +1,13 @@
+interface:
+  display_name: 批判性阅读文献
+  short_description: 拆解医学论文的主张与证据，核对关键矛盾、反证与回复，判断评论切口是否成立
+  default_prompt: 使用 $critically-read-literature 批判性阅读这篇文献，先还原作者的研究问题与证据，再核查最重要的疑点、反证和可实施的验证方案。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
