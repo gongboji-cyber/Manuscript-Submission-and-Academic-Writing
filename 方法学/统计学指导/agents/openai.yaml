@@ -1,0 +1,13 @@
+interface:
+  display_name: 方法学/统计学指导
+  short_description: 从研究问题、设计与分析单位出发，建立可追溯方案、统计诊断和结果审计
+  default_prompt: 使用 $guide-research-methods-statistics 为这项研究建立方法学与统计分析方案，核查偏倚、独立单位、缺失和验证设计，并给出依据、审计清单和结论边界。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

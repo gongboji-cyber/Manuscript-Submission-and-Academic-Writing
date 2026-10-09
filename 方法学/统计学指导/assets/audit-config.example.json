@@ -1,0 +1,34 @@
+{
+  "unit_col": "patient_id",
+  "row_key": [
+    "patient_id",
+    "target_id",
+    "split"
+  ],
+  "split_col": "split",
+  "numeric_cols": [
+    "score_A",
+    "score_B"
+  ],
+  "paired_cols": [
+    "score_A",
+    "score_B"
+  ],
+  "bounds": {
+    "score_A": [
+      0,
+      1
+    ],
+    "score_B": [
+      0,
+      1
+    ]
+  },
+  "missing_tokens": [
+    "",
+    "NA",
+    "N/A",
+    "NaN",
+    "nan"
+  ]
+}
