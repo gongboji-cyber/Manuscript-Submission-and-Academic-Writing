@@ -1,0 +1,17 @@
+{
+  "panel_id": "Fig2A",
+  "kind": "forest",
+  "columns": {"label": "comparison", "y": "estimate", "low": "ci_low", "high": "ci_high"},
+  "xlabel": "Paired difference (unit)",
+  "ylabel": "",
+  "width_mm": 89,
+  "height_mm": 70,
+  "font": "Arial",
+  "seed": 20261009,
+  "reference": 0,
+  "uncertainty": "95% patient-clustered bootstrap CI; supplied estimates",
+  "analysis_unit": "patient",
+  "question": "How large is the paired difference and its uncertainty?",
+  "transformations": ["Display supplied intervals without inferential recomputation"],
+  "copy_input": true
+}

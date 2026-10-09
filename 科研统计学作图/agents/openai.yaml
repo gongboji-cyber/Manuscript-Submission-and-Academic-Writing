@@ -1,0 +1,14 @@
+interface:
+  display_name: 科研统计学作图
+  short_description: 按研究问题选择统计图，保存单panel代码并核查800dpi TIFF与矢量PDF
+  default_prompt: 使用 $plot-research-statistics 为这些结果选择合适统计图，逐panel绘制，检查裁剪、重叠和图例遮挡，保存代码并导出800
+    dpi TIFF及矢量PDF。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
