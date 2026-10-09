@@ -1,0 +1,13 @@
+interface:
+  display_name: 文献/指南阅读板块
+  short_description: 检索并阅读医学文献与指南，为正文主张匹配可核查引用并记录证据边界
+  default_prompt: 使用 $retrieve-and-match-references 检索并阅读相关文献与现行指南，逐条核对稿件主张与原文，匹配参考文献并交付来源台账、证据定位和需要收窄的表述。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

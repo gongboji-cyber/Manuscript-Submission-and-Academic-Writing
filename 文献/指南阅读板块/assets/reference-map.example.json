@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "references": [
+    {
+      "record_id": "R001",
+      "title": "待填写：真实来源题名",
+      "source_type": "guideline",
+      "doi": "",
+      "pmid": "",
+      "url": "",
+      "identity_status": "unverified",
+      "identity_sources": [],
+      "read_scope": "none",
+      "publication_status": "unchecked",
+      "status_checked_at": "",
+      "status_sources": [],
+      "guideline": {
+        "organisation": "",
+        "version": "",
+        "official_url": "",
+        "currency_status": "unclear",
+        "checked_at": "",
+        "recommendation_locator": ""
+      }
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C001",
+      "text": "待填写：需要核查的原句/子主张",
+      "location": "待填写稿件节/段",
+      "requires_full_text": true,
+      "links": [
+        {
+          "record_id": "R001",
+          "support": "unassessed",
+          "role": "recommendation",
+          "source_locator": "",
+          "evidence_note": "",
+          "limits": "待阅读全文并核实版本和条件",
+          "action": "hold",
+          "recommendation_strength": "",
+          "evidence_certainty": ""
+        }
+      ]
+    }
+  ]
+}
