@@ -42,7 +42,7 @@ python -B scripts/paired_cluster_bootstrap.py --data paired.csv --cluster-col pa
 
 ## 联动其他模块
 
-方法学问题先解决再调用 `audit-and-polish-manuscript` 润色；用 `write-manuscript-supplement` 记录详尽方法与敏感性结果；用 `critically-read-literature` 核验方法文献和批判主张；用 `plot-research-statistics` 保留单 panel 代码并导出 800 dpi TIFF/矢量 PDF；用 `format-academic-word` 排版。不能让润色、图形美观或可执行代码替代证据有效性。
+方法学问题先解决再调用 `audit-and-polish-manuscript` 润色；用 `write-manuscript-supplement` 记录详尽方法与敏感性结果；用 `critically-read-literature` 核验方法文献和批判主张；用 `research-flow-diagrams` 绘制经过证据核验的研究流程图、技术路线和可编辑模型框架图；用 `plot-research-statistics` 保留统计结果单 panel 代码并导出 800 dpi TIFF/矢量 PDF；用 `format-academic-word` 排版。不能让润色、图形美观或可执行代码替代证据有效性。
 
 ## 默认交付
 

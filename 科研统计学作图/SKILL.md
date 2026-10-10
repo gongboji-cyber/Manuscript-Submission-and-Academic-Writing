@@ -11,7 +11,7 @@ description: Design, draw and audit evidence-grounded medical, biomedical and co
 - 验收使用[24项检查](references/checklist.md)；核查期刊与第三方实现时读取[来源与复用](references/sources-and-reuse.md)。
 - 使用[单panel工具](scripts/panel_tools.py)统一样式、检查文字边界并导出；使用[常用图入口](scripts/plot_panel.py)和[配置示例](assets/panel-spec.example.json)绘制核对后的CSV。工具不代替统计设计或逐图检查。
 
-## 1. 根据研究问题选图
+流程图、技术路线图、纳排路径和模型架构示意图由 `research-flow-diagrams` 负责；本模块仅处理带真实数据、估计量和不确定性的统计结果图。\n\n## 1. 根据研究问题选图
 
 每个panel先写：**问题→读者应看到的比较/关系→变量与独立单位→图型→估计量/不确定性→来源**。核对配对/重复测量、单位、分母、缺失、删失、预处理、CI方法与展示范围。从证据选图，不先选漂亮模板再找结果。说明首选相对替代图的信息优势；阴性结果、异质性、失败与不确定性照常显示。
 
