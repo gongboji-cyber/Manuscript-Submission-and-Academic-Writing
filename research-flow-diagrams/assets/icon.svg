@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Research diagram">
+  <rect width="128" height="128" rx="26" fill="#ecf3f8"/>
+  <g fill="none" stroke="#456f88" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M43 38H83M64 38V59M64 59H32V83M64 59H97V83"/>
+  </g>
+  <rect x="24" y="22" width="80" height="23" rx="9" fill="#397795"/>
+  <rect x="17" y="81" width="33" height="27" rx="7" fill="#e8bd8a" stroke="#a16b45" stroke-width="3"/>
+  <rect x="78" y="81" width="33" height="27" rx="7" fill="#abd7be" stroke="#498260" stroke-width="3"/>
+</svg>

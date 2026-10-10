@@ -1,0 +1,19 @@
+{
+  "title": "SYNTHETIC | Cohort flow (illustration only)",
+  "synthetic": true,
+  "canvas": {"width": 1080, "height": 690},
+  "nodes": [
+    {"id": "screened", "label": "Records screened\nn = 120", "count": 120, "unit": "records", "role": "input", "x": 150, "y": 120, "w": 300, "h": 85},
+    {"id": "eligible", "label": "Eligible records\nn = 100", "count": 100, "unit": "records", "role": "process", "x": 150, "y": 310, "w": 300, "h": 85},
+    {"id": "excluded", "label": "Excluded\nn = 20", "count": 20, "unit": "records", "role": "excluded", "x": 630, "y": 310, "w": 275, "h": 85},
+    {"id": "analyzed", "label": "Included in analysis\nn = 100", "count": 100, "unit": "records", "role": "output", "x": 150, "y": 510, "w": 300, "h": 85}
+  ],
+  "balances": [
+    {"parent": "screened", "parts": ["eligible", "excluded"]}
+  ],
+  "edges": [
+    {"id": "screened-eligible", "source": "screened", "target": "eligible"},
+    {"id": "screened-excluded", "source": "screened", "target": "excluded", "from_port": "right", "to_port": "top", "via": [[767, 163]]},
+    {"id": "eligible-analyzed", "source": "eligible", "target": "analyzed"}
+  ]
+}

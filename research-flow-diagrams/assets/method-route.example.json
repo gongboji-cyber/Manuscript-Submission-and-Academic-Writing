@@ -1,0 +1,27 @@
+{
+  "title": "SYNTHETIC | Method evaluation workflow",
+  "synthetic": true,
+  "canvas": {"width": 1320, "height": 620},
+  "groups": [
+    {"label": "Input", "x": 35, "y": 90, "w": 290, "h": 440},
+    {"label": "Method", "x": 350, "y": 90, "w": 610, "h": 440},
+    {"label": "Evaluation", "x": 985, "y": 90, "w": 300, "h": 440}
+  ],
+  "nodes": [
+    {"id": "research-question", "label": "Research question", "role": "input", "x": 75, "y": 180, "w": 210, "h": 65},
+    {"id": "public-data", "label": "Public data\n(version recorded)", "role": "input", "x": 75, "y": 355, "w": 210, "h": 75},
+    {"id": "preprocess", "label": "Preprocess\n(no outcome leakage)", "role": "process", "x": 395, "y": 355, "w": 220, "h": 75},
+    {"id": "method", "label": "Frozen method", "role": "novel", "x": 710, "y": 355, "w": 205, "h": 75},
+    {"id": "protocol", "label": "Analysis protocol", "role": "process", "x": 395, "y": 180, "w": 220, "h": 65},
+    {"id": "evaluation", "label": "Independent\nevaluation", "role": "validation", "x": 1030, "y": 355, "w": 210, "h": 75},
+    {"id": "report", "label": "Results and\nlimitations", "role": "output", "x": 1030, "y": 180, "w": 210, "h": 65}
+  ],
+  "edges": [
+    {"id": "question-to-protocol", "source": "research-question", "target": "protocol"},
+    {"id": "data-to-preprocess", "source": "public-data", "target": "preprocess"},
+    {"id": "protocol-to-preprocess", "source": "protocol", "target": "preprocess"},
+    {"id": "preprocess-to-method", "source": "preprocess", "target": "method"},
+    {"id": "method-to-eval", "source": "method", "target": "evaluation"},
+    {"id": "eval-to-report", "source": "evaluation", "target": "report"}
+  ]
+}
