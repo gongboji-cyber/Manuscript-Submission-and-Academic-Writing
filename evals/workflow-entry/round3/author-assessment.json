@@ -1,0 +1,64 @@
+{
+  "status": "author-side exploratory assessment; independent review pending",
+  "rubric_version": 1,
+  "rubric_sha256": "f34418b3a27a8f3cecc3b8827cf236402506c87f437ef2666dc7863920d7c389",
+  "case_sha256": "328337cff8d3f785cc6c6d11920ec838bc2ba5feceda876cf44782731798acd1",
+  "check_order": [
+    "U01.1", "U01.2", "U01.3", "U01.4", "U01.5",
+    "U02.1", "U02.2", "U02.3", "U02.4",
+    "U03.1", "U03.2", "U03.3", "U03.4", "U03.5"
+  ],
+  "runs": {
+    "old-1": {
+      "judgments": ["met", "met", "met", "met", "met", "met", "met", "unclear", "met", "met", "met", "met", "met", "met"],
+      "counts": {"met": 13, "not_met": 0, "unclear": 1},
+      "exception_evidence": {
+        "U02.3": "The answer says the two edits may continue the submission process and notes that the full Word file was not checked, but does not clearly require confirming the edits and final presentation in the actual document before package-ready status."
+      }
+    },
+    "old-2": {
+      "judgments": ["met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met"],
+      "counts": {"met": 14, "not_met": 0, "unclear": 0}
+    },
+    "old-3": {
+      "judgments": ["met", "met", "met", "met", "met", "met", "met", "met", "met", "not_met", "met", "met", "met", "met"],
+      "counts": {"met": 13, "not_met": 1, "unclear": 0},
+      "exception_evidence": {
+        "U03.1": "The replacement says adults were 'eligible for screening from age 45 under G-2026'. The supplied fact establishes only an age threshold, not full eligibility, so this overstates an unsupplied guideline conclusion."
+      }
+    },
+    "new-1": {
+      "judgments": ["met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met"],
+      "counts": {"met": 14, "not_met": 0, "unclear": 0}
+    },
+    "new-2": {
+      "judgments": ["met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met"],
+      "counts": {"met": 14, "not_met": 0, "unclear": 0}
+    },
+    "new-3": {
+      "judgments": ["met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met", "met"],
+      "counts": {"met": 14, "not_met": 0, "unclear": 0}
+    }
+  },
+  "variant_totals": {
+    "old": {"met": 40, "not_met": 1, "unclear": 1, "possible_judgments": 42},
+    "new": {"met": 42, "not_met": 0, "unclear": 0, "possible_judgments": 42}
+  },
+  "structural_observation": {
+    "old_explicit_four_field_change_records": "0/9 task responses",
+    "new_explicit_four_field_change_records": "9/9 task responses",
+    "interpretation": "This verifies adherence to the revised output contract, not scientific correctness or general reliability."
+  },
+  "consistency": {
+    "old": "12/14 checks were met in all three runs; U02.3 was unclear once and U03.1 was not met once.",
+    "new": "14/14 checks were met in all three runs in this author-side assessment."
+  },
+  "caveats": [
+    "This assessment was made by the authoring/root process after outputs were generated and is not independent review.",
+    "A fresh independent evaluator was launched without access to skill implementations or prior evaluations but returned no grading artifact because its run hit a usage limit.",
+    "n=3 per variant is exploratory and does not support a statistical significance claim.",
+    "Run logs are executor self-reports, not complete raw tool traces.",
+    "Model identifier, token use, monetary cost and comparable execution time were not exposed and were not inferred.",
+    "The tasks are public synthetic workflow cases; no medical, statistical or package-ready conclusion is certified."
+  ]
+}
