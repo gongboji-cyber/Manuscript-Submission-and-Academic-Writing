@@ -1,0 +1,18 @@
+[
+  {
+    "id": "W01",
+    "request": "只检查这句英文是否需要润色，必要时给修订句。不做全稿审查，不联网，不生成文件：The mean paired difference was 0.020 (95% confidence interval, −0.005 to 0.045)."
+  },
+  {
+    "id": "W02",
+    "request": "基于以下合成材料，修订Results句和cover letter贡献句，列出需要同步的其他材料，暂不改图或生成Word，也不重跑分析。作者指定的当前结果为analysis-v2，修复了配对单位；仅有汇总报告，没有源数据或运行日志。v2：A−B均值0.020，患者等权，95% CI −0.005至0.045。旧版analysis-v1：A−B均值0.035，95% CI 0.010至0.060。当前Results：Method A was superior to B, with a mean difference of 0.035 (95% CI, 0.010–0.060). 当前cover letter：Our method demonstrably improves clinical outcomes over existing methods. Figure2.pdf和Supplement-v1仍引用v1；只知道文件身份，未提供图或补充正文。"
+  },
+  {
+    "id": "W03",
+    "request": "我只有文献管理器导出的候选记录：题名Example Association Study，DOI字段写为10.0000/synthetic，检索工具显示DOI解析成功，摘要提示X与Y有关联，原文和补充不可得。这里所有资料都是合成案例，不联网寻找真实文章。请判断它能否支持句子X causes Y in all patient populations；给引用处理与可支持表述的建议。不要虚构作者、推荐等级或已阅读全文。"
+  },
+  {
+    "id": "W04",
+    "request": "我第一次遇到这个内部交换格式UNITROWS/1，需要将输入转成CSV，把mm转换为cm，保留ID和缺失信息。请实际读取本案例附带的格式说明，写最小转换代码，执行转换并核对关键边界。只操作自己的输出目录；无网络、安装或统计分析。输入文件和说明见本案例的input.unitrows、format.md；另附duplicate.unitrows用于检查错误处理。这不是公开行业标准，不要编造外部规范。"
+  }
+]
