@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-10-11T09:38:44Z",
+  "defect_under_test": "The unfamiliar-situation protocol has no direct behavioral evidence for source-status conflicts, unavailable unknown dependencies, or evidence-insufficient stop decisions.",
+  "baseline_commit": "5cb757140c2d7e85229f9ca3d86dca2b6c125d7d",
+  "candidate_commit": "5c463f8d5fb422a1a94076e80c41878329a4eba0",
+  "pull_request": 3,
+  "variants": {
+    "old": "byte-exact 104-file main skill collection",
+    "new": "same 104 files plus the six current workflow-entry files"
+  },
+  "snapshot_checks": {
+    "old_matches_main_git_blobs": "104/104",
+    "new_inherited_files_match_main_git_blobs": "104/104",
+    "new_core_matches_round3_candidate": "6/6"
+  },
+  "inputs_sha256": "fb176114a972c9a128db7b64965a7f51b4de3c2071cf1c35087e87428f62a1c6",
+  "rubric_sha256": "9fe32a5dec99aa7096c6c1c50faf23ac340b2b3f07f923e7531c50f3afb1dbce",
+  "rubric_frozen_before_launch": true,
+  "runs_per_variant": 1,
+  "execution_context": "Two fresh subagents, fork_turns=none, inherited same parent model/configuration, identical cases/materials, separate skill and output directories, no rubric or expected answers in execution context.",
+  "model_id": null,
+  "model_note": "The actual model identifier is not exposed; no model override was used.",
+  "restrictions": [
+    "local public synthetic materials only",
+    "no network",
+    "no dependency installation",
+    "read only own skill/material directory",
+    "write only own output directory"
+  ],
+  "telemetry": {
+    "token_usage": null,
+    "cost": null,
+    "comparable_runtime": null,
+    "complete_tool_event_export": null
+  },
+  "publication_boundary": "No real manuscript, patient data, private message or credential is present. One run per variant is exploratory and cannot establish general reliability, scientific correctness, efficiency or cost improvement."
+}

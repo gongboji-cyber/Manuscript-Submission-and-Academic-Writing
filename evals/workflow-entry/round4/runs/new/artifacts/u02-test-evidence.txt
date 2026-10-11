@@ -1,0 +1,60 @@
+MEDFMTX 1.2 local minimal validation transcript
+
+COMMAND: command -v medfmtx
+WORKDIR: /workspace/scratch/46b39df32326/skill-optimization-20261011/round4/new/materials/U02
+EXIT_CODE: 1
+RAW_OUTPUT_BEGIN
+RAW_OUTPUT_END
+
+COMMAND: python3 reference_checker.py input.medfmt
+WORKDIR: /workspace/scratch/46b39df32326/skill-optimization-20261011/round4/new/materials/U02
+EXIT_CODE: 0
+RAW_OUTPUT_BEGIN
+{
+  "format": "MEDFMTX 1.2",
+  "records": [
+    {
+      "id": "A01",
+      "value": 12.5
+    },
+    {
+      "id": "B_02",
+      "value": null
+    },
+    {
+      "id": "C3",
+      "value": 88
+    }
+  ]
+}
+RAW_OUTPUT_END
+
+COMMAND: python3 reference_checker.py boundary.medfmt
+WORKDIR: /workspace/scratch/46b39df32326/skill-optimization-20261011/round4/new/materials/U02
+EXIT_CODE: 0
+RAW_OUTPUT_BEGIN
+{
+  "format": "MEDFMTX 1.2",
+  "records": [
+    {
+      "id": "LOW",
+      "value": 0
+    },
+    {
+      "id": "HIGH",
+      "value": 100
+    },
+    {
+      "id": "MISSING",
+      "value": null
+    }
+  ]
+}
+RAW_OUTPUT_END
+
+COMMAND: python3 reference_checker.py invalid-duplicate.medfmt
+WORKDIR: /workspace/scratch/46b39df32326/skill-optimization-20261011/round4/new/materials/U02
+EXIT_CODE: 2
+RAW_OUTPUT_BEGIN
+ERROR: line 3: duplicate ID DUP
+RAW_OUTPUT_END
