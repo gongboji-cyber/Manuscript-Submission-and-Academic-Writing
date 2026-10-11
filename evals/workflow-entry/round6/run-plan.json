@@ -1,0 +1,12 @@
+{
+  "baseline": {"ref": "5cb757140c2d7e85229f9ca3d86dca2b6c125d7d", "snapshot": "old/skills"},
+  "candidate": {"ref": "9268e180c22e9158ff8815fc305a3c04c8a40546", "snapshot": "new/skills"},
+  "same_conditions": "One fresh executor per version; same parent model configuration, request, DOCX bytes, document runtime, filesystem permissions, and output contract.",
+  "runs_per_version": 1,
+  "known_measurement_limits": [
+    "Model identifier, token count, price, and complete internal tool event stream are unavailable.",
+    "One synthetic case per version cannot estimate general success probability or scientific correctness.",
+    "Wall-clock time is environment-dependent and is recorded only when tool output exposes it."
+  ]
+}
+
