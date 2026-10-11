@@ -1,0 +1,17 @@
+{
+  "scope": "Public synthetic handoff tasks; no real manuscript, patient data or external lookup",
+  "tasks": [
+    {
+      "id": "H01",
+      "request": "A synthetic submission has a new author-designated summary. analysis-v3 supersedes analysis-v2 after removal of duplicate records. v3 reports the patient-paired difference B−A as −0.012 (95% CI, −0.040 to 0.016); v2 reported 0.025 (95% CI, 0.005 to 0.045). The current Results sentence is: “Method B outperformed Method A (mean difference B−A, 0.025; 95% CI, 0.005 to 0.045).” Figure4-v2.pdf and Supplement-v2.docx are known to use v2, but their contents are unavailable. The current Acknowledgments sentence is: “We thank the data management team for their assistance.” It is verified current and does not depend on the analysis. Update only the provided Results sentence; polish the Acknowledgments only if necessary; then give a concise handoff showing what is complete, what must be redone on updated artifacts, and what independent work can continue. Do not run analysis, invent file contents, or create files."
+    },
+    {
+      "id": "H02",
+      "request": "A synthetic journal style notice changes one punctuation rule: in this journal’s reference style, a colon must follow the publication year instead of a semicolon. The only supplied line is: “Example A, Example B. Synthetic methods. 2026; 12:34–40.” Change that line only and give a brief impact record. The citation identity and scientific content are already verified and unchanged. Do not inspect the rest of the bibliography, rerun analysis, redraw figures, render Word, or create files."
+    },
+    {
+      "id": "H03",
+      "request": "Perform a status-only audit of this synthetic package; make no edits and create no files. analysis-v5 is the designated current result. Results-v5, Figure2-v5.pdf, Supplement-v5.docx, and CoverLetter-v5 all explicitly identify analysis-v5 and the same estimate. The package record states that numerical comparison, cross-material consistency, PDF export, and visual QA were completed after each v5 artifact was generated; no source, method, requirement, or artifact has changed since. State whether anything must be marked stale or repeated, what work may continue, and the evidence boundary. Do not reopen completed checks merely to produce activity."
+    }
+  ]
+}
