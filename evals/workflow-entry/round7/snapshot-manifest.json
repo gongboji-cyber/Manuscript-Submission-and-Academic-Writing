@@ -1,0 +1,28 @@
+{
+  "base_ref": "8a2537768962f3bee756a1ef41ccfdc4cabf3841",
+  "candidate_runtime_files": {
+    "Word文档格式/SKILL.md": "b54e389c3ce94e7179017b2f92efc2ee27c0d9681fd396d19a5372bb5f7f4c7c",
+    "Word文档格式/references/three-line-tables.md": "9d3dadb8ff405d4160947b3e42c95f4faf52b4f92c259cb459216abfa9dd9afb",
+    "Word文档格式/scripts/stage_task_bundle.py": "b3921e1f8114ccc3e3a13888e849b912f47abb9abfcc04b09ef14d12951a8669"
+  },
+  "synthetic_inputs": {
+    "simple-table.docx": "529b0e5110c806b5d7e1e64487f2703fb6ff880d09e02e47bd21b115ab04819f",
+    "boundary-crossing-merge.docx": "1c5456e5b9bc891fdb51110c229d4532332dd093d7436dd15aaffe149f8f7568"
+  },
+  "staged_manifests": {
+    "local-three-line": "8a8088fc0646b37ba45251d73580c1bf3a459a103a7225898a09424fea61232d",
+    "full-audit": "75e25eb68684222eb518f9b926602496281123fe23c89cf00a03cd2874ef113e"
+  },
+  "normal_outputs": {
+    "full-snapshot.docx": "ea5fd9e23d6e7571cebe176f75112c0fc7a636103ffd3336316ff4f641b82d46",
+    "local-bundle-v2.docx": "787d4bb463a13349275d8a9745770249273526d68514dc302a329b1c9d94fb01",
+    "shared-render-page-1.png": "a2d7eb5eba9ca7bf34b1f7d90a4fc612e63fe133afe00cd6d2c2cc17e540c19d"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "python-docx": "1.2.0",
+    "lxml": "6.1.1",
+    "libreoffice": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+    "pdftoppm": "26.05.0"
+  }
+}
