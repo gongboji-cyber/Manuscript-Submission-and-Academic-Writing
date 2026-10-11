@@ -25,7 +25,7 @@
 | 版本 | met | not_met | unclear |
 |---|---:|---:|---:|
 | old（main 104 文件） | 13 | 2 | 0 |
-| new（当前 PR head 110 运行文件） | 13 | 2 | 0 |
+| new（本轮修订前候选 `05ad626` 的 110 个运行文件） | 13 | 2 | 0 |
 | revised（两处最小修订） | 15 | 0 | 0 |
 
 新独立评审者只读冻结的案例、量表与 old/new/revised 最终输出，不读技能实现、中间尝试或作者结论。其判定 revised 相对 new 在 `R02.3`、`R03.5` 改善，其余 13 项持平，无回退。R02 修订输出明示 `abstract-level note; no full text or supplement was available`；R03 修订运行只读入口、附信模块和 `authoring.md`，未读清单。
