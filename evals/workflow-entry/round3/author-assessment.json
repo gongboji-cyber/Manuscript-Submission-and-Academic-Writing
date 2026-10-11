@@ -1,5 +1,5 @@
 {
-  "status": "author-side exploratory assessment; independent review pending",
+  "status": "author-side exploratory assessment; retained separately from subsequent independent review",
   "rubric_version": 1,
   "rubric_sha256": "f34418b3a27a8f3cecc3b8827cf236402506c87f437ef2666dc7863920d7c389",
   "case_sha256": "328337cff8d3f785cc6c6d11920ec838bc2ba5feceda876cf44782731798acd1",
@@ -55,7 +55,7 @@
   },
   "caveats": [
     "This assessment was made by the authoring/root process after outputs were generated and is not independent review.",
-    "A fresh independent evaluator was launched without access to skill implementations or prior evaluations but returned no grading artifact because its run hit a usage limit.",
+    "A later fresh independent evaluator reviewed the allowlisted outputs and frozen rubric; its separate files must be used for independent judgments. The author-side and independent assessments differ only on old-1 U02.3: unclear here versus not_met independently.",
     "n=3 per variant is exploratory and does not support a statistical significance claim.",
     "Run logs are executor self-reports, not complete raw tool traces.",
     "Model identifier, token use, monetary cost and comparable execution time were not exposed and were not inferred.",
