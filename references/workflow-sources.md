@@ -2,7 +2,7 @@
 
 核查日期：2026-10-12。此入口为内部工作编排协议；没有新增临床推荐、统计阈值、法律判断或经验证质量分数。
 
-- 本候选已同步读取`main@b92b44487caac54aaa491aa533ab18aa0ec52e45`及PR分支原有模块，共十一份专业模块SKILL.md；其中新增`research-topic-selection`负责选题、立项和实验前止损。引用匹配、证据边界、独立单位、实际运行与视觉检查、局部任务和授权等约束沿用相应模块；专业来源仍在各模块的references中，使用时读取具体原文，不以此入口作为科学依据。模块清单或入口职责变化时须重查此映射，不得仅沿用本段快照。
+- 本候选已同步读取`main@5af337b3d8cdf530aa382ad9cf0f33de03cc046e`及PR分支原有模块，共十一份专业模块SKILL.md；其中`research-topic-selection` V2负责从线索发现到G0—G5裁决，并在G1、G2/G4分别按需联动文献/批判性阅读和方法学模块。引用匹配、证据边界、独立单位、实际运行与视觉检查、局部任务和授权等约束沿用相应模块；专业来源仍在各模块的references中，使用时读取具体原文，不以此入口作为科学依据。模块清单、门槛或入口职责变化时须重查此映射，不得仅沿用本段快照。
 - Kundel, Dominik, and Gabriel Chua. “Testing Agent Skills Systematically with Evals.” *OpenAI Developers*, 22 Jan. 2026, https://developers.openai.com/blog/eval-skills. Accessed 11 Oct. 2026. 实际读取成功条件、触发/环境假设、任务集、执行轨迹与回归检查相关段落；采用“先定义可核查完成条件，再看行为和成果”，不复制示例代码，不声称当前环境运行了Codex CLI或提供了不可取得的完整轨迹/成本。
 - Skill Creator：按实际可用版本读取创建、按需加载、独立试用和持久保存规则；本次用户要求架构候选先PR，所以不发布为个人正式技能或自动合并。安装时仍需按运行环境正式保存并核对路径。
 
