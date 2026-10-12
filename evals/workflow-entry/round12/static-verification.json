@@ -1,0 +1,24 @@
+{
+  "date_utc": "2026-10-12",
+  "environment": {
+    "python": "3.12.14",
+    "git": "2.51.1",
+    "skill_creator": "work-skill-creator/0.1.0"
+  },
+  "changed_runtime_files": ["专利书写规范/SKILL.md"],
+  "candidate_skill_sha256": "70a7e8530b23c77485027748aac0e447e7ec54448524a6ca7518b11bf0fd64bd",
+  "baseline_output_sha256": "48fe55934e58d803799190442961290f96830d510ad812d519b37772e69437d9",
+  "candidate_output_sha256": "bf03ad4fd0640499e83954704e9ca960454be941a3dd82ef1b6709f4d72edc09",
+  "checks": [
+    {"command": "quick_validate.py 专利书写规范", "result": "PASS"},
+    {"command": "PYTHONDONTWRITEBYTECODE=1 python3 evals/workflow-entry/round10/verify_round10.py", "result": "PASS: 11/11 checks; 11 modules; zero missing relative links"},
+    {"command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s research-topic-selection/tests -v", "result": "PASS: 10/10 tests"},
+    {"command": "PYTHONDONTWRITEBYTECODE=1 python3 research-topic-selection/scripts/validate_gate_ledger.py research-topic-selection/assets/gate-ledger-example.csv", "result": "PASS: 18 rows / 3 topics"},
+    {"command": "quick_validate.py on every SKILL.md at depth <=3", "result": "PASS: 12/12 entrypoints"},
+    {"command": "git diff --check", "result": "PASS"}
+  ],
+  "three_local_regressions_elapsed_ns": 103263988,
+  "timing_scope": "Only Round 10 structural verification, topic-selection unit tests, and gate-ledger validation. Excludes model execution, independent review, cloning/network work, and quick_validate.",
+  "telemetry": {"model_id": null, "token_usage": null, "cost": null, "comparable_model_runtime": null},
+  "scientific_legal_scope": "Synthetic workflow validation only; no source patent, legal status, scientific result, patentability, or FTO was independently verified."
+}
