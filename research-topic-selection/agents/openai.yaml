@@ -1,0 +1,11 @@
+interface:
+  display_name: 科研选题与立项审计
+  short_description: 核验科学新意、真实数据资格和最小试点，给出可追溯GO/HOLD/STOP裁决
+  default_prompt: 使用 $research-topic-selection 对我的科研选题开展对抗式新颖性与数据资格审查，设计最短可证伪试点，结合最强竞争前作、替代解释及预算给出唯一GO/HOLD/STOP建议。
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

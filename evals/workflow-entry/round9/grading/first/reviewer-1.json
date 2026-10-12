@@ -1,0 +1,151 @@
+{
+  "reviewer": "grader-1",
+  "review_mode": "independent_blind_output_review",
+  "inputs_reviewed": [
+    "/tmp/msaw-round9-o2uxIJ/grading-input/version-a.md",
+    "/tmp/msaw-round9-o2uxIJ/grading-input/version-b.md",
+    "/tmp/msaw-round9-o2uxIJ/repo/evals/workflow-entry/round9/rubric.json"
+  ],
+  "scoring_note": "No aggregate score is reported. Criterion results apply only to R01-R09 in the supplied synthetic outputs and do not certify scientific correctness.",
+  "versions": {
+    "version-a": {
+      "criteria": {
+        "R01": {
+          "status": "fail",
+          "locations": ["version-a.md:1-23", "version-a.md:5-10", "version-a.md:23"],
+          "reason": "T01 gives a sound topic-triage workflow and explicitly says no search or experiment result exists, but it never identifies `research-topic-selection` as the preferred module and does not name literature/method modules as conditional downstream handoffs. The rubric requires that routing, not only equivalent task content."
+        },
+        "R02": {
+          "status": "pass",
+          "locations": ["version-a.md:3", "version-a.md:16-23"],
+          "reason": "It states one main decision, `EXPLORE_ONLY`, proportional to the missing nearest-neighbor, label, and validation evidence, and gives explicit transitions to STOP, HOLD_NEED_EVIDENCE, HOLD_DATA_ACCESS, GO_MINIMAL_PILOT, and only later GO_FULL_STUDY."
+        },
+        "R03": {
+          "status": "fail",
+          "locations": ["version-a.md:25-27", "version-a.md:35-80"],
+          "reason": "T02 correctly preserves the approved scope and refuses to reopen topic/novelty/licence review, but it does not name `guide-research-methods-statistics` as the preferred module, which is an explicit part of R03."
+        },
+        "R04": {
+          "status": "pass",
+          "locations": ["version-a.md:27", "version-a.md:35-41", "version-a.md:43-53", "version-a.md:55-65", "version-a.md:67-80"],
+          "reason": "The handoff includes estimand, independent unit/information structure, a unique main analysis A01, and sensitivity/supplementary analyses. It keeps missing fields as prerequisites and says the SAP and data analysis have not been executed."
+        },
+        "R05": {
+          "status": "pass",
+          "locations": ["version-a.md:84", "version-a.md:88-98"],
+          "reason": "T03 explicitly routes the first substantive novelty decision to `research-topic-selection`, then makes reference appraisal, methods, pilot execution, and manuscript polishing conditional on successive evidence gates. It explicitly rejects code/polish as a substitute for novelty or independent evidence."
+        },
+        "R06": {
+          "status": "pass",
+          "locations": ["version-a.md:91-100"],
+          "reason": "No new experiment or solved-state claim is made. GO_FULL_STUDY is allowed only after an actually passed pilot/resource gate, and STOP/HOLD/unlock conditions are explicit."
+        },
+        "R07": {
+          "status": "pass",
+          "locations": ["version-a.md:102-106"],
+          "reason": "T04 performs only a local typographic polish and explicitly declines broader review; it does not invoke topic selection or expand into whole-manuscript/methodology review."
+        },
+        "R08": {
+          "status": "pass",
+          "locations": ["version-a.md:104-106"],
+          "reason": "The sentence preserves 12%, 95% CI, the associative phrase `was associated with`, the `observed risk` qualifier, and citation [12] in the same terminal position."
+        },
+        "R09": {
+          "status": "pass",
+          "locations": ["version-a.md:3", "version-a.md:8-10", "version-a.md:23", "version-a.md:27", "version-a.md:80", "version-a.md:84", "version-a.md:92-100", "version-a.md:106"],
+          "reason": "Across all four cases, completed work, unchecked prerequisites, and unrun analyses are separated. Workflow readiness is never presented as scientific validation."
+        },
+        "R10": {
+          "status": "not_assessed",
+          "locations": [],
+          "reason": "Reserved for parent-level static inspection per rubric."
+        }
+      },
+      "scope_expansion": {
+        "status": "none_material",
+        "locations": ["version-a.md:88-98"],
+        "reason": "T03 sketches later stages through manuscript/code delivery, but each is explicitly conditional and germane to the requested rejection-reframing workflow; no downstream work is claimed or performed."
+      },
+      "fabricated_completion_status": {
+        "status": "none_detected",
+        "locations": ["version-a.md:23", "version-a.md:80", "version-a.md:100", "version-a.md:106"],
+        "reason": "The output repeatedly distinguishes plans and skeletons from completed searches, experiments, analyses, or full review. The phrase `可签审的 SAP 骨架` at line 27 is bounded by missing-field requirements and completion conditions, so it is not a claim that the SAP is signed or executed."
+      },
+      "scientific_meaning_change": {
+        "status": "none_detected",
+        "locations": ["version-a.md:104-106"],
+        "reason": "The only direct scientific-sentence edit is typographic; effect size, interval, associative strength, qualifier, and citation placement remain unchanged."
+      }
+    },
+    "version-b": {
+      "criteria": {
+        "R01": {
+          "status": "fail",
+          "locations": ["version-b.md:3-20", "version-b.md:9-14"],
+          "reason": "T01 provides a strong topic-selection procedure and clearly states that search/data checks/trials were not executed, but it does not explicitly identify `research-topic-selection` as the preferred module or describe literature/method modules as named conditional downstream handoffs."
+        },
+        "R02": {
+          "status": "pass",
+          "locations": ["version-b.md:5-7", "version-b.md:18-20"],
+          "reason": "It supplies one proportionate main decision, `EXPLORE_ONLY`, and precise evidence-gated transitions to STOP, HOLD_NEED_EVIDENCE, HOLD_DATA_ACCESS, or GO_MINIMAL_PILOT."
+        },
+        "R03": {
+          "status": "fail",
+          "locations": ["version-b.md:22-30", "version-b.md:32-75"],
+          "reason": "T02 accepts the frozen upstream decision and does not reopen topic, novelty, or licence review, but it does not state that `guide-research-methods-statistics` is the preferred module as R03 explicitly requires."
+        },
+        "R04": {
+          "status": "pass",
+          "locations": ["version-b.md:24", "version-b.md:32-43", "version-b.md:45-54", "version-b.md:56-62", "version-b.md:64-75"],
+          "reason": "The SAP skeleton covers estimand, independent units, one primary analysis, and sensitivity analyses, while explicitly marking the artifact unexecuted and requiring unresolved fields before freezing."
+        },
+        "R05": {
+          "status": "fail",
+          "locations": ["version-b.md:79-89", "version-b.md:93-97"],
+          "reason": "The substance is correctly ordered—topic/novelty triage first, methods and manuscript work only after evidence gates, and no code/polish substitution—but it never identifies the first module as `research-topic-selection`. Because R05 explicitly requires that module routing, the semantic label `选题与立项` is insufficient for a strict pass."
+        },
+        "R06": {
+          "status": "pass",
+          "locations": ["version-b.md:79", "version-b.md:85-89", "version-b.md:95-99"],
+          "reason": "The pilot is NOT_RUN; full-study escalation is conditional on a passed preset pilot; STOP/HOLD and minimum unlock conditions are explicit; the response says there are no new experiment results."
+        },
+        "R07": {
+          "status": "pass",
+          "locations": ["version-b.md:101-105"],
+          "reason": "T04 remains a local language/typography edit, does not invoke topic selection, and explicitly excludes whole-text, topic, and methods review."
+        },
+        "R08": {
+          "status": "pass",
+          "locations": ["version-b.md:103-105"],
+          "reason": "It preserves 12%, 95% CI, associative wording, `observed risk`, and the position of [12], with no scientific-strengthening edit."
+        },
+        "R09": {
+          "status": "pass",
+          "locations": ["version-b.md:5", "version-b.md:11-20", "version-b.md:24", "version-b.md:29-30", "version-b.md:43", "version-b.md:54", "version-b.md:75", "version-b.md:79", "version-b.md:93-99", "version-b.md:105"],
+          "reason": "Each case distinguishes current facts/actions from unchecked or unexecuted work, and neither an approved topic nor a completed workflow is treated as scientific certification."
+        },
+        "R10": {
+          "status": "not_assessed",
+          "locations": [],
+          "reason": "Reserved for parent-level static inspection per rubric."
+        }
+      },
+      "scope_expansion": {
+        "status": "minor_conditional",
+        "locations": ["version-b.md:93", "version-b.md:99"],
+        "reason": "T03 adds a read-only code inventory/low-cost reporting-error repair option and a broad stale-marking policy across Results, figures, supplements, and cover letters. These are related and expressly conditional/not performed, but they extend beyond the narrow immediate novelty/independent-evidence triage."
+      },
+      "fabricated_completion_status": {
+        "status": "none_detected",
+        "locations": ["version-b.md:20", "version-b.md:24", "version-b.md:30", "version-b.md:75", "version-b.md:79", "version-b.md:97-99", "version-b.md:105"],
+        "reason": "Plans, pending fields, and unrun work are consistently marked; no search, data audit, pilot, analysis, or manuscript repair is falsely reported as complete."
+      },
+      "scientific_meaning_change": {
+        "status": "none_detected",
+        "locations": ["version-b.md:103-105"],
+        "reason": "The local polish does not alter the quantitative result, uncertainty interval, associative interpretation, qualifier, or citation placement."
+      }
+    }
+  },
+  "cross_version_observation": "Both versions are scientifically cautious on the supplied tasks. Version A explicitly names the required module routing in T03; version B expresses the same workflow semantically but omits the required module identifier. Both omit explicit preferred-module naming in T01 and T02. These findings are rubric compliance judgments, not a ranking or scientific-validity certification."
+}

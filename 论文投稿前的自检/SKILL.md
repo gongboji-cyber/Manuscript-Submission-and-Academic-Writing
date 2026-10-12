@@ -18,6 +18,7 @@ description: Evidence-grounded pre-submission auditing and academic language pol
 
 ## 资源导航
 
+- 对拒稿后的“是否继续补实验、是否值得重做为原创论文”或投稿前的原创性/独立证据缺口，先调用 `research-topic-selection` 进行最近邻前作、数据资格、可证伪试点和止损裁决；本模块随后处理稿件证据一致性、报告问题与语言修订。润色与补代码不自动解决创新性不足。
 - 开始诊断读取 [完整检查清单](references/checklist.md)。限定章节只覆盖相关模块；全稿审查逐项覆盖全部模块。
 - 确定类型、核查期刊和判定状态时读取 [适用范围与裁决](references/routing-and-verdict.md)。
 - 需要起草、修订或组装补充材料时，可配合write-manuscript-supplement的正文分工、材料台账与SUP清单；没有该skill时仍按本skill的S/F/X模块处理。仅核查补充时不自动扩展为补充写作；合并重复问题并保留关联ID，不把105项与SUP项机械累加评分。
