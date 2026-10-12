@@ -1,0 +1,19 @@
+topic_id,gate,status,evidence_refs,reading_level,blocker,unlock,decision,pilot_status
+SYNTH_GO_PILOT,G0,PASS,SYNTH-E0,not_applicable,,,"GO_MINIMAL_PILOT",NOT_RUN
+SYNTH_GO_PILOT,G1,PASS,SYNTH-E1,fulltext-supp-reviewed,,,"GO_MINIMAL_PILOT",NOT_RUN
+SYNTH_GO_PILOT,G2,PASS,SYNTH-E2,not_applicable,,,"GO_MINIMAL_PILOT",NOT_RUN
+SYNTH_GO_PILOT,G3,PASS,SYNTH-E3,not_applicable,,,"GO_MINIMAL_PILOT",NOT_RUN
+SYNTH_GO_PILOT,G4,PASS,SYNTH-E4,not_applicable,,,"GO_MINIMAL_PILOT",NOT_RUN
+SYNTH_GO_PILOT,G5,NOT_TESTED,,not_applicable,PILOT_NOT_RUN,Run frozen pilot,"GO_MINIMAL_PILOT",NOT_RUN
+SYNTH_HOLD,G0,PASS,SYNTH-E5,not_applicable,,,"HOLD_NEED_EVIDENCE",NOT_RUN
+SYNTH_HOLD,G1,UNKNOWN,,abstract-read,FULL_TEXT_MISSING,Read methods results and relevant supplements,"HOLD_NEED_EVIDENCE",NOT_RUN
+SYNTH_HOLD,G2,UNKNOWN,,not_applicable,ESTIMAND_UNKNOWN,Define target quantity,"HOLD_NEED_EVIDENCE",NOT_RUN
+SYNTH_HOLD,G3,UNKNOWN,,not_applicable,JOIN_UNKNOWN,Check keys and labels,"HOLD_NEED_EVIDENCE",NOT_RUN
+SYNTH_HOLD,G4,NOT_TESTED,,not_applicable,PILOT_NOT_DESIGNED,Freeze strong baselines,"HOLD_NEED_EVIDENCE",NOT_RUN
+SYNTH_HOLD,G5,NOT_TESTED,,not_applicable,PILOT_NOT_RUN,Wait for gate clearance,"HOLD_NEED_EVIDENCE",NOT_RUN
+SYNTH_STOP,G0,PASS,SYNTH-E6,not_applicable,,,"STOP",NOT_RUN
+SYNTH_STOP,G1,FAIL,SYNTH-E7,fulltext-supp-reviewed,DIRECT_CLAIM_COVERED,Only reopen with distinct evidence,"STOP",NOT_RUN
+SYNTH_STOP,G2,UNKNOWN,,not_applicable,NOT_NEEDED_FOR_STOP,Revisit if new contribution appears,"STOP",NOT_RUN
+SYNTH_STOP,G3,UNKNOWN,,not_applicable,NOT_NEEDED_FOR_STOP,Revisit if new contribution appears,"STOP",NOT_RUN
+SYNTH_STOP,G4,NOT_TESTED,,not_applicable,STOP_AFTER_G1,No pilot,"STOP",NOT_RUN
+SYNTH_STOP,G5,NOT_TESTED,,not_applicable,STOP_AFTER_G1,No expansion,"STOP",NOT_RUN
