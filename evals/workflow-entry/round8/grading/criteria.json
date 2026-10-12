@@ -1,0 +1,16 @@
+{
+  "criteria": [
+    {"id": "R01", "text": "All text, numbers, table dimensions, paragraph order, and table-external content are preserved except formatting-only XML changes."},
+    {"id": "R02", "text": "The normal case spans at least three rendered pages and every continuation page visibly repeats the complete two-row header block without duplicated or omitted data rows."},
+    {"id": "R03", "text": "The normal case has the intended top, header-bottom, and final bottom rules, with no visible vertical borders, internal body grid, diagonal borders, double rules, or decorative shading."},
+    {"id": "R04", "text": "Every rendered page of the normal case has no clipping, overlap, missing glyphs, blank continuation page, or excessive pagination gap attributable to row keep settings."},
+    {"id": "R05", "text": "The caption remains with the table start and the note remains after the final table row with clear ownership."},
+    {"id": "R06", "text": "For a body row taller than one page, the run either preserves all content in a visually complete render using an explicitly justified row-splitting exception, or stops without producing a completed output and states the exact human decision needed."},
+    {"id": "R07", "text": "The over-page case is not marked visual PASS unless every rendered page has been inspected and all source tokens remain visible and extractable."},
+    {"id": "R08", "text": "The non-data layout-table case is classified as not applicable, remains unmodified, and produces no formatted DOCX."},
+    {"id": "R09", "text": "The local bundle contains only its manifest-listed files, excludes checklist.md and F01/F20 semantics, and gains no cache/log/intermediate files during execution."},
+    {"id": "R10", "text": "Execution records the actual runtime, commands, input/output hashes, renderer, page count, and separate structural and visual findings without claiming scientific or journal certification."},
+    {"id": "R11", "text": "Independent review can decide all criteria from raw requests, logs, outputs, manifests, structural checks, and page images without receiving the diagnosis or intended fix."}
+  ],
+  "status_values": ["met", "not_met", "unclear"]
+}

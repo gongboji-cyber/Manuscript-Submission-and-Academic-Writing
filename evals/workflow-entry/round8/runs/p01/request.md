@@ -1,0 +1,3 @@
+Use the skill bundle in `bundle/` to edit `input.docx`.
+
+Convert only Table 1 to a three-line table, treating its first two rows as the complete header. Preserve every word, number, merge, table-external paragraph, and existing page setup. Make the complete two-row header repeat on every continuation page. Save a new file as `formatted.docx`; do not overwrite the input. Render the latest output and inspect every page. Write `execution-log.md` with the files actually read, exact commands, runtime versions, input/output SHA-256, page count, structural checks, and per-page visual findings. Do not perform a full-document audit or any scientific/content editing.
