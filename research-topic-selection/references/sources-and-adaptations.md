@@ -1,0 +1,24 @@
+# 公开来源及本模块的改造边界
+
+本模块为独立重写的中文工作流，提炼公开科研思维框架，不复制第三方技能正文、模板或脚本。以下为启发来源和本模块对应改造；**来源链接用于核验和归属，不表示这些作者认可本 skill**。链接于 2026-10-12（UTC）核验可访问；实际使用时再次核对项目现状、许可证及最新版本。本记录不构成外部项目的许可授权。
+
+| 公开项目 | 主要启发 | 本模块的实质性改造 |
+| --- | --- | --- |
+| [Anthropic — scientific-problem-selection](https://github.com/anthropics/life-sciences/tree/main/scientific-problem-selection) | 重要性、风险、解法空间与科研问题选择优先于执行 | 转为明确的 G0–G5 证据关口、可访问性与科学适格性分轴、停止条件 |
+| [Rimagination — good-question](https://github.com/Rimagination/good-question) | 有风险的好问题、竞争解释、可否证试点、最强反对意见 | 增加最近邻编辑桌拒测试、真实数据资格、结果树和预算冻结 |
+| [WenyuChiou — research-hub/gap-to-topic](https://github.com/WenyuChiou/research-hub/tree/master/skills/gap-to-topic) | 空白真实存在、构成贡献、可执行三个维度，研究者最终决策 | 将空白与数据独立验证、泄漏、对象覆盖逐项绑定，输出单一有条件裁决 |
+| [K-Dense-AI — hypothesis-generation](https://github.com/K-Dense-AI/scientific-agent-skills/tree/main/skills/hypothesis-generation) | 观察/假设区分，提出竞争解释与区分性实验 | 强制冻结可观测量、最小有意义效果、独立单位与零效应解释 |
+| [slpanir — idea-funnel](https://github.com/slpanir/idea-funnel) | 先问值不值得做，再设低成本否证与止损 | 把工程失败、数据访问失败、科学失败分开；明确沉没成本限制 |
+| [UCL-ERL — research-idea-rubric](https://github.com/UCL-ERL/skills/tree/main/skills/ideation/research-idea-rubric) | 从创新、基线、可行性、失败路径多维评价 | 不沿用跨领域分数，而以硬门槛+证据定位+定性组合排序替代 |
+| [LengFeng00 — research-gap-finder](https://github.com/LengFeng00/research-gap-finder) | 系统提取文献中的未解决问题 | 添加相反文献/后续文献核验，论文局限不自动成为原创选题 |
+
+## 来自实际科研复盘的通用方法（匿名化）
+
+1. **已知现象与增量价值分离：** 可重复的 benchmark discordance 可能已经有前作；新研究必须补足更严格的外部证据或决策结果。
+2. **访问失败不等于资格失败：** 公共扰动组学数据的下载/体积限制只证明当时环境阻塞，不证明外部实验数据不存在。
+3. **核查信息流：** 真值辅助提示、共享生物通路先验、重用基准标签都可能让“验证”不独立；要从来源链证明独立性。
+4. **身份与分析单位比算法复杂度优先：** 结构相似、覆盖差异、对象分组、批次和并列排名需要强基线/分层与不确定性分析。
+5. **真实工程止损：** 无法复现应给清晰版本和失败原因，不能无限修环境或因缺代码默认判方法无效。
+6. **拒稿后先重判命题：** 修改表格、提升英语、补代码等必要改进不等于克服缺原创性的独立新证据。
+
+以上经验是供未来项目触发审计的风险模式，不是对任何具体论文、数据或方法的既定裁定；公开仓库中不储存私有手稿或未发表结果。
