@@ -1,0 +1,19 @@
+{
+  "baseline_commit": "aba0a9a6332ca92458cf100657b5de64b554b6eb",
+  "checks": {
+    "round10_structure": "11/11 PASS",
+    "topic_unit_tests": "10/10 PASS",
+    "gate_ledger": "18 rows / 3 topics PASS",
+    "skill_creator_validation": "12/12 entrypoints PASS",
+    "pr_state": "open draft; mergeable; ahead main 16; behind main 0",
+    "pr_discussion": "0 comments; no review record observed"
+  },
+  "commands": [
+    "python3 -B evals/workflow-entry/round10/verify_round10.py",
+    "python3 -B -m unittest discover -s research-topic-selection/tests -v",
+    "python3 -B research-topic-selection/scripts/validate_gate_ledger.py research-topic-selection/assets/gate-ledger-example.csv",
+    "python3 -B /root/.codex/skills/oai/skill-creator/scripts/quick_validate.py <each root and module skill directory>"
+  ],
+  "all_pass": true,
+  "boundary": "Structural and workflow regression only; not scientific, data-access, statistical or deployment certification."
+}
