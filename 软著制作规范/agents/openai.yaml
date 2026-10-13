@@ -1,0 +1,11 @@
+interface:
+  display_name: 软著制作规范
+  short_description: 从真实项目生成并审计中国计算机软件著作权登记材料，覆盖申请字段、源码鉴别材料、说明文档、权属与一致性
+  default_prompt: 使用 $prepare-chinese-software-copyright 为这个真实软件项目准备或审计软著材料。先扫描项目并建立软件事实台账，再核对权属和第三方代码，规划连续的源程序鉴别材料，整理申请字段和软件说明文档，最后做名称、版本、功能、截图、源码和权属的一致性审计；不得编造源码、功能、日期、权属或截图。
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
