@@ -1,0 +1,46 @@
+{
+  "round": 14,
+  "date": "2026-10-13",
+  "repository": "gongboji-cyber/Manuscript-Submission-and-Academic-Writing",
+  "baseline": {
+    "main": "5af337b3d8cdf530aa382ad9cf0f33de03cc046e",
+    "candidate_head": "64e9a27e18e26a0f74615b4ccc82232b60517354",
+    "soft_copyright_route_count": 0,
+    "source_module_count_text": 11
+  },
+  "upstream": {
+    "merged_pr": 6,
+    "main": "6a009e86d4fa10d375e691911601f0c1faef97b8",
+    "runtime_skill_path": "软著制作/SKILL.md",
+    "runtime_skill_name": "prepare-cn-software-copyright",
+    "parallel_open_pr": 5,
+    "parallel_pr_integrated": false
+  },
+  "candidate_static": {
+    "runtime_skill_count": 13,
+    "professional_module_count": 12,
+    "soft_copyright_route_count": 1,
+    "relative_link_missing": 0,
+    "frontmatter_valid": 13,
+    "skill_names_unique": true,
+    "patent_boundary_explicit": true
+  },
+  "unit_test": {
+    "command": "python -B -m unittest discover -s tests -v",
+    "python": "3.12.14",
+    "tests_run": 9,
+    "failures": 0,
+    "errors": 0,
+    "exit_code": 0,
+    "reported_runtime_seconds": 0.029
+  },
+  "behavior_eval": {
+    "status": "NOT_RUN",
+    "reason": "No independent model execution channel was used in this run; static routing consistency and upstream synthetic unit tests do not certify agent behavior or legal correctness."
+  },
+  "cost": {
+    "tokens": null,
+    "fees": null,
+    "comparable_end_to_end_time": null
+  }
+}

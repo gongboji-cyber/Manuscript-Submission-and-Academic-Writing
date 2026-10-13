@@ -1,0 +1,11 @@
+interface:
+  display_name: 软著制作
+  short_description: 基于真实软件和官方登记规则制作源程序、文档与权属材料
+  default_prompt: 使用 $prepare-cn-software-copyright 对真实项目进行软著材料制作，冻结版本、核实著作权归属、按法规准备源程序鉴别材料与说明书并执行逐页审计；不编造代码、截图或登记事实。
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
