@@ -128,3 +128,61 @@ Git、测试日志、回归报告、release 和 hash 属于防御性证据。
 - Word/WPS/PDF 视觉 QA 未确认。
 
 脚本的价值来自“把不确定性暴露出来”，而不是替申请人把所有状态改成绿色。
+
+
+## 8. DOCX 自动生成
+
+确认业务、申请事实、代码选择和截图后：
+
+```bash
+python scripts/run_pipeline.py build-docx \
+  --project "<PROJECT_ROOT>" \
+  --facts "<application-facts.json>" \
+  --manual-md "<软件说明书.md>" \
+  --selection "<代码文件选择.json>" \
+  --screenshots "<截图证据.csv>" \
+  --out-dir "<04_正式资料>"
+```
+
+说明书 Markdown 可使用标题、普通段落、无序列表、fenced code block、简单 Markdown 表格；`[[FIGURE:图4-1]]` 会把截图 manifest 中对应 figure_id 插入文档。
+
+源程序 DOCX 只读取 `selected=true` 且 ownership_status 已确认的第一方文件，不会把依赖、测试或未确认代码自动塞进材料。
+
+## 9. 真实分页 QA
+
+源码名义页映射之后，还必须对 DOCX 做真实渲染：
+
+```bash
+python scripts/run_pipeline.py render-qa \
+  --docx "<源程序鉴别材料.docx>" \
+  --out-dir "<05_内部审计/render_qa>" \
+  --kind source \
+  --source-map "<..._SOURCE_PAGE_MAP.csv>" \
+  --header-text "<软件全称> <版本号>"
+```
+
+说明书同样以 `--kind manual` 运行。渲染器优先 Windows Word COM，其次 LibreOffice/soffice；PDF 文本提取优先 PyMuPDF、pypdf、pdftotext。
+
+脚本会检查实际页数、名义页数漂移、空白页、中间源码页文本行数异常，以及说明书中的 TODO/待确认/截图占位。即使自动状态为 `AUTO_RENDER_QA_PASS`，也必须逐页看实际 PDF/PNG；只有人工视觉 QA 完成后才能把 `manual_render_qa` 改为 true。
+
+## 10. 最终提交包构建
+
+人工 QA 完成、canonical facts 冻结后：
+
+```bash
+python scripts/run_pipeline.py package \
+  --facts "<application-facts.json>" \
+  --manual-docx "<软件说明书.docx>" \
+  --manual-pdf "<软件说明书.pdf>" \
+  --source-docx "<源程序鉴别材料.docx>" \
+  --source-pdf "<源程序鉴别材料.pdf>" \
+  --screenshots-dir "<03_截图/正式>" \
+  --internal-dir "<05_内部审计>" \
+  --internal-dir "<06_开发证据链_可选>" \
+  --out-dir "<最终提交包>" \
+  --require-pdf
+```
+
+输出分成 `01_正式上传/` 和 `02_内部归档_不上传/`，并生成 `PACKAGE_MANIFEST.json`、`FINAL_HASHES.sha256` 和 `FINAL_SUBMISSION_PACKAGE_VERDICT.md`。
+
+builder 会拒绝 canonical facts 仍有待确认、`manual_render_qa` 未确认、正式 DOCX 残留内部状态词、软件名/版本无法核对，或在 `--require-pdf` 模式下缺最终 PDF。因此自动成稿和正式提交之间仍保留真实人工 QA 门。
