@@ -14,13 +14,14 @@ PLACEHOLDER_PATTERNS=(r'【图[^】]*】','截图待补','placeholder')
 
 def read_text(path:Path)->str:
     if path.suffix.lower()=='.docx':
-        with zipfile.ZipFile(path) as z:
-            xml=z.read('word/document.xml')
-        root=ET.fromstring(xml)
         out=[]
-        for node in root.iter():
-            if node.tag.endswith('}t') and node.text: out.append(node.text)
-            elif node.tag.endswith('}p'): out.append('\n')
+        with zipfile.ZipFile(path) as z:
+            names=['word/document.xml'] + sorted(n for n in z.namelist() if n.startswith('word/header') and n.endswith('.xml')) + sorted(n for n in z.namelist() if n.startswith('word/footer') and n.endswith('.xml'))
+            for name in names:
+                root=ET.fromstring(z.read(name))
+                for node in root.iter():
+                    if node.tag.endswith('}t') and node.text: out.append(node.text)
+                    elif node.tag.endswith('}p'): out.append('\n')
         return ''.join(out)
     return path.read_text(encoding='utf-8',errors='replace')
 
