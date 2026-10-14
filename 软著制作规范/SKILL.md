@@ -30,12 +30,15 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
 - 当前法律与登记规则：`references/current-rules.md`
 - 项目扫描、源码选择与鉴别材料：`references/source-code-materials.md`
 - 申请字段、说明文档和截图一致性：`references/application-and-documentation.md`
+- 官网字段 schema 与长度/来源口径：`references/application-field-schema.md`
+- 工作区、文档结构与阶段门禁：`references/workspace-and-document-structure.md`
 - 权属、第三方代码与开源合规：`references/ownership-and-third-party-code.md`
 - 完整提交前自检：`references/checklist.md`
 - 公开来源与借鉴边界：`references/sources-and-adaptations.md`
 - 软件事实台账模板：`assets/software-fact-ledger-template.md`
 - 申请信息模板：`assets/application-info-template.md`
 - 审计报告模板：`assets/audit-report-template.md`
+- 阶段确认台账模板：`assets/gate-ledger-template.md`
 
 官方法规、登记机构当前页面、用户真实项目和权属文件优先级最高。GitHub 项目只能提供工作流与工程实现参考，不能替代官方规则。
 
@@ -124,6 +127,11 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
 
 ## 5. 文档鉴别材料不是宣传册
 
+文档结构不应只有一种固定模板。先判软件形态，再选择 GUI/Web 操作手册、CLI/科研工具使用说明书或 SDK/API 接口说明。详细结构见 `references/workspace-and-document-structure.md`。
+
+借鉴 SoftwareCopyright-Skill 的优点：操作手册要像真实软件随附文档，先理解业务再写；核心页面/流程要从普通用户视角描述用途、入口、动作、限制和反馈；“相关文档”只有真实存在时才列出，禁止为模板完整虚构总体设计、测试案例等历史资料。
+
+
 “文档”可以是用于描述程序内容、组成、设计、功能规格、开发情况、测试结果或使用方法的文字资料和图表。实际提交哪一种，以项目现状和当前登记要求为准。
 
 默认优先生成“软件说明书/用户操作手册”，结构可包括：
@@ -195,6 +203,11 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
 
 ## 9. 标准工作流
 
+默认使用分层工作区：`项目证据 → 草稿 → 截图 → 正式资料 → 内部审计 → 可选开发证据链`。正式资料与内部审计必须分开，避免将 TODO、agent 状态词、私人路径或内部研发记录误上传登记系统。
+
+关键门禁至少包括：业务理解、申请事实、代码选择、截图计划、最终草稿和人工渲染 QA。任一已确认事实后来改变，对应门禁必须失效并重新确认。门禁台账模板见 `assets/gate-ledger-template.md`。
+
+
 ```text
 输入：项目目录 / 仓库 / 既有软著材料
   ↓
@@ -204,20 +217,22 @@ Step 2 扫描真实项目并建立软件事实台账
   ↓
 Step 3 进行权属与第三方代码初筛
   ↓
-Step 4 输出“软著建议稿”与待确认项
+Step 4 生成业务理解.md/json，并建立 BUSINESS_UNDERSTANDING 门禁
   ↓
-Step 5 规划源程序鉴别材料并生成候选清单
+Step 5 整理申请字段，建立 APPLICATION_FACTS 门禁
   ↓
-Step 6 起草申请字段 + 软件说明文档
+Step 6 生成代码候选清单与选择 JSON，建立 CODE_SELECTION 门禁
   ↓
-Step 7 生成/排版源码与文档材料
+Step 7 按软件形态起草说明文档与截图计划
   ↓
-Step 8 建立一致性矩阵并执行提交前自检
+Step 8 生成真实截图、源码材料与正式文档
   ↓
-Step 9 输出 GO / HOLD / STOP
+Step 9 建立一致性矩阵 + Word/WPS/PDF 人工渲染 QA
+  ↓
+Step 10 输出 READY_FOR_SUBMISSION / GO / HOLD / STOP
 ```
 
-除非用户明确要求“一竿到底且无需中间确认”，否则对**权属、名称、版本、日期、发表状态、开发方式**至少做一次确认门。
+除非用户明确要求“一竿到底且无需中间确认”，否则对**权属、名称、版本、日期、发表状态、开发方式**至少做一次确认门。即使用户授权一竿到底，agent 也只能在无冲突证据时继续，不得把未知法律事实自动填成常见答案。
 
 ## 10. 提交前裁决
 
@@ -257,7 +272,11 @@ Step 9 输出 GO / HOLD / STOP
 - 权属与第三方代码风险表；
 - 一致性矩阵；
 - 提交前审计报告；
-- 补正材料修改稿。
+- 补正材料修改稿；
+- `业务理解.md/json`；
+- `代码文件候选清单.md` 与 `代码文件选择.json`；
+- `截图计划.md` 与截图证据台账；
+- 分层工作区与 generation report。
 
 最终边界必须明确，例如：
 
