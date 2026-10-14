@@ -1,0 +1,44 @@
+{
+  "round": 15,
+  "source_main": "304fea0148c630d2c36b5dcb07551e12bd1c2c00",
+  "previous_candidate": "5edbbaa160528c656d7d824395a4b71c2e63b33e",
+  "checks": [
+    {
+      "id": "V01",
+      "status": "PASS",
+      "evidence": "main advanced by exactly 2 commits; changed only supplement SKILL and new source-code supplement template"
+    },
+    {
+      "id": "V02",
+      "status": "PASS",
+      "evidence": "candidate route text contains stable names write-manuscript-supplement and prepare-cn-software-copyright with explicit separation"
+    },
+    {
+      "id": "V03",
+      "status": "PASS",
+      "evidence": "source snapshot updated to main@304fea0148c630d2c36b5dcb07551e12bd1c2c00 and 12 professional modules"
+    },
+    {
+      "id": "V04",
+      "status": "PASS",
+      "evidence": "upstream supplement SKILL blob e6583cc96838918f8cf3674a8bcb783092fbb7ac reused unchanged"
+    },
+    {
+      "id": "V05",
+      "status": "PASS",
+      "evidence": "upstream source-code supplement template blob fc34ef2a92e6131a291cab529444dba6a55f8a7e reused unchanged"
+    },
+    {
+      "id": "V06",
+      "status": "NOT_RUN",
+      "evidence": "no independent model behavior runner available; R01-R05 remain unverified behavior cases"
+    }
+  ],
+  "candidate_blobs": {
+    "root_skill": "b08c6115fbf023694e392c382249edf428036dbf",
+    "workflow_sources": "ae49b1226b88501e886b318427611ca8457dcafa",
+    "cases": "525d6dc8e3335dda0191177a0d2f0181f5eaf5e6",
+    "rubric": "941b2e5956394e6d7060f82834b3ea8f52d65b11",
+    "evaluation": "cfa328aecd9333c93e525ad9443a8b6fb6e1e570"
+  }
+}
