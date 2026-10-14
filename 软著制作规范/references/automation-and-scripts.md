@@ -161,7 +161,7 @@ python scripts/run_pipeline.py render-qa \
   --header-text "<软件全称> <版本号>"
 ```
 
-说明书同样以 `--kind manual` 运行。渲染器优先 Windows Word COM，其次 LibreOffice/soffice；PDF 文本提取优先 PyMuPDF、pypdf、pdftotext。
+说明书同样以 `--kind manual` 运行。渲染器优先 Windows Microsoft Word COM；若不可用则尝试 WPS Writer COM（KWPS/WPS/Kingsoft.WPS ProgID），最后回退 LibreOffice/soffice；PDF 文本提取优先 PyMuPDF、pypdf、pdftotext。
 
 脚本会检查实际页数、名义页数漂移、空白页、中间源码页文本行数异常，以及说明书中的 TODO/待确认/截图占位。即使自动状态为 `AUTO_RENDER_QA_PASS`，也必须逐页看实际 PDF/PNG；只有人工视觉 QA 完成后才能把 `manual_render_qa` 改为 true。
 
