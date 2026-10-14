@@ -1,0 +1,22 @@
+{
+  "canonical": {
+    "software_full_name": "待申请人确认",
+    "software_short_name": "",
+    "version": "待申请人确认",
+    "copyright_owner": "待申请人确认",
+    "development_mode": "待申请人确认",
+    "rights_acquisition": "待申请人确认",
+    "completion_date": "待申请人确认",
+    "publication_status": "待申请人确认",
+    "programming_languages": [],
+    "source_loc": null,
+    "source_material_pages": null,
+    "manual_material_pages": null,
+    "manual_render_qa": false
+  },
+  "evidence": {},
+  "notes": [
+    "法律/权属/日期类字段不得由脚本自动猜测。",
+    "manual_render_qa 只有申请人在 Word/WPS/PDF 中完成最终视觉检查后才能改为 true。"
+  ]
+}
