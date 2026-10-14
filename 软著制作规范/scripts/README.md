@@ -33,3 +33,41 @@ python run_pipeline.py audit \
 - 自动审计通过也不等同于登记成功。
 
 详细说明见 `../references/automation-and-scripts.md`。
+
+
+## DOCX 自动生成
+
+```bash
+python run_pipeline.py build-docx \
+  --project "<项目目录>" \
+  --facts "<application-facts.json>" \
+  --manual-md "<软件说明书.md>" \
+  --selection "<代码文件选择.json>" \
+  --screenshots "<截图证据.csv>" \
+  --out-dir "<04_正式资料>"
+```
+
+需要 `python-docx`。截图 manifest 中的 `figure_id` 可在 Markdown 用 `[[FIGURE:figure_id]]` 插入真实截图。
+
+## 真实分页与视觉 QA
+
+```bash
+python run_pipeline.py render-qa --docx "<说明书.docx>" --out-dir qa_manual --kind manual
+python run_pipeline.py render-qa --docx "<源程序.docx>" --out-dir qa_source --kind source --source-map "<..._SOURCE_PAGE_MAP.csv>"
+```
+
+优先调用 Microsoft Word COM；没有 Word 时调用 LibreOffice。输出真实 PDF、分页 QA CSV/JSON/MD，并在可用时导出逐页 PNG。自动 PASS 后仍必须人工逐页查看。
+
+## 最终提交包
+
+```bash
+python run_pipeline.py package \
+  --facts "<application-facts.json>" \
+  --manual-docx "<说明书.docx>" --manual-pdf "<说明书.pdf>" \
+  --source-docx "<源程序.docx>" --source-pdf "<源程序.pdf>" \
+  --screenshots-dir "<正式截图目录>" \
+  --internal-dir "<内部审计目录>" \
+  --out-dir "<最终提交包>" --require-pdf
+```
+
+只有 `manual_render_qa=true/CONFIRMED` 才允许生成 READY 提交包。正式上传目录和内部归档目录自动分离，并生成 `PACKAGE_MANIFEST.json` 与 `FINAL_HASHES.sha256`。
