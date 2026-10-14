@@ -3,13 +3,27 @@
     "software_full_name": "待申请人确认",
     "software_short_name": "",
     "version": "待申请人确认",
+    "software_classification": "",
     "copyright_owner": "待申请人确认",
     "development_mode": "待申请人确认",
     "rights_acquisition": "待申请人确认",
+    "rights_scope": "全部权利",
     "completion_date": "待申请人确认",
     "publication_status": "待申请人确认",
+    "first_publication_date": "",
+    "software_description": "原创",
+    "development_hardware": "",
+    "runtime_hardware": "",
+    "development_os": "",
+    "development_tools": "",
+    "runtime_os": "",
+    "runtime_support": "",
     "programming_languages": [],
     "source_loc": null,
+    "development_purpose": "",
+    "industry": "",
+    "main_functions": "",
+    "technical_features": "",
     "source_material_pages": null,
     "manual_material_pages": null,
     "manual_render_qa": false
@@ -17,6 +31,8 @@
   "evidence": {},
   "notes": [
     "法律/权属/日期类字段不得由脚本自动猜测。",
+    "source_loc 指登记软件全部经确认第一方源程序总行数，不等于抽取材料行数。",
+    "source_material_pages/manual_material_pages 应填写最终渲染后实际页数。",
     "manual_render_qa 只有申请人在 Word/WPS/PDF 中完成最终视觉检查后才能改为 true。"
   ]
 }
