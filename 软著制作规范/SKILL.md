@@ -32,6 +32,7 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
 - 申请字段、说明文档和截图一致性：`references/application-and-documentation.md`
 - 官网字段 schema 与长度/来源口径：`references/application-field-schema.md`
 - 工作区、文档结构与阶段门禁：`references/workspace-and-document-structure.md`
+- 自动化脚本与执行边界：`references/automation-and-scripts.md`
 - 权属、第三方代码与开源合规：`references/ownership-and-third-party-code.md`
 - 完整提交前自检：`references/checklist.md`
 - 公开来源与借鉴边界：`references/sources-and-adaptations.md`
@@ -39,6 +40,7 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
 - 申请信息模板：`assets/application-info-template.md`
 - 审计报告模板：`assets/audit-report-template.md`
 - 阶段确认台账模板：`assets/gate-ledger-template.md`
+- canonical 申请事实 JSON：`assets/application-facts-template.json`
 
 官方法规、登记机构当前页面、用户真实项目和权属文件优先级最高。GitHub 项目只能提供工作流与工程实现参考，不能替代官方规则。
 
@@ -91,6 +93,9 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
 
 ## 3. 项目扫描必须先于写作
 
+优先使用 `scripts/scan_project.py` 建立可复算 inventory；若环境不允许执行脚本，再由 agent 手工扫描，但输出字段应尽量与 inventory schema 对齐。脚本结果只是工程事实，不是权属结论。
+
+
 扫描目标不是“统计文件数”，而是确定什么软件真实存在。
 
 至少识别：
@@ -114,11 +119,11 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
 
 工作流：
 
-1. 生成候选源码清单；
+1. 使用 `scripts/propose_code_selection.py` 或等价人工流程生成候选源码清单；
 2. 标记原创核心代码、第三方/生成代码、配置/样板代码；
 3. 确定可代表“申请软件本身”的连续代码序列；
 4. 规划前段与后段；
-5. 在排版后核验每页行数、页数、连续性和文件边界；
+5. 对确认后的第一方源码用 `scripts/count_first_party_loc.py` 复算 LOC/hash，并用 `scripts/build_source_page_map.py` 建立名义页映射；排版后仍需核验实际每页行数、页数、连续性和文件边界；
 6. 若使用例外交存，必须明确采用的官方允许方式及原因。
 
 不要只按文件扩展名筛选。应优先保留能体现软件主体逻辑的源码，同时维持真实文件顺序和连续性。
@@ -188,6 +193,9 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
 
 ## 8. 一致性矩阵是提交前核心
 
+可使用 `scripts/final_consistency_audit.py` 对 canonical 申请事实、DOCX/TXT/MD 正式材料和 SOURCE_PAGE_MAP 做自动文本级检查。自动检查不替代 Word/WPS/PDF 视觉渲染，也不作法律权属判断。
+
+
 至少建立：
 
 | 项目 | 申请表 | 源码材料 | 文档 | 截图/界面 | 项目事实 | 状态 |
@@ -213,7 +221,7 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
   ↓
 Step 1 读取官方当前规则与本 skill references
   ↓
-Step 2 扫描真实项目并建立软件事实台账
+Step 2 运行 `run_pipeline.py bootstrap`（或等价流程），扫描真实项目并建立软件事实台账
   ↓
 Step 3 进行权属与第三方代码初筛
   ↓
@@ -221,13 +229,13 @@ Step 4 生成业务理解.md/json，并建立 BUSINESS_UNDERSTANDING 门禁
   ↓
 Step 5 整理申请字段，建立 APPLICATION_FACTS 门禁
   ↓
-Step 6 生成代码候选清单与选择 JSON，建立 CODE_SELECTION 门禁
+Step 6 生成代码候选清单与选择 JSON，建立 CODE_SELECTION 门禁；确认后运行 `run_pipeline.py post-confirm` 复算 LOC 与页映射
   ↓
 Step 7 按软件形态起草说明文档与截图计划
   ↓
 Step 8 生成真实截图、源码材料与正式文档
   ↓
-Step 9 建立一致性矩阵 + Word/WPS/PDF 人工渲染 QA
+Step 9 运行自动一致性审计 + 建立一致性矩阵 + Word/WPS/PDF 人工渲染 QA
   ↓
 Step 10 输出 READY_FOR_SUBMISSION / GO / HOLD / STOP
 ```
@@ -281,3 +289,17 @@ Step 10 输出 READY_FOR_SUBMISSION / GO / HOLD / STOP
 最终边界必须明确，例如：
 
 “该版本已完成软著材料整理与内部一致性审计；最终登记字段、权属证明、上传格式与受理要求仍应以中国版权保护中心/登记系统当前要求和申请人的真实权属文件为准。”
+
+## 13. 自动化执行快捷路径
+
+当本地可运行 Python 3 时，推荐：
+
+```bash
+python scripts/run_pipeline.py bootstrap "<项目目录>" --profile auto
+# 人工/模型确认业务、权属和代码候选后
+python scripts/run_pipeline.py post-confirm "<项目目录>" "<代码文件选择.json>"
+# 最终材料生成后
+python scripts/run_pipeline.py audit --application "<application-facts.json>" --manual "<软件说明书.docx>" --source-map "<SOURCE_PAGE_MAP.csv>"
+```
+
+任何阶段遇到未知权属、日期、发表状态或第一方代码边界时，流水线必须停在门禁，而不是填入“常见答案”。
