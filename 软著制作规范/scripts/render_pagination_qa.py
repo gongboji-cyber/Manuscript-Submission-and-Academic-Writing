@@ -2,8 +2,9 @@
 """Render DOCX to PDF and perform real page-count / per-page text-line QA.
 
 Backend order:
-1. Microsoft Word COM on Windows (if pywin32 + Word available)
-2. LibreOffice/soffice headless
+1. Microsoft Word COM on Windows
+2. WPS Writer COM on Windows (KWPS/WPS/Kingsoft.WPS ProgID fallbacks)
+3. LibreOffice/soffice headless
 
 PDF text extraction order:
 1. PyMuPDF (fitz)
@@ -26,26 +27,38 @@ from pathlib import Path
 
 PAGE_PAT=re.compile(r"^(?:第\s*)?\d+(?:\s*页)?$")
 
-def render_word(docx:Path,pdf:Path)->bool:
-    if os.name!="nt": return False
+def render_com(docx:Path,pdf:Path)->str|None:
+    if os.name!="nt": return None
     try:
         import win32com.client  # type: ignore
     except Exception:
-        return False
-    word=None; doc=None
-    try:
-        word=win32com.client.DispatchEx("Word.Application"); word.Visible=False; word.DisplayAlerts=0
-        doc=word.Documents.Open(str(docx),ReadOnly=True); doc.Repaginate(); doc.SaveAs2(str(pdf),FileFormat=17)
-        return pdf.is_file() and pdf.stat().st_size>0
-    except Exception:
-        return False
-    finally:
-        if doc is not None:
-            try: doc.Close(False)
+        return None
+    candidates=[("Word.Application","word-com"),("KWPS.Application","wps-com"),("WPS.Application","wps-com"),("Kingsoft.WPS.Application","wps-com")]
+    for progid,label in candidates:
+        app=None; doc=None
+        try:
+            try:
+                app=win32com.client.DispatchEx(progid)
+            except Exception:
+                app=win32com.client.Dispatch(progid)
+            app.Visible=False
+            try: app.DisplayAlerts=0
             except Exception: pass
-        if word is not None:
-            try: word.Quit()
+            doc=app.Documents.Open(str(docx),ReadOnly=True)
+            try: doc.Repaginate()
             except Exception: pass
+            doc.SaveAs2(str(pdf),FileFormat=17)
+            if pdf.is_file() and pdf.stat().st_size>0: return label
+        except Exception:
+            pass
+        finally:
+            if doc is not None:
+                try: doc.Close(False)
+                except Exception: pass
+            if app is not None:
+                try: app.Quit()
+                except Exception: pass
+    return None
 
 def render_libreoffice(docx:Path,pdf:Path)->bool:
     exe=shutil.which("soffice") or shutil.which("libreoffice")
@@ -117,8 +130,9 @@ def main()->int:
     ap.add_argument("--source-map"); ap.add_argument("--header-text"); ap.add_argument("--min-source-lines",type=int,default=50)
     args=ap.parse_args()
     docx=Path(args.docx).resolve(); outdir=Path(args.out_dir).resolve(); outdir.mkdir(parents=True,exist_ok=True); pdf=outdir/(docx.stem+".pdf")
-    backend="word-com" if render_word(docx,pdf) else "libreoffice" if render_libreoffice(docx,pdf) else None
-    if not backend: raise SystemExit("No DOCX renderer available. Use Microsoft Word + pywin32 on Windows, or install LibreOffice/soffice.")
+    backend=render_com(docx,pdf)
+    if not backend and render_libreoffice(docx,pdf): backend="libreoffice"
+    if not backend: raise SystemExit("No DOCX renderer available. Use Microsoft Word/WPS + pywin32 on Windows, or install LibreOffice/soffice.")
     extractor,pages=extract_pages(pdf); png_backend,png_files=render_pngs(pdf,outdir); rows=[]; issues=[]; expected=[]
     if args.source_map:
         with Path(args.source_map).resolve().open(encoding="utf-8-sig",newline="") as f: expected=list(csv.DictReader(f))
