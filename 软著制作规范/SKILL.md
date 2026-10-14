@@ -42,6 +42,8 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
 - 审计报告模板：`assets/audit-report-template.md`
 - 阶段确认台账模板：`assets/gate-ledger-template.md`
 - canonical 申请事实 JSON：`assets/application-facts-template.json`
+- 说明书 Markdown 模板：`assets/manual-markdown-template.md`
+- 截图证据 manifest 模板：`assets/screenshot-manifest-template.csv`
 
 官方法规、登记机构当前页面、用户真实项目和权属文件优先级最高。GitHub 项目只能提供工作流与工程实现参考，不能替代官方规则。
 
