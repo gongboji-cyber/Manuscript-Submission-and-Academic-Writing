@@ -33,6 +33,7 @@ description: Evidence-grounded preparation and pre-submission audit for Chinese 
 - 官网字段 schema 与长度/来源口径：`references/application-field-schema.md`
 - 工作区、文档结构与阶段门禁：`references/workspace-and-document-structure.md`
 - 自动化脚本与执行边界：`references/automation-and-scripts.md`
+- DOCX 自动生成、真实分页 QA、提交包构建脚本：`scripts/`
 - 权属、第三方代码与开源合规：`references/ownership-and-third-party-code.md`
 - 完整提交前自检：`references/checklist.md`
 - 公开来源与借鉴边界：`references/sources-and-adaptations.md`
@@ -233,11 +234,15 @@ Step 6 生成代码候选清单与选择 JSON，建立 CODE_SELECTION 门禁；�
   ↓
 Step 7 按软件形态起草说明文档与截图计划
   ↓
-Step 8 生成真实截图、源码材料与正式文档
+Step 8 使用 `build_docx_materials.py` 生成说明书 DOCX + 源程序 DOCX
   ↓
-Step 9 运行自动一致性审计 + 建立一致性矩阵 + Word/WPS/PDF 人工渲染 QA
+Step 9 使用 `render_pagination_qa.py` 实际渲染 DOCX→PDF/PNG，核对真实页数和分页漂移
   ↓
-Step 10 输出 READY_FOR_SUBMISSION / GO / HOLD / STOP
+Step 10 运行自动一致性审计 + Word/WPS/PDF 人工视觉 QA
+  ↓
+Step 11 使用 `build_submission_package.py` 构建正式上传包与内部归档
+  ↓
+Step 12 输出 READY_FOR_SUBMISSION / GO / HOLD / STOP
 ```
 
 除非用户明确要求“一竿到底且无需中间确认”，否则对**权属、名称、版本、日期、发表状态、开发方式**至少做一次确认门。即使用户授权一竿到底，agent 也只能在无冲突证据时继续，不得把未知法律事实自动填成常见答案。
@@ -298,8 +303,15 @@ Step 10 输出 READY_FOR_SUBMISSION / GO / HOLD / STOP
 python scripts/run_pipeline.py bootstrap "<项目目录>" --profile auto
 # 人工/模型确认业务、权属和代码候选后
 python scripts/run_pipeline.py post-confirm "<项目目录>" "<代码文件选择.json>"
-# 最终材料生成后
-python scripts/run_pipeline.py audit --application "<application-facts.json>" --manual "<软件说明书.docx>" --source-map "<SOURCE_PAGE_MAP.csv>"
+# 由确认后的 Markdown + facts + screenshot manifest 生成 DOCX
+python scripts/run_pipeline.py build-docx --project "<项目目录>" --facts "<application-facts.json>" --manual-md "<软件说明书.md>" --selection "<代码文件选择.json>" --out-dir "<04_正式资料>"
+# 分别对说明书和源程序 DOCX 做真实渲染 QA
+python scripts/run_pipeline.py render-qa --docx "<软件说明书.docx>" --out-dir "<05_内部审计/manual_qa>" --kind manual
+python scripts/run_pipeline.py render-qa --docx "<源程序鉴别材料.docx>" --out-dir "<05_内部审计/source_qa>" --kind source --source-map "<..._SOURCE_PAGE_MAP.csv>"
+# 自动一致性审计
+python scripts/run_pipeline.py audit --application "<application-facts.json>" --manual "<软件说明书.docx>" --source-map "<..._SOURCE_PAGE_MAP.csv>"
+# 人工 Word/WPS/PDF 逐页确认后，将 manual_render_qa 设为 true，再构建最终提交包
+python scripts/run_pipeline.py package --facts "<application-facts.json>" --manual-docx "<软件说明书.docx>" --manual-pdf "<软件说明书.pdf>" --source-docx "<源程序鉴别材料.docx>" --source-pdf "<源程序鉴别材料.pdf>" --out-dir "<最终提交包>" --require-pdf
 ```
 
 任何阶段遇到未知权属、日期、发表状态或第一方代码边界时，流水线必须停在门禁，而不是填入“常见答案”。
