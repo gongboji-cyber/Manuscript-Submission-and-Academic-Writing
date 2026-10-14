@@ -90,6 +90,27 @@ def visible_lines(text:str,header_text:str|None=None)->list[str]:
         out.append(s)
     return out
 
+def render_pngs(pdf:Path,outdir:Path)->tuple[str,list[str]]:
+    pngdir=outdir/"page_pngs"; pngdir.mkdir(parents=True,exist_ok=True)
+    try:
+        import fitz  # type: ignore
+        doc=fitz.open(pdf); files=[]
+        scale=150/72
+        matrix=fitz.Matrix(scale,scale)
+        for i,page in enumerate(doc,1):
+            out=pngdir/f"page-{i}.png"; page.get_pixmap(matrix=matrix,alpha=False).save(out); files.append(str(out))
+        return "pymupdf",files
+    except Exception:
+        pass
+    exe=shutil.which("pdftoppm")
+    if exe:
+        prefix=pngdir/"page"
+        cp=subprocess.run([exe,"-png","-r","150",str(pdf),str(prefix)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+        if cp.returncode==0:
+            files=[str(p) for p in sorted(pngdir.glob("page-*.png"))]
+            return "pdftoppm",files
+    return "unavailable",[]
+
 def main()->int:
     ap=argparse.ArgumentParser()
     ap.add_argument("docx"); ap.add_argument("--out-dir",required=True); ap.add_argument("--kind",choices=["manual","source"],required=True)
@@ -98,7 +119,7 @@ def main()->int:
     docx=Path(args.docx).resolve(); outdir=Path(args.out_dir).resolve(); outdir.mkdir(parents=True,exist_ok=True); pdf=outdir/(docx.stem+".pdf")
     backend="word-com" if render_word(docx,pdf) else "libreoffice" if render_libreoffice(docx,pdf) else None
     if not backend: raise SystemExit("No DOCX renderer available. Use Microsoft Word + pywin32 on Windows, or install LibreOffice/soffice.")
-    extractor,pages=extract_pages(pdf); rows=[]; issues=[]; expected=[]
+    extractor,pages=extract_pages(pdf); png_backend,png_files=render_pngs(pdf,outdir); rows=[]; issues=[]; expected=[]
     if args.source_map:
         with Path(args.source_map).resolve().open(encoding="utf-8-sig",newline="") as f: expected=list(csv.DictReader(f))
     for i,text in enumerate(pages,1):
@@ -126,11 +147,11 @@ def main()->int:
         w=csv.DictWriter(f,fieldnames=["page","rendered_nonblank_text_lines","blank_page","expected_code_lines","status"]); w.writeheader(); w.writerows(rows)
     blocking={"BLANK_PAGE","PAGE_COUNT_MISMATCH","PLACEHOLDER_OR_INTERNAL_MARKER"}
     status="AUTO_RENDER_QA_PASS" if not any(x["code"] in blocking for x in issues) else "HOLD_FOR_FIXES"
-    report={"schema_version":1,"status":status,"docx":str(docx),"pdf":str(pdf),"renderer":backend,"extractor":extractor,"rendered_pages":len(pages),
+    report={"schema_version":1,"status":status,"docx":str(docx),"pdf":str(pdf),"renderer":backend,"extractor":extractor,"png_renderer":png_backend,"page_pngs":png_files,"rendered_pages":len(pages),
             "nominal_pages":len(expected) if expected else None,"issues":issues,"manual_visual_qa_required":True}
     jp=outdir/(docx.stem+"_PAGINATION_QA.json"); jp.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     mdp=outdir/(docx.stem+"_PAGINATION_QA.md")
-    md=["# 真实分页 QA","",f"- 状态：**{status}**",f"- 渲染器：{backend}",f"- PDF文本提取：{extractor}",f"- 实际页数：{len(pages)}",f"- 名义页数：{len(expected) if expected else 'N/A'}","","## 自动发现"]
+    md=["# 真实分页 QA","",f"- 状态：**{status}**",f"- 渲染器：{backend}",f"- PDF文本提取：{extractor}",f"- PNG渲染：{png_backend}",f"- 实际页数：{len(pages)}",f"- 名义页数：{len(expected) if expected else 'N/A'}","","## 自动发现"]
     md += [f"- {x['code']}: {x['message']}" for x in issues] if issues else ["- 无阻断性自动问题。"]
     md += ["","## 必须人工确认","- 逐页查看渲染后的 PDF/PNG，确认无截断、重叠、字体异常、图片变形和页眉页脚问题。",
            "- 自动 PASS 不等于 READY_FOR_SUBMISSION；人工视觉 QA 完成后才可更新 canonical facts 中 manual_render_qa。"]
