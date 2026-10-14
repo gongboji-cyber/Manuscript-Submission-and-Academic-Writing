@@ -44,6 +44,28 @@ def text_of(path:Path)->str:
     if path.suffix.lower() in (".txt",".md",".json",".csv"): return path.read_text(encoding="utf-8",errors="replace")
     return ""
 
+def pdf_page_count(path:Path)->int|None:
+    try:
+        import fitz  # type: ignore
+        return len(fitz.open(path))
+    except Exception:
+        pass
+    try:
+        from pypdf import PdfReader  # type: ignore
+        return len(PdfReader(str(path)).pages)
+    except Exception:
+        pass
+    import shutil as _shutil, subprocess as _subprocess
+    exe=_shutil.which("pdfinfo")
+    if exe:
+        cp=_subprocess.run([exe,str(path)],stdout=_subprocess.PIPE,stderr=_subprocess.PIPE,text=True)
+        if cp.returncode==0:
+            for line in cp.stdout.splitlines():
+                if line.lower().startswith("pages:"):
+                    try: return int(line.split(":",1)[1].strip())
+                    except Exception: pass
+    return None
+
 def application_txt(c:dict)->str:
     order=[
         ("软件全称","software_full_name"),("软件简称","software_short_name"),("版本号","version"),("软件分类","software_classification"),
@@ -81,6 +103,23 @@ def main()->int:
         if not p.is_file(): raise SystemExit(f"missing required file: {p}")
     if args.require_pdf and (not manual_pdf or not manual_pdf.is_file() or not source_pdf or not source_pdf.is_file()):
         raise SystemExit("PDFs required but missing")
+
+    if manual_pdf and manual_pdf.is_file():
+        actual=pdf_page_count(manual_pdf)
+        expected=c.get("manual_material_pages")
+        if actual is not None and expected not in (None,""):
+            try:
+                if int(expected)!=actual: raise SystemExit(f"manual PDF page count mismatch: canonical={expected}, actual={actual}")
+            except ValueError:
+                raise SystemExit(f"invalid canonical manual_material_pages: {expected}")
+    if source_pdf and source_pdf.is_file():
+        actual=pdf_page_count(source_pdf)
+        expected=c.get("source_material_pages")
+        if actual is not None and expected not in (None,""):
+            try:
+                if int(expected)!=actual: raise SystemExit(f"source PDF page count mismatch: canonical={expected}, actual={actual}")
+            except ValueError:
+                raise SystemExit(f"invalid canonical source_material_pages: {expected}")
 
     for p in (manual_docx,source_docx):
         txt=text_of(p)
