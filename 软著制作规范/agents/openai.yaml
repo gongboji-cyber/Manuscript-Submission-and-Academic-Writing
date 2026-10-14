@@ -1,7 +1,7 @@
 interface:
   display_name: 软著制作规范
   short_description: 从真实项目生成并审计中国计算机软件著作权登记材料，覆盖申请字段、源码鉴别材料、说明文档、权属与一致性
-  default_prompt: 使用 $prepare-chinese-software-copyright 为这个真实软件项目准备或审计软著材料。先扫描项目并建立软件事实台账，再核对权属和第三方代码，规划连续的源程序鉴别材料，整理申请字段和软件说明文档，最后做名称、版本、功能、截图、源码和权属的一致性审计；不得编造源码、功能、日期、权属或截图。
+  default_prompt: 使用 $prepare-chinese-software-copyright 为这个真实软件项目准备或审计软著材料。优先运行 scripts/run_pipeline.py 的安全分阶段流程：初始化工作区、扫描真实项目、生成业务理解和代码候选；在权属/第一方代码门禁确认后复算 LOC 与源码页映射；再整理申请字段、按 GUI/CLI/API 软件形态生成说明文档和真实截图，最后运行自动一致性审计并完成 Word/WPS/PDF 人工视觉 QA。不得编造源码、功能、日期、权属、Git 历史或截图。
 policy:
   products:
   - chatgpt
