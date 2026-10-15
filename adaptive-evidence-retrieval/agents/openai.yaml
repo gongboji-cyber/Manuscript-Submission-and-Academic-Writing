@@ -1,0 +1,11 @@
+interface:
+  display_name: 自适应证据检索
+  short_description: 以决策问题驱动多来源搜索、反证核验与停止规则
+  default_prompt: 使用 $adaptive-evidence-retrieval 为本任务制定检索计划，调用实际可用的学术与网页来源，迭代查找关键证据及反证，记录阅读深度、未覆盖范围和成本，输出可追溯证据账本与有边界的裁决。
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
