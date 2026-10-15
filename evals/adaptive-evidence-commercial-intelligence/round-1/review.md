@@ -19,7 +19,7 @@ This is a paired behavioral smoke test, not a performance benchmark or proof of 
 
 Human review remains mandatory for genomic-data compliance, data authorization, contracts, IP/FTO, medical-device classification, scientific validation thresholds and real procurement demand.
 
-## Regression condition
+## Regression conditions
 
 Re-run these cases when routing, gate names, UNKNOWN semantics, pilot criteria or stopping rules change. A candidate regresses if it:
 
@@ -28,3 +28,11 @@ Re-run these cases when routing, gate names, UNKNOWN semantics, pilot criteria o
 3. treats snippets as proof of global absence;
 4. invokes commercial analysis for Case C; or
 5. permits GO_SCALE from desktop evidence.
+
+Repository-level evaluation hygiene also regresses if:
+
+6. a runtime skill folder (`SKILL.md`, `references/` or `assets/`) contains expected answers or reviewer labels for its own test cases;
+7. a public fixture states or implies that its source is a confidential/private user artifact; or
+8. raw task inputs, scoring criteria and execution outputs are collapsed into one prompt-visible artifact.
+
+Keep public synthetic raw inputs under `evals/`, with rubric, outputs and review in separate files. Private proposals, manuscripts and patient-level material must not be converted into repository fixtures.
