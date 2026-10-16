@@ -1,0 +1,100 @@
+{
+  "case_id": "W02-regression",
+  "scope": {
+    "requested": [
+      "Revise the Results sentence to the author-designated analysis-v2",
+      "Revise the cover-letter contribution to analysis-v2",
+      "List other submission materials needing synchronization"
+    ],
+    "prohibited_or_not_authorized": [
+      "Rerun the analysis",
+      "Generate a figure",
+      "Generate a Word file",
+      "Modify the supplied skill repository or case input",
+      "Use network services"
+    ]
+  },
+  "inputs_read": [
+    {
+      "path": "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/regression/old/case.json",
+      "purpose": "Synthetic case request and supplied v1/v2 facts"
+    },
+    {
+      "path": "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/baseline/skills/SKILL.md",
+      "purpose": "Root routing, task-scope, handoff, and delivery rules"
+    },
+    {
+      "path": "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/baseline/skills/方法学/统计学指导/SKILL.md",
+      "purpose": "Analysis-unit, weighting, interval interpretation, and verification boundaries"
+    },
+    {
+      "path": "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/baseline/skills/论文投稿前的自检/SKILL.md",
+      "purpose": "Claim-to-evidence, version consistency, limited-scope editing, and delivery rules"
+    },
+    {
+      "path": "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/baseline/skills/论文投稿前的自检/references/polishing.md",
+      "purpose": "Protected facts, claim-strength calibration, numerical fidelity, and cross-material review"
+    },
+    {
+      "path": "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/baseline/skills/cover letter书写/SKILL.md",
+      "purpose": "Evidence-grounded cover-letter revision workflow and boundaries"
+    },
+    {
+      "path": "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/baseline/skills/cover letter书写/references/authoring.md",
+      "purpose": "Contribution drafting and claim-preservation rules"
+    },
+    {
+      "path": "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/baseline/skills/cover letter书写/references/checklist.md",
+      "purpose": "Relevant L05, L08, and L10 claim checks and partial-material status"
+    },
+    {
+      "path": "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/baseline/skills/references/workflow-handoff.md",
+      "purpose": "Stale/current status and dependency-based synchronization"
+    }
+  ],
+  "facts_protected": {
+    "current_analysis": "analysis-v2 (author-designated)",
+    "comparison_direction": "A−B",
+    "estimate": "0.020",
+    "confidence_interval": "95% CI, −0.005 to 0.045",
+    "analysis_structure": "paired analysis",
+    "weighting": "patients weighted equally",
+    "superseded_analysis": "analysis-v1",
+    "superseded_estimate": "0.035",
+    "superseded_confidence_interval": "95% CI, 0.010 to 0.060"
+  },
+  "reasoning_and_actions": [
+    {
+      "action": "Calibrated the Results claim",
+      "basis": "The v2 confidence interval includes zero, so the supplied summary does not establish superiority; it also does not establish equivalence or no difference."
+    },
+    {
+      "action": "Calibrated the cover-letter contribution",
+      "basis": "The supplied materials support a paired, equally patient-weighted comparison and its numerical summary, but do not identify or establish improved clinical outcomes."
+    },
+    {
+      "action": "Propagated the analysis-version change",
+      "basis": "Known v1-dependent Figure2.pdf and Supplement-v1 were marked stale; other common submission locations were listed for conditional search and synchronization."
+    },
+    {
+      "action": "Preserved verification limits",
+      "basis": "No source data, code, run logs, or unavailable figure/supplement contents were inspected, so no independent reproduction, visual QA, or whole-package certification was claimed."
+    }
+  ],
+  "tools_and_external_actions": {
+    "network_used": false,
+    "analysis_rerun": false,
+    "figure_generated": false,
+    "word_file_generated": false,
+    "account_action": false,
+    "software_installed": false
+  },
+  "output_validation": {
+    "result_md_read_back": true,
+    "run_log_json_parsed_with_jq": true
+  },
+  "outputs_written": [
+    "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/regression/old/output/result.md",
+    "/workspace/scratch/46b39df32326/skill-optimization-20261011/round2/regression/old/output/run-log.json"
+  ]
+}

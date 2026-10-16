@@ -1,0 +1,61 @@
+MEDFMTX 1.2 local execution evidence
+
+[1] Tool availability check
+Command:
+command -v medfmtx
+Exit code: 1
+Raw stdout/stderr:
+<empty>
+
+[2] Validate and convert input.medfmt
+Command:
+python3 /workspace/scratch/46b39df32326/skill-optimization-20261011/round4/old/materials/U02/reference_checker.py /workspace/scratch/46b39df32326/skill-optimization-20261011/round4/old/materials/U02/input.medfmt
+Exit code: 0
+Raw stdout/stderr:
+{
+  "format": "MEDFMTX 1.2",
+  "records": [
+    {
+      "id": "A01",
+      "value": 12.5
+    },
+    {
+      "id": "B_02",
+      "value": null
+    },
+    {
+      "id": "C3",
+      "value": 88
+    }
+  ]
+}
+
+[3] Validate and convert boundary.medfmt
+Command:
+python3 /workspace/scratch/46b39df32326/skill-optimization-20261011/round4/old/materials/U02/reference_checker.py /workspace/scratch/46b39df32326/skill-optimization-20261011/round4/old/materials/U02/boundary.medfmt
+Exit code: 0
+Raw stdout/stderr:
+{
+  "format": "MEDFMTX 1.2",
+  "records": [
+    {
+      "id": "LOW",
+      "value": 0
+    },
+    {
+      "id": "HIGH",
+      "value": 100
+    },
+    {
+      "id": "MISSING",
+      "value": null
+    }
+  ]
+}
+
+[4] Validate invalid-duplicate.medfmt
+Command:
+python3 /workspace/scratch/46b39df32326/skill-optimization-20261011/round4/old/materials/U02/reference_checker.py /workspace/scratch/46b39df32326/skill-optimization-20261011/round4/old/materials/U02/invalid-duplicate.medfmt
+Exit code: 2
+Raw stdout/stderr:
+ERROR: line 3: duplicate ID DUP

@@ -1,0 +1,32 @@
+{
+  "executor_root": "bundle",
+  "files": [
+    {
+      "bundle_path": "SKILL.md",
+      "bytes": 2873,
+      "sha256": "d08ae4c94f850e41a0ce5aa042279d7ecc755ff6b5b46ba9af2459bcdf6dbed0",
+      "source_path": "<generated:local-three-line>"
+    },
+    {
+      "bundle_path": "references/formatting.md",
+      "bytes": 3511,
+      "sha256": "0add98ffbc3b7b89acd854e43ea3ce7cdbb8b6c5e2af80de404bdf879c7a1ebc",
+      "source_path": "references/formatting.md"
+    },
+    {
+      "bundle_path": "references/three-line-tables.md",
+      "bytes": 6610,
+      "sha256": "9d3dadb8ff405d4160947b3e42c95f4faf52b4f92c259cb459216abfa9dd9afb",
+      "source_path": "references/three-line-tables.md"
+    },
+    {
+      "bundle_path": "scripts/word_format_helpers.py",
+      "bytes": 7169,
+      "sha256": "7803caf25714a8cdc5c62da04ea0463887d586fd555fb4da7e86874a837dfbb9",
+      "source_path": "scripts/word_format_helpers.py"
+    }
+  ],
+  "manifest_exposure": "coordinator-only",
+  "schema_version": 1,
+  "scope": "local-three-line"
+}

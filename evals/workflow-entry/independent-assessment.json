@@ -1,0 +1,557 @@
+{
+  "assessment_type": "output-and-evidence review by a separate agent; rubric disclosed",
+  "rubric_file": "grading/rubric.json",
+  "rubric_frozen_before_runs": true,
+  "review_is_not_independent_medical_expert_certification": true,
+  "isolation": "仅读取固定rubric、cases/cases.json、两版output文件及grading/replay.json；未读取baseline/candidate/skills、其他评分资料或父对话；未联网、未改输入、未执行转换或统计重跑。run-log中出现技能路径只是日志内容，不代表已读取技能。",
+  "status_rule": "met=所需成果由可见文字/产物或允许的复跑证据支持；not_met=完整条款在成果中有可确认遗漏；unclear=复合条款部分满足但原运行过程只能由执行代理自报。",
+  "evidence_provenance": {
+    "direct_artifacts": "本复核直接读取了两版结果、代码、CSV、run-log及检查产物，并重新计算提交转换脚本哈希；哈希与grading/replay.json匹配。",
+    "replay": "grading/replay.json由父代理提供，独立于执行代理，覆盖同一正常及重复ID输入与复跑期来源哈希。复核者未亲自复跑，不能把其提升为完整原运行轨迹。",
+    "self_report": "两版run-log、checks.json/validation.json由执行代理产生，不是外部原始工具审计日志；不据此认证实际读取顺序、全部副作用、无联网/无重算或完整输入保留。"
+  },
+  "checks": [
+    {
+      "id": "W01.1",
+      "case": "W01",
+      "criterion": "Meaning, numbers and uncertainty preserved",
+      "a": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "The mean paired difference was 0.020 (95% confidence interval, −0.005 to 0.045)."
+          }
+        ],
+        "reason": "原句完整保留；配对差、点估计和跨零区间未改变。"
+      },
+      "b": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "The mean paired difference was 0.020 (95% confidence interval, −0.005 to 0.045)."
+          }
+        ],
+        "reason": "原句完整保留；配对差、点估计和跨零区间未改变。"
+      }
+    },
+    {
+      "id": "W01.2",
+      "case": "W01",
+      "criterion": "No unnecessary global audit, recomputation or files",
+      "a": {
+        "status": "unclear",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "仅完成该句语言检查，未做全稿审查或统计正确性认证。"
+          },
+          {
+            "file": "evaluation-a/output/run-log.json",
+            "field": "case_boundaries.W01; write_commands_summary"
+          }
+        ],
+        "reason": "成果未见W01专属文稿或全稿审查；合并交付记录承载四项结果。原执行是否完全没有额外审查、重算或写入仅有自报，缺少完整原始工具轨迹。"
+      },
+      "b": {
+        "status": "unclear",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "此文件是合并交付记录；W01本身未另行生成文稿文件。"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "没有核实底层统计计算，也未审查全文、结局单位或期刊格式。"
+          },
+          {
+            "file": "evaluation-b/output/run-log.json",
+            "field": "checks.W01; mutations"
+          }
+        ],
+        "reason": "可见产物与局部范围一致；但“没有做过”额外活动不能仅由执行代理的结果/日志自报独立确认。"
+      }
+    },
+    {
+      "id": "W02.1",
+      "case": "W02",
+      "criterion": "Both revised sentences use v2 and preserve CI crossing zero",
+      "a": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "In analysis-v2, with equal weighting of patients, the mean paired difference between Methods A and B (A − B) was 0.020 (95% CI, −0.005 to 0.045)."
+          },
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "Our study provides a paired comparison of Methods A and B with equal weighting of patients, yielding an estimated mean difference (A − B) of 0.020 (95% CI, −0.005 to 0.045); the confidence interval spans zero."
+          }
+        ],
+        "reason": "两句均使用v2数字、A−B及患者等权；两端点跨零。"
+      },
+      "b": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "With patients weighted equally, the mean paired difference between Method A and Method B (A−B) was 0.020 (95% CI, −0.005 to 0.045)."
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "Our study quantifies the paired difference between Methods A and B using equal patient weights (mean A−B difference, 0.020; 95% CI, −0.005 to 0.045)."
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "两句都以作者指定的analysis-v2汇总为当前事实集合。"
+          }
+        ],
+        "reason": "两句均使用v2数字、A−B及患者等权；版本身份在句后明确。"
+      }
+    },
+    {
+      "id": "W02.2",
+      "case": "W02",
+      "criterion": "No demonstrated superiority or clinical outcome benefit claimed",
+      "a": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "撤去“was superior”及“demonstrably improves clinical outcomes”。"
+          },
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "不能据此确定A优于B，也不能改成两者等效、无差异或已证实没有临床获益。"
+          }
+        ],
+        "reason": "修订句没有确定优势或临床获益断言，并保留不确定性。"
+      },
+      "b": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "现有材料不支持“superior”或“demonstrably improves clinical outcomes”；没有结局名称、单位或临床获益证据，不能自行补入。"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "跨零区间也不能改写成已证明无差异、等效或非劣。"
+          }
+        ],
+        "reason": "修订句没有确定优势或临床获益断言，并避免把跨零解释为等效。"
+      }
+    },
+    {
+      "id": "W02.3",
+      "case": "W02",
+      "criterion": "Figure and supplement identified as awaiting synchronization; no invented inspection",
+      "a": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "仅收到文件身份及仍用v1的说明，未提供或查看图，未修改"
+          },
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "未提供补充正文，不能定位具体表、节或页；未修改"
+          }
+        ],
+        "reason": "Figure2及Supplement被列为待同步，未虚构内容检查。"
+      },
+      "b": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "已知仍引用v1；结果依赖已过期，实际图未提供"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "已知仍引用v1；结果依赖已过期，补充正文未提供"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "本次未改图，不能宣称图已通过"
+          }
+        ],
+        "reason": "两材料明确为过期依赖；没有冒称已检查或修改。"
+      }
+    },
+    {
+      "id": "W02.4",
+      "case": "W02",
+      "criterion": "Source report distinguished from independent recomputation",
+      "a": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "v2修复配对单位属于作者报告，未独立确认；仅有汇总报告，故未复现或认证估计值、区间算法及修复正确性。"
+          }
+        ],
+        "reason": "明确区分作者报告与独立复算。"
+      },
+      "b": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "实际核查仅为“给定汇总→两句文字”的数值和语义对照。"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "未把“作者报告已修复配对单位”视作源数据或代码验证成功。"
+          }
+        ],
+        "reason": "明确区分文字核对与源数据/代码验证。"
+      }
+    },
+    {
+      "id": "W02.5",
+      "case": "W02",
+      "criterion": "Affected checks must be repeated on updated output; unaffected work can proceed",
+      "a": {
+        "status": "not_met",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "根据v2核对并更新相关点估计、区间、比较标签、图注和优势描述；生成后检查最终图"
+          },
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "更新关联结果、配对单位、患者等权说明和版本引用；另存与v2对应的新补充版本，保留旧版历史"
+          }
+        ],
+        "reason": "部分满足：图更新后再检查最终图。未完整说明所有受影响检查须在更新成果上重做，也未明确未受影响工作可继续；同步清单不能替代两项交接规则。"
+      },
+      "b": {
+        "status": "not_met",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "再重新导出和视觉检查。"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "R07跨材料一致性仍未完成，因为Figure2.pdf与Supplement-v1尚待同步。"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "四项互相独立；"
+          }
+        ],
+        "reason": "部分满足更清楚：图须重新导出/视觉检查，局部已完成与R07未完成分开记录。但未明确全部受影响检查更新后重做；“四项互相独立”也未等同明确允许未受影响工作继续。按完整固定条款判not_met。"
+      }
+    },
+    {
+      "id": "W03.1",
+      "case": "W03",
+      "criterion": "DOI resolution distinguished from identity and semantic verification",
+      "a": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "解析成功不证明DOI与该题名正确对应，更不证明作者、发表版本或更正/撤稿状态已核实；身份仍待核。"
+          },
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "原句的引用动作“暂缓采用”。"
+          }
+        ],
+        "reason": "DOI解析、身份核验、内容支持分开，未用解析成功维持原主张。"
+      },
+      "b": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "身份核验未完成；解析成功不能替代身份一致性或内容证据核查"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "不要贴上可解析DOI来维持原断言。"
+          }
+        ],
+        "reason": "DOI解析、身份核验与语义支持清楚分开。"
+      }
+    },
+    {
+      "id": "W03.2",
+      "case": "W03",
+      "criterion": "Causality and all-population claim not adopted",
+      "a": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "已提供线索只提示关联，不能升级为因果"
+          },
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "“all patient populations”没有证据支持，不能由一条关联摘要外推。"
+          }
+        ],
+        "reason": "拒绝因果及全人群主张，建议收窄为摘要线索报告的关联。"
+      },
+      "b": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "提供的摘要线索只有关联，没有满足这两种要求。"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "不支持从现有材料作因果表述"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "不支持普遍外推；未评估具体适用人群"
+          }
+        ],
+        "reason": "拒绝因果及全人群断言，且不反向认定因果绝不可能。"
+      }
+    },
+    {
+      "id": "W03.3",
+      "case": "W03",
+      "criterion": "Abstract-only and synthetic identity limitations explicit",
+      "a": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "仅使用提供的合成材料"
+          },
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "实际仅读取案例给出的候选元数据与摘要线索。未取得摘要全文、原文或补充，未阅读全文。"
+          },
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "也不能据其合成DOI直接断言记录无效或不存在。"
+          }
+        ],
+        "reason": "合成身份和摘要线索阅读边界明确，无虚构作者、等级或全文阅读。"
+      },
+      "b": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "依据本案例的合成材料"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "只有用户给出的候选元数据和摘要线索；未取得或阅读原始摘要、原文及补充"
+          },
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "本次遵照要求未检索真实文章，也未声称阅读全文。"
+          }
+        ],
+        "reason": "合成案例和阅读边界明确，待核背景句也明确不能当最终已核引文。"
+      }
+    },
+    {
+      "id": "W04.1",
+      "case": "W04",
+      "criterion": "Local format actually read and conversion executed",
+      "a": {
+        "status": "unclear",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "依据实际读取的`materials/format.md`"
+          },
+          {
+            "file": "evaluation-a/output/run-log.json",
+            "field": "resources_read; read_commands"
+          },
+          {
+            "file": "grading/replay.json",
+            "field": "variants[variant=a].commands[0]: returncode=0; output_exists=true"
+          }
+        ],
+        "reason": "转换确实有外部于执行代理的父代理复跑记录，且提交脚本哈希匹配。实际读取格式说明这一原运行步骤仅执行代理自报；本复核未取得原始完整工具轨迹，故复合条款不能全部确认。"
+      },
+      "b": {
+        "status": "unclear",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "已完整读取本案例的format.md（版本1，内部合成说明）"
+          },
+          {
+            "file": "evaluation-b/output/run-log.json",
+            "field": "resources_read; commands_executed"
+          },
+          {
+            "file": "grading/replay.json",
+            "field": "variants[variant=b].commands[0]: returncode=0; output_exists=true"
+          }
+        ],
+        "reason": "转换复跑可证实；原执行实际读取说明仍仅由执行代理的结果和日志自报，不能确认完整原运行轨迹。"
+      }
+    },
+    {
+      "id": "W04.2",
+      "case": "W04",
+      "criterion": "Output IDs 01/02/03 preserved; cm values 1/NA/2.5",
+      "a": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/input.csv",
+            "quote": "id,value_cm\n01,1\n02,NA\n03,2.5"
+          },
+          {
+            "file": "grading/replay.json",
+            "field": "variants[variant=a].csv_rows; checks.ids_preserved; checks.numbers"
+          }
+        ],
+        "reason": "CSV和父代理复跑均保留01/02/03、1/NA/2.5。"
+      },
+      "b": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/input.csv",
+            "quote": "id,value_cm\n01,1.0\n02,NA\n03,2.5"
+          },
+          {
+            "file": "grading/replay.json",
+            "field": "variants[variant=b].csv_rows; checks.ids_preserved; checks.numbers"
+          }
+        ],
+        "reason": "1.0数值等于1，条款要求cm值而非字符串规范化；ID和NA保留。"
+      }
+    },
+    {
+      "id": "W04.3",
+      "case": "W04",
+      "criterion": "Duplicate-ID fixture refused",
+      "a": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "grading/replay.json",
+            "field": "variants[variant=a].commands[1]: returncode=2; stderr=\"ERROR: line 4: duplicate ID '01'\"; output_exists=false"
+          },
+          {
+            "file": "evaluation-a/output/convert_unitrows.py",
+            "quote": "if identifier in seen:"
+          }
+        ],
+        "reason": "父代理复跑拒绝重复ID且无输出；代码亦有对应校验。"
+      },
+      "b": {
+        "status": "met",
+        "evidence": [
+          {
+            "file": "grading/replay.json",
+            "field": "variants[variant=b].commands[1]: returncode=2; stderr=\"ERROR: line 4: duplicate ID '01'\"; output_exists=false"
+          },
+          {
+            "file": "evaluation-b/output/convert_unitrows.py",
+            "quote": "if identifier in ids:"
+          }
+        ],
+        "reason": "父代理复跑拒绝重复ID且无输出；代码亦有对应校验。"
+      }
+    },
+    {
+      "id": "W04.4",
+      "case": "W04",
+      "criterion": "Input preserved and actual scope/limitations recorded",
+      "a": {
+        "status": "unclear",
+        "evidence": [
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "所有脚本、CSV、测试夹具和记录仅写本output目录；未作统计分析。"
+          },
+          {
+            "file": "evaluation-a/output/result.md",
+            "quote": "检查覆盖本说明及列出的边界，不声称完成未提供的其他格式规范验证。"
+          },
+          {
+            "file": "evaluation-a/output/checks.json",
+            "field": "input_sha256_before; input_sha256_after"
+          },
+          {
+            "file": "grading/replay.json",
+            "field": "variants[variant=a].checks.source_hashes_unchanged=true"
+          }
+        ],
+        "reason": "范围/限制记录满足；父代理复跑范围内输入哈希不变有证据。原执行全过程输入是否保持、是否只写其output，仍只有自报及其生成检查记录，不能独立确认全程。"
+      },
+      "b": {
+        "status": "unclear",
+        "evidence": [
+          {
+            "file": "evaluation-b/output/result.md",
+            "quote": "未测试超大文件性能、异常断电时的输出原子性或未规定的扩展语法。所有源材料保持不变。"
+          },
+          {
+            "file": "evaluation-b/output/validation.json",
+            "field": "source_sha256; check=\"supplied inputs unchanged during boundary checks\""
+          },
+          {
+            "file": "grading/replay.json",
+            "field": "variants[variant=b].checks.source_hashes_unchanged=true"
+          }
+        ],
+        "reason": "范围和未测项明确；复跑期输入不变已记录。原执行全程的输入保留和写入范围无独立完整轨迹支持，故复合条款暂不能全部确认。"
+      }
+    }
+  ],
+  "objective_differences": [
+    "b把Figure2和Supplement明确写为过期依赖，并区分局部两句已完成与R07跨材料未完成；a也列明待同步和未看文件，但未使用同样明确的状态表述。两版均未完整满足W02.5。",
+    "a的贡献句显式写confidence interval spans zero；b在句后说明跨零及不确定性。两版数字和主张强度均合格，不能由这一表达差异推出科学质量优劣。",
+    "a将正常CSV数值写为1，b写为1.0；两者数值相同。",
+    "a转换代码限制输出为脚本所在目录直接子文件，采用open(\"x\")拒绝覆盖已有目标；b仅阻止源目标同路径，采用open(\"w\")在有效输入下可覆盖已有目标。无效输入均先校验再写。此为代码行为差异，不推定当前任务发生越界写入。",
+    "a边界脚本主要经CLI子进程校验，b边界脚本主要直接调用convert并检查错误保留既有哨兵。初次复核时可用的父代理复跑只共同覆盖正常和重复输入；后来完整自设边界复跑见subsequent_evidence。"
+  ],
+  "remaining_risks": [
+    "两版缺少完整的受影响检查重做与未受影响工作继续规则。",
+    "未提供原始完整执行轨迹；实际读取格式、无额外活动、全程输入保留只能局部判断。",
+    "初次外部复跑仅覆盖内部合成格式的正常及重复输入；后续已运行两版打包的完整自设边界检查脚本。脚本未定义的边界、超大文件和异常写出原子性仍未覆盖；打包副本字节身份未由新增记录独立验证。",
+    "W02无源数据、分析代码/运行日志、图或补充正文；不能确认配对修复、患者等权实现、区间估计或跨材料最终一致。",
+    "W03没有原始摘要/全文/补充与真实身份核验；不能确认研究设计、因果效应、适用人群或最终引文身份。"
+  ],
+  "inference_limits": "四项公开合成任务只支持功能和交付边界观察；不自创加权总分，不将自设测试数量当进步，不推断token/费用、统计显著改善、跨模型稳定性或真实科研场景泛化。科学正确性仍需医学/统计专家及数据级审查。",
+  "subsequent_evidence": {
+    "timing": "初次复核完成后，主代理另行提供；不回填为初次复核时已有证据。",
+    "sources": [
+      "grading/portable-replay.json",
+      "candidate/evals/workflow-entry/replay_converters.py"
+    ],
+    "source_scope": "本次只读取新增证据JSON及该复跑脚本，未读取其他candidate文件；更新现有两份复核文件。",
+    "initial_replay": "初次可用的grading/replay.json仅共同覆盖正常转换、重复ID拒绝和复跑期来源哈希。",
+    "later_replay": "新增脚本使用tempfile.TemporaryDirectory，将打包材料、两版转换代码和各自边界检查代码复制到临时目录；以标准库subprocess.run（capture_output=True、timeout=30）分别执行正常、重复和完整自设边界检查脚本。",
+    "evidence": [
+      {
+        "file": "grading/portable-replay.json",
+        "field": "results[variant=a].commands",
+        "observation": "正常退出0，重复退出2；check_conversion.py退出0、stderr为空，stdout含\"checks_passed\": 19及\"checks_failed\": 0。"
+      },
+      {
+        "file": "grading/portable-replay.json",
+        "field": "results[variant=b].commands",
+        "observation": "正常退出0，重复退出2；check_unitrows.py退出0、stderr为空，stdout含\"passed\": 22及\"failed\": 0，并列出相应边界检查通过。"
+      },
+      {
+        "file": "candidate/evals/workflow-entry/replay_converters.py",
+        "observation": "脚本在成功输出记录前验证正常成功、重复不成功且无duplicate.csv、CSV的ID/缺失/换算值以及边界进程退出0；临时目录退出时清理。"
+      }
+    ],
+    "inference": "后续记录为打包的两版自设完整边界脚本提供了执行代理之外的功能运行证据，补足初次证据仅覆盖共同正常/重复输入的限制。19与22是各脚本自身拆分后的计数，不构成质量进步或优劣证据。",
+    "limitations": "复核者仍未亲自执行，只审阅主代理提供的脚本与运行记录；新记录不含所复制代码的哈希，未独立验证打包副本与初次提交的字节身份。不能由临时目录功能复跑推断原代理实际读取说明、原运行全部副作用、输入全程保留、无其他活动或科学正确性；也不覆盖脚本未定义的边界、超大文件或异常写出原子性。",
+    "grading_change": "14条既定条款及全部met/not_met/unclear判定保持不变。"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "round": 8,
+  "frozen_before_runtime_change": true,
+  "cases": [
+    {
+      "id": "P01",
+      "class": "normal",
+      "input": "normal-long-table.docx",
+      "request": "Convert only Table 1 to a three-line table, treating its first two rows as the complete header. Preserve content and existing page setup; make the full header repeat on continuation pages; render and inspect every page."
+    },
+    {
+      "id": "P02",
+      "class": "boundary-unseen",
+      "input": "overpage-row.docx",
+      "request": "Convert only Table 1 to a three-line table, treating its first row as the header. Preserve every word and the existing page setup; render and inspect every page."
+    },
+    {
+      "id": "P03",
+      "class": "not-applicable",
+      "input": "layout-table.docx",
+      "request": "Make the first table a publication three-line data table. Preserve all content and render the result."
+    }
+  ],
+  "comparison": "Run the frozen current bundle first. Only if a criterion fails, make the smallest runtime change and rerun the same raw request with a fresh agent and identical fixture.",
+  "separation": "Executors receive only their raw request, input DOCX, and bundle. The rubric, defect hypothesis, prior outputs, and intended fix stay outside their directories."
+}

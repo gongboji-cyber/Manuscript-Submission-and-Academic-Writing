@@ -1,0 +1,44 @@
+{
+  "executor_root": "bundle",
+  "files": [
+    {
+      "bundle_path": "SKILL.md",
+      "bytes": 7549,
+      "sha256": "b54e389c3ce94e7179017b2f92efc2ee27c0d9681fd396d19a5372bb5f7f4c7c",
+      "source_path": "SKILL.md"
+    },
+    {
+      "bundle_path": "assets/default-profile.json",
+      "bytes": 685,
+      "sha256": "fa6263bc176192b596937f2776b5d93abb104bddb290a5c46b859a2b376cedaf",
+      "source_path": "assets/default-profile.json"
+    },
+    {
+      "bundle_path": "references/checklist.md",
+      "bytes": 2224,
+      "sha256": "841a03d171731152db68c1c0d71bc70d7fb19e2ccc23cb841cdff0e24d0c937c",
+      "source_path": "references/checklist.md"
+    },
+    {
+      "bundle_path": "references/formatting.md",
+      "bytes": 3511,
+      "sha256": "0add98ffbc3b7b89acd854e43ea3ce7cdbb8b6c5e2af80de404bdf879c7a1ebc",
+      "source_path": "references/formatting.md"
+    },
+    {
+      "bundle_path": "references/three-line-tables.md",
+      "bytes": 6610,
+      "sha256": "9d3dadb8ff405d4160947b3e42c95f4faf52b4f92c259cb459216abfa9dd9afb",
+      "source_path": "references/three-line-tables.md"
+    },
+    {
+      "bundle_path": "scripts/word_format_helpers.py",
+      "bytes": 7169,
+      "sha256": "7803caf25714a8cdc5c62da04ea0463887d586fd555fb4da7e86874a837dfbb9",
+      "source_path": "scripts/word_format_helpers.py"
+    }
+  ],
+  "manifest_exposure": "coordinator-only",
+  "schema_version": 1,
+  "scope": "full-audit"
+}

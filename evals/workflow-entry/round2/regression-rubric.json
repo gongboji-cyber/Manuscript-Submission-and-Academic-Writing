@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "frozen_before_runs": true,
+  "scope": "Exact regression of the previously failed change-impact handoff behavior; not a held-out generalization test",
+  "checks": [
+    "Both revised sentences use v2 and preserve the CI crossing zero",
+    "No demonstrated superiority or clinical outcome benefit is claimed",
+    "Figure and supplement are identified as awaiting synchronization without invented inspection",
+    "Author-reported summary is distinguished from independent recomputation",
+    "Final handoff explicitly states that checks affected by v2 must be repeated on each updated artifact and that work proven independent of v1 may continue"
+  ],
+  "grading": "Per-check met/not_met/unclear with literal output evidence. No weighted total or scientific-validity certification."
+}

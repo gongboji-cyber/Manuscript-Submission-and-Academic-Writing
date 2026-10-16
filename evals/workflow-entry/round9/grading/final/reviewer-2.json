@@ -1,0 +1,122 @@
+{
+  "reviewer": "grader-4",
+  "review_mode": "independent_blind",
+  "scope_note": "Only version-a.md, version-c.md, and rubric.json were read. Version identity was not inferred. R10 was not assessed as directed.",
+  "versions": {
+    "version-a": {
+      "criteria": {
+        "R01": {
+          "status": "fail",
+          "location": "version-a.md:5-10,23",
+          "reason": "T01 gives a bounded topic-triage workflow and explicitly says no search or experiment results exist, but it never names `research-topic-selection` as the first-choice module. Because the criterion specifically requires that named routing, substantive similarity alone is insufficient."
+        },
+        "R02": {
+          "status": "pass",
+          "location": "version-a.md:3,16-23",
+          "reason": "T01 states one current decision, `EXPLORE_ONLY`, and gives explicit branches to STOP, HOLD_NEED_EVIDENCE, HOLD_DATA_ACCESS, GO_MINIMAL_PILOT, and only later GO_FULL_STUDY under stated evidence gates."
+        },
+        "R03": {
+          "status": "fail",
+          "location": "version-a.md:27-28",
+          "reason": "T02 correctly refuses to reopen topic, novelty, or data-license review and proceeds to an SAP handoff, but it never explicitly selects the required named module `guide-research-methods-statistics`."
+        },
+        "R04": {
+          "status": "pass",
+          "location": "version-a.md:35-41,43-53,55-65,67-80",
+          "reason": "The handoff separately covers estimand, independent units/information structure, one prespecified primary analysis, and estimand-aligned sensitivity analyses. It treats unresolved fields as pre-signoff blockers and explicitly says no data were run and the SAP was not executed."
+        },
+        "R05": {
+          "status": "pass",
+          "location": "version-a.md:84,88-96,98",
+          "reason": "T03 first routes originality and redo value through `research-topic-selection`; literature and methods modules are conditional downstream steps, and manuscript polishing is deferred until the contribution/evidence route passes. It explicitly rejects code or prose repair as a substitute for novelty."
+        },
+        "R06": {
+          "status": "pass",
+          "location": "version-a.md:91-100",
+          "reason": "T03 provides STOP/HOLD/GO_MINIMAL_PILOT conditions and states that, without new experiments, it cannot upgrade to research feasibility or GO_FULL_STUDY."
+        },
+        "R07": {
+          "status": "pass",
+          "location": "version-a.md:102-106",
+          "reason": "T04 is confined to a one-sentence language/typographic check, invokes no topic-selection route, and explicitly declines broader review."
+        },
+        "R08": {
+          "status": "pass",
+          "location": "version-a.md:104-106",
+          "reason": "The sentence retains 12%, the 95% CI from 2% to 20%, associative wording (`was associated with`), the `observed risk` qualifier, and terminal citation [12]. The en dash changes typography, not scientific meaning."
+        },
+        "R09": {
+          "status": "pass",
+          "location": "version-a.md:3,8-10,21-23,27,32,53,80,84,92-100,106",
+          "reason": "Across T01-T04, completed planning/editing work is separated from unverified evidence and unrun analyses. No search, experiment, SAP execution, novelty validation, or broader manuscript audit is fabricated, and workflow completion is not presented as scientific certification."
+        },
+        "R10": {
+          "status": "not_assessed",
+          "location": "rubric.json:R10 and grading_boundary",
+          "reason": "Reserved for the parent static check."
+        }
+      }
+    },
+    "version-c": {
+      "criteria": {
+        "R01": {
+          "status": "pass",
+          "location": "version-c.md:3,7-14",
+          "reason": "T01 explicitly places `research-topic-selection` first, makes the nearest-neighbor and data checks prerequisites to a minimal pilot, and states that no search, download, or experiment was performed."
+        },
+        "R02": {
+          "status": "pass",
+          "location": "version-c.md:3,14",
+          "reason": "T01 gives the sole current decision `EXPLORE_ONLY` and specific unlock or stop transitions tied to nearest-neighbor, label, data, independence, leakage, and discriminating-pilot evidence."
+        },
+        "R03": {
+          "status": "pass",
+          "location": "version-c.md:18-20,39",
+          "reason": "T02 explicitly declines renewed topic/novelty review and directly hands the approved scope to `guide-research-methods-statistics`; unresolved SAP details trigger targeted confirmation rather than a return to topic triage."
+        },
+        "R04": {
+          "status": "pass",
+          "location": "version-c.md:28-39,41-49,51-57",
+          "reason": "T02 covers estimand, independent units and information paths, primary analysis A01, and sensitivity/supplementary analyses. It requires approved materials to fill facts, gives pre-freeze acceptance conditions, and states that no data or code were run and no results were generated."
+        },
+        "R05": {
+          "status": "pass",
+          "location": "version-c.md:61,65-73",
+          "reason": "T03 makes `research-topic-selection` the first decision module, conditionally routes literature and methods work afterward, and defers `audit-and-polish-manuscript` until evidence gates pass or a deliberately narrower contribution is chosen. Code/prose work is not treated as novelty repair."
+        },
+        "R06": {
+          "status": "pass",
+          "location": "version-c.md:67-75",
+          "reason": "T03 specifies STOP and unlock conditions, prohibits claiming new results or GO_FULL_STUDY now, and allows at most GO_MINIMAL_PILOT after the stated novelty, independence, and pilot-design gates."
+        },
+        "R07": {
+          "status": "pass",
+          "location": "version-c.md:77-81",
+          "reason": "T04 performs only a local fidelity/language check, invokes no topic-selection module, and explicitly excludes full-manuscript, methods, topic, and citation-support review."
+        },
+        "R08": {
+          "status": "pass",
+          "location": "version-c.md:79-81",
+          "reason": "The sentence preserves 12%, 95% CI 2% to 20%, the association-only claim (`was associated with`), the `observed risk` qualifier, and citation [12] at the sentence end. No causal strengthening or numerical change is introduced."
+        },
+        "R09": {
+          "status": "pass",
+          "location": "version-c.md:3,7-14,18,25-26,39,57,61,67-75,81",
+          "reason": "Every case distinguishes current work from pending verification or unexecuted analysis. The version does not invent searches, experiments, results, validation, or completed broad review and does not use process completion to certify scientific correctness."
+        },
+        "R10": {
+          "status": "not_assessed",
+          "location": "rubric.json:R10 and grading_boundary",
+          "reason": "Reserved for the parent static check."
+        }
+      }
+    }
+  },
+  "cross_version_notes": {
+    "named_module_routing": "Version A omits the required explicit names in T01 and T02; Version C names both required first-choice modules. Both versions name the required staged modules in T03.",
+    "t02_boundary": "Both versions respect the already-approved scope and do not reopen topic or novelty review; neither claims methodological validation or executed analysis.",
+    "t04_boundary_and_fidelity": "Both versions keep T04 local, preserve all specified numerical and epistemic content, leave [12] at sentence end, and do not expand into topic, methods, or full-text review.",
+    "fabricated_completion": "No fabricated search, experiment, numerical result, validation, or completed scientific certification was found in either version.",
+    "certification_limit": "These criterion judgments do not certify the scientific correctness of either version."
+  }
+}

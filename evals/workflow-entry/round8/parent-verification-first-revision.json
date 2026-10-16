@@ -1,0 +1,279 @@
+{
+  "bundles": {
+    "p01-revised": {
+      "actual_files": [
+        "SKILL.md",
+        "references/formatting.md",
+        "references/three-line-tables.md",
+        "scripts/word_format_helpers.py"
+      ],
+      "contains_F01_or_F20": false,
+      "contains_checklist_md": false,
+      "file_set_equal": true,
+      "hashes_equal": true,
+      "manifest_files": [
+        "SKILL.md",
+        "references/formatting.md",
+        "references/three-line-tables.md",
+        "scripts/word_format_helpers.py"
+      ]
+    },
+    "p02-revised": {
+      "actual_files": [
+        "SKILL.md",
+        "references/formatting.md",
+        "references/three-line-tables.md",
+        "scripts/word_format_helpers.py"
+      ],
+      "contains_F01_or_F20": false,
+      "contains_checklist_md": false,
+      "file_set_equal": true,
+      "hashes_equal": true,
+      "manifest_files": [
+        "SKILL.md",
+        "references/formatting.md",
+        "references/three-line-tables.md",
+        "scripts/word_format_helpers.py"
+      ]
+    },
+    "p03-revised": {
+      "actual_files": [
+        "SKILL.md",
+        "references/formatting.md",
+        "references/three-line-tables.md",
+        "scripts/word_format_helpers.py"
+      ],
+      "contains_F01_or_F20": false,
+      "contains_checklist_md": false,
+      "file_set_equal": true,
+      "hashes_equal": true,
+      "manifest_files": [
+        "SKILL.md",
+        "references/formatting.md",
+        "references/three-line-tables.md",
+        "scripts/word_format_helpers.py"
+      ]
+    }
+  },
+  "p01": {
+    "external_blocks_equal": true,
+    "final_bottom_rules": [
+      [
+        "single",
+        "8"
+      ],
+      [
+        "single",
+        "8"
+      ],
+      [
+        "single",
+        "8"
+      ],
+      [
+        "single",
+        "8"
+      ]
+    ],
+    "header_bottom_rules": [
+      [
+        "single",
+        "4"
+      ],
+      [
+        "single",
+        "4"
+      ],
+      [
+        "single",
+        "4"
+      ],
+      [
+        "single",
+        "4"
+      ]
+    ],
+    "header_flags": [
+      true,
+      true,
+      false,
+      false
+    ],
+    "merge_signature_equal": true,
+    "output_grid_widths": [
+      2556,
+      2556,
+      2556,
+      2556
+    ],
+    "output_sha256": "99e05eea4ad64e55d4601354603d2f3111bf3aa5eeeb36bc715f2c6e3bc80102",
+    "paragraph_text_equal": true,
+    "pdf_headers_by_page": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "render_pages": 5,
+    "row_ids_by_page": [
+      [
+        "R001",
+        "R002",
+        "R003",
+        "R004",
+        "R005",
+        "R006",
+        "R007",
+        "R008",
+        "R009",
+        "R010",
+        "R011",
+        "R012",
+        "R013"
+      ],
+      [
+        "R014",
+        "R015",
+        "R016",
+        "R017",
+        "R018",
+        "R019",
+        "R020",
+        "R021",
+        "R022",
+        "R023",
+        "R024",
+        "R025",
+        "R026",
+        "R027",
+        "R028"
+      ],
+      [
+        "R029",
+        "R030",
+        "R031",
+        "R032",
+        "R033",
+        "R034",
+        "R035",
+        "R036",
+        "R037",
+        "R038",
+        "R039",
+        "R040",
+        "R041",
+        "R042",
+        "R043"
+      ],
+      [
+        "R044",
+        "R045",
+        "R046",
+        "R047",
+        "R048",
+        "R049",
+        "R050",
+        "R051",
+        "R052",
+        "R053",
+        "R054",
+        "R055",
+        "R056",
+        "R057",
+        "R058"
+      ],
+      [
+        "R059",
+        "R060",
+        "R061",
+        "R062",
+        "R063",
+        "R064",
+        "R065",
+        "R066",
+        "R067",
+        "R068",
+        "R069",
+        "R070",
+        "R071",
+        "R072"
+      ]
+    ],
+    "section_xml_equal": true,
+    "source_grid_widths": [
+      2556,
+      2556,
+      2556,
+      2556
+    ],
+    "source_sha256": "d9081a3f3498db5edde05ad03be6f68a7d98694259b632dd9a2641b422609ab1",
+    "table_count_equal": true,
+    "table_dimensions_equal": true,
+    "table_text_equal": true,
+    "top_rules": [
+      [
+        "single",
+        "8"
+      ],
+      [
+        "single",
+        "8"
+      ],
+      [
+        "single",
+        "8"
+      ]
+    ]
+  },
+  "p02": {
+    "all_tokens_once": true,
+    "body_has_cantSplit": false,
+    "external_blocks_equal": true,
+    "header_has_cantSplit": true,
+    "header_has_tblHeader": true,
+    "merge_signature_equal": true,
+    "output_grid_widths": [
+      1200,
+      9024
+    ],
+    "output_sha256": "c9ecfb6fce89f5f9096a8eaf1dee59e39ded64952e259815bb5d3088e25f9f71",
+    "paragraph_text_equal": true,
+    "pdf_headers_by_page": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "render_pages": 4,
+    "section_xml_equal": true,
+    "sentinel_visible": true,
+    "source_grid_widths": [
+      5112,
+      5112
+    ],
+    "source_sha256": "1e61c860f0fff95e961b021c33459d6943ea4cb5ab5fe360fb227d1d03a7fc8b",
+    "table_count_equal": true,
+    "table_dimensions_equal": true,
+    "table_text_equal": true,
+    "token_positions_in_order": true
+  },
+  "p03": {
+    "expected_input_sha256": "e7b80c318e311100a20a3314dc3fd92141ba41a44ba03aad575d15efb96269cb",
+    "formatted_exists": false,
+    "input_sha256": "e7b80c318e311100a20a3314dc3fd92141ba41a44ba03aad575d15efb96269cb",
+    "log_exists": true
+  },
+  "runtime": {
+    "libreoffice": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+    "lxml": [
+      6,
+      1,
+      1,
+      0
+    ],
+    "pdftoppm": "pdftoppm version 26.05.0",
+    "python": "Python 3.12.14",
+    "python_docx": "1.2.0"
+  }
+}

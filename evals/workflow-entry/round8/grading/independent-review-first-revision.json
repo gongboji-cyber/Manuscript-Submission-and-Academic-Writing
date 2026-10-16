@@ -1,0 +1,108 @@
+{
+  "reviewer_scope": "Independent document and workflow validation against grading/criteria.json using only the revised staged requests, inputs, formatted outputs, execution logs, canonical PDFs and page PNGs, bundle manifests, matching bundle directories, and parent-verification-revised.json. No candidate source outside staged bundles, prior reviews or rounds, diagnosis, or intended fix was inspected. Run-log PASS statements were independently checked. This review does not certify scientific correctness, statistical validity, accessibility, journal compliance, or Microsoft Word rendering parity.",
+  "pages_inspected": [
+    {
+      "case": "P01",
+      "count": 5,
+      "paths": [
+        "runs/p01-revised/qa-render/page-1.png",
+        "runs/p01-revised/qa-render/page-2.png",
+        "runs/p01-revised/qa-render/page-3.png",
+        "runs/p01-revised/qa-render/page-4.png",
+        "runs/p01-revised/qa-render/page-5.png"
+      ],
+      "observed_sequence": [
+        "R001-R013",
+        "R014-R028",
+        "R029-R043",
+        "R044-R058",
+        "R059-R072"
+      ]
+    },
+    {
+      "case": "P02",
+      "count": 4,
+      "paths": [
+        "runs/p02-revised/qa-formatted-v2/page-1.png",
+        "runs/p02-revised/qa-formatted-v2/page-2.png",
+        "runs/p02-revised/qa-formatted-v2/page-3.png",
+        "runs/p02-revised/qa-formatted-v2/page-4.png"
+      ],
+      "observed_sequence": [
+        "TOKEN-001-TOKEN-044",
+        "TOKEN-045-TOKEN-096",
+        "TOKEN-097-TOKEN-148",
+        "TOKEN-149-TOKEN-180"
+      ]
+    },
+    {
+      "case": "P03",
+      "count": 0,
+      "paths": [],
+      "reason": "No formatted output is expected under the required safe-stop path."
+    }
+  ],
+  "criteria": [
+    {
+      "id": "R01",
+      "status": "met",
+      "evidence": "Independent DOCX comparison found identical ordered w:t sequences (P01: 299 nodes; P02: 188), document-level paragraph text/order, canonical XML for all table-external body elements (6 per case), sectPr, table counts/dimensions (P01 74x4; P02 2x2), physical-cell counts, and merge signatures. P03 produced no output and its input SHA-256 remains e7b80c318e311100a20a3314dc3fd92141ba41a44ba03aad575d15efb96269cb."
+    },
+    {
+      "id": "R02",
+      "status": "met",
+      "evidence": "P01 renders to 5 Letter pages. PDF extraction and visual inspection found the complete two-row header on every page and continuous nonduplicated row IDs: R001-R013, R014-R028, R029-R043, R044-R058, and R059-R072. OOXML has tblHeader on rows 1 and 2 only."
+    },
+    {
+      "id": "R03",
+      "status": "met",
+      "evidence": "P01 visually has top and header-bottom rules on each fragment, the final bottom rule after R072, and no vertical/internal grid, diagonal/double rules, or shading. OOXML has only 11 non-nil cell rules: three 1 pt top, four 0.5 pt header-bottom, and four 1 pt final-bottom rules; shading is clear/FFFFFF."
+    },
+    {
+      "id": "R04",
+      "status": "met",
+      "evidence": "All five P01 pages were inspected at original resolution. No clipping, overlap, missing glyphs, blank continuation page, or excessive gap was visible; extracted rows are complete and continuous through R072, and the final note/sentinel are visible."
+    },
+    {
+      "id": "R05",
+      "status": "met",
+      "evidence": "P01 and P02 captions are directly above their table starts on page 1. Their notes and sentinels follow the final data and final bottom rule on P01 page 5 and P02 page 4, with clear ownership."
+    },
+    {
+      "id": "R06",
+      "status": "met",
+      "evidence": "P02's single 180-paragraph body row is taller than one page. Independent OOXML inspection found cantSplit on the header but not the body row, matching the documented justified splitting exception. Four-page rendering preserves all content through TOKEN-180 plus the note and sentinel."
+    },
+    {
+      "id": "R07",
+      "status": "met",
+      "evidence": "All four canonical P02 PNGs were independently inspected. Visible ranges are continuous (001-044, 045-096, 097-148, 149-180). Input/output DOCX each contain exactly 180 unique tokens in exact order; PDF extraction contains all 180 once and the final sentinel. The log limits visual PASS to the four inspected pages."
+    },
+    {
+      "id": "R08",
+      "status": "met",
+      "evidence": "P03 input explicitly identifies the only 3x2 table as an author-information layout container. The log classifies it out of scope, specifies a title-page/author-information layout workflow, and safely stops. formatted.docx is absent and the input hash is unchanged."
+    },
+    {
+      "id": "R09",
+      "status": "met",
+      "evidence": "All coordinator and run bundle trees contain exactly the four manifest-listed files, and every hash matches. No extra/missing files, cache/log/intermediate files, checklist.md, or F01/F20 text were found."
+    },
+    {
+      "id": "R10",
+      "status": "not_met",
+      "evidence": "P01 and P02 record the required runtime, concrete commands/exit results, hashes, renderer/page counts, separate structure/visual findings, and non-certification boundaries. P03 records versions, input hash, justified N/A output/render fields, and separate sections, but abbreviates its key read-only DOCX/XML inspection as \"$CODEX_PRIMARY_RUNTIME_PYTHON -B - <<'PY' ... PY\". The actual here-document body is omitted, so the actual command is not recorded."
+    },
+    {
+      "id": "R11",
+      "status": "met",
+      "evidence": "Every criterion was decidable from the staged requests, logs, outputs, manifests, independent structural checks, and canonical page images without diagnosis or intended-fix material. The R10 defect is directly visible in the P03 log."
+    }
+  ],
+  "overall_status": "not_met",
+  "limitations": [
+    "Visual findings are specific to the supplied LibreOffice/Poppler canonical renders and do not guarantee identical pagination in every Microsoft Word version.",
+    "The review is limited to document/workflow behavior and does not assess scientific meaning, statistical correctness, accessibility, or journal-specific compliance.",
+    "Bundle purity was verified from manifest-matched final trees and recorded -B/post-run checks; an already-deleted transient file cannot be reconstructed from staged evidence."
+  ]
+}
