@@ -18,6 +18,8 @@ description: >
 
 | 当前任务 | 首选模块 | 必要交接 |
 |---|---|---|
+| 需要为陌生科学/技术问题建立检索策略、反证和停止条件 | [`adaptive-evidence-retrieval`（自适应证据检索）](adaptive-evidence-retrieval/SKILL.md) | 先冻结决策问题、查询族、来源层级、读取深度、反证与预算；形成证据/矛盾台账和停止原因。正式文献身份与正文主张匹配继续交 `retrieve-and-match-references`，不得把 no-find 写成“不存在” |
+| 商业调研、成果转化、竞品/替代方案、TAM/SAM/SOM、定价或采购路径 | [`commercial-intelligence`（商业情报）](commercial-intelligence/SKILL.md) | 先用 `adaptive-evidence-retrieval` 建立来源与反证日志，再区分用户/付费者、需求、竞争、实施、IP/监管、经济性和真实验证。桌面检索不能通过 G6，也不能推出 `GO_SCALE` |
 | 科研选题、立项、研究idea筛选或拒稿后是否值得重做 | [`research-topic-selection`（选题与立项）](research-topic-selection/SKILL.md) | 由选题模块按当前版本完成适用漏斗、门槛与唯一裁决；G1按需联动`retrieve-and-match-references`/`critically-read-literature`，G2/G4在裁决前按需联动`guide-research-methods-statistics`。`GO_MINIMAL_PILOT`后才进入获授权的试点实施，只有G5通过才考虑写稿/投稿模块 |
 | 核查他人论文、评论切口或作者回复 | [批判性阅读](批判性阅读文献/SKILL.md) | 具体主张、反证与最小核查；有依据才进入写稿 |
 | 检索、读指南、匹配正文参考文献 | [文献与指南](文献/指南阅读板块/SKILL.md) | 来源身份、读取范围、版本、主张对应与限制 |
@@ -39,7 +41,7 @@ description: >
 
 ## 3. 处理陌生情景
 
-遇到本体系未覆盖的情景，读取 [陌生问题协议](references/unknown-situation.md)，执行“决定与缺口 → 竞争解释 → 原始/官方来源与反证 → 最小验证 → 有边界的结论 → 继续或停止”。不要用更长的提示词、软件能运行或另一份skill来代替验证。
+遇到本体系未覆盖的情景，读取 [陌生问题协议](references/unknown-situation.md)，执行“决定与缺口 → 竞争解释 → 原始/官方来源与反证 → 最小验证 → 有边界的结论 → 继续或停止”。需要外部证据时用 `adaptive-evidence-retrieval` 建立查询、来源、反证与停止记录，再把文献主张、方法学或商业裁决交回对应专业模块；检索引擎不替代下游判断。不要用更长的提示词、软件能运行或另一份skill来代替验证。
 
 ## 4. 交接、失效与接续
 
