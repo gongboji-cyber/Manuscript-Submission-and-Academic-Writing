@@ -1,0 +1,11 @@
+interface:
+  display_name: 商业情报与成果转化审计
+  short_description: 基于可核验网络证据分析客户、竞品、市场规模及商业化门槛
+  default_prompt: 使用 $commercial-intelligence 针对拟转化成果，区分使用者与付费者，研究直接竞品和替代方案，核验商业化及监管/IP约束，给出可审计市场规模假设、最小客户验证试验和逐关口裁决。不得把网页需求信号当成真实付费意愿。
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
