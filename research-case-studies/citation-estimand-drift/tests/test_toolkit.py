@@ -1,6 +1,7 @@
 import csv
 import json
 import sys
+import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -64,3 +65,47 @@ def test_gate_pivots_without_independent_drift():
     decision = gate_decision(summary)
     assert decision["verdict"] == "PIVOT"
     assert decision["reliability"] == "HUMAN_RELIABILITY_PENDING"
+
+
+def test_denominator_excludes_machine_prior_known_and_duplicate_rows():
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        registry = root / "registry.csv"
+        evidence = root / "evidence.csv"
+        registry.write_text(
+            "record_id,prior_known_case\nR1,False\nR2,False\nK1,True\n",
+            encoding="utf-8",
+        )
+        evidence.write_text(
+            "record_id,source_cited,provisional_dimensions,reviewer_status\n"
+            "R1,True,D1,machine_provisional\n"
+            "K1,True,D1,human_verified\n"
+            "R2,False,D1,human_verified\n"
+            "R1,True,D1,human_verified\n"
+            "R1,True,D2,human_verified\n",
+            encoding="utf-8",
+        )
+
+        summary = denominator_summary(registry, evidence)
+        assert summary["independent_records"] == 2
+        assert summary["independent_verified_reuse"] == 1
+        assert summary["independent_verified_drift"] == 1
+        assert gate_decision(summary)["verdict"] == "STOP"
+
+
+def test_denominator_requires_human_verified_source_match():
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        registry = root / "registry.csv"
+        evidence = root / "evidence.csv"
+        registry.write_text("record_id,prior_known_case\nR1,False\n", encoding="utf-8")
+        evidence.write_text(
+            "record_id,source_cited,provisional_dimensions,reviewer_status\n"
+            "R1,True,P0,machine_provisional\n"
+            "R1,False,P0,human_verified\n",
+            encoding="utf-8",
+        )
+
+        summary = denominator_summary(registry, evidence)
+        assert summary["independent_verified_reuse"] == 0
+        assert summary["independent_verified_preserved"] == 0
