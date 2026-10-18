@@ -11,6 +11,18 @@ from pathlib import Path
 from typing import Dict, List
 
 
+def _is_true(value: str | None) -> bool:
+    return (value or "").strip().lower() in {"1", "true", "yes"}
+
+
+def _dimension_codes(value: str | None) -> set[str]:
+    return {
+        code.strip().upper()
+        for code in (value or "").replace(",", ";").split(";")
+        if code.strip()
+    }
+
+
 def denominator_summary(registry_path: Path, evidence_path: Path) -> Dict[str, int]:
     with open(registry_path, encoding="utf-8-sig") as handle:
         registry = list(csv.DictReader(handle))
@@ -19,15 +31,31 @@ def denominator_summary(registry_path: Path, evidence_path: Path) -> Dict[str, i
         with open(evidence_path, encoding="utf-8-sig") as handle:
             evidence_rows = list(csv.DictReader(handle))
 
-    independent = [r for r in registry if r.get("prior_known_case") != "True"]
-    verified = [r for r in evidence_rows if r.get("provisional_dimensions") != "U"]
-    drift = [r for r in verified if "D" in r.get("provisional_dimensions", "")]
-    preserved = [r for r in verified if r.get("provisional_dimensions") == "P0"]
+    independent = [r for r in registry if not _is_true(r.get("prior_known_case"))]
+    independent_ids = {r.get("record_id", "").strip() for r in independent}
+
+    # Only explicit human verification can enter scientific decision denominators.
+    # Machine-provisional rows remain useful for triage but are not verified evidence.
+    verified_by_record: Dict[str, set[str]] = {}
+    for row in evidence_rows:
+        record_id = row.get("record_id", "").strip()
+        codes = _dimension_codes(row.get("provisional_dimensions")) - {"U"}
+        if (
+            record_id in independent_ids
+            and record_id
+            and _is_true(row.get("source_cited"))
+            and row.get("reviewer_status", "").strip().lower() == "human_verified"
+            and codes
+        ):
+            verified_by_record.setdefault(record_id, set()).update(codes)
+
+    drift = [codes for codes in verified_by_record.values() if any(code.startswith("D") for code in codes)]
+    preserved = [codes for codes in verified_by_record.values() if "P0" in codes]
     return {
         "total_records": len(registry),
         "prior_known_cases": len(registry) - len(independent),
         "independent_records": len(independent),
-        "independent_verified_reuse": len(verified),
+        "independent_verified_reuse": len(verified_by_record),
         "independent_verified_drift": len(drift),
         "independent_verified_preserved": len(preserved),
         "human_reliability_assessed": 0,
