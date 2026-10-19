@@ -41,7 +41,7 @@
 
 | ID | 来源/固定版本 | 实际读取范围 | 采用规则、边界与重查条件 |
 |---|---|---|---|
-| S20 | scikit-learn 1.9.1 官方文档：[Common pitfalls §11.3](https://scikit-learn.org/stable/common_pitfalls.html#controlling-randomness)、[RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) | 读取 `random_state` 对重复 `fit` 的整数/`None` 行为及随机森林自助抽样、特征抽样的随机性说明；本地最小试验实际版本为1.8.0 | 支持“逐层传递种子并做相同输入重复检查”；不支持“固定种子即可证明方法有效或跨环境逐位一致”。升级 scikit-learn、并行后端或文档稳定版后重查 |
+| S20 | scikit-learn 1.9.1 官方文档：[Common pitfalls §12.3](https://scikit-learn.org/stable/common_pitfalls.html#controlling-randomness)、[RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) | 读取 `random_state` 对重复 `fit` 的整数/`None` 行为及随机森林自助抽样、特征抽样的随机性说明；本地最小试验实际版本为1.8.0 | 支持“逐层传递种子并做相同输入重复检查”；不支持“固定种子即可证明方法有效或跨环境逐位一致”。升级 scikit-learn、并行后端或文档稳定版后重查 |
 | C01 | MolPAL 官方 `publication` 标签，commit [`fc0b913`](https://github.com/coleygroup/molpal/tree/fc0b913c87200e28bfc2e36028f559961f2f438b) | 读取 `molpal/models/sklmodels.py` 第23–48行：`RFModel` 构造 `RandomForestRegressor` 时未传 `random_state` | 只作为公开失败模式和最小反事实的触发案例，不证明论文数值错误或其他软件同样失控；审计其他 MolPAL 版本或模型时重新读取对应 commit |
 
 ## 开源 skill：借鉴结构，独立实现
