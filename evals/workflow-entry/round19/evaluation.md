@@ -2,7 +2,7 @@
 
 ## Defect and acceptance rule
 
-The eight-skill personal installation does not include `research-topic-selection`, `research-flow-diagrams`, or the coordinator. Three installed core skills nevertheless used hard handoffs to those unavailable modules. The candidate must:
+The personal installation exposes only eight skills and does not include `research-topic-selection`, `research-flow-diagrams`, or the coordinator. To test whether the current repository entrypoints could be synchronized safely into that environment, the baseline loaded the three repository `main@90f43f21a58a67686cd7dae75dc8e857641900c2` entrypoints while simulating the personal installation's module availability. Those repository files—not the actual installed personal copies—used hard handoffs to unavailable modules. The candidate must:
 
 1. name the missing dependency and never imply that it ran;
 2. use `NOT_RUN/HOLD` for decisions or graphics that require it;
@@ -14,8 +14,10 @@ Candidate acceptance was frozen at R01–R10 = 10/10 with no T2/T3 regression.
 
 ## Versions
 
-- Baseline: `main@90f43f21a58a67686cd7dae75dc8e857641900c2`
+- Baseline runtime files: repository `main@90f43f21a58a67686cd7dae75dc8e857641900c2`; this was not the personal installed workspace.
 - Candidate runtime: `optimize/workflow-entry@ef35f814e0cd6d0d0ec74861417f2c1e2a4e669a`
+- Simulated availability context: the same eight skill names exposed by the personal installation; the three unavailable modules and coordinator remained unreadable to scored producers.
+- Personal installed workspace inspected at `08e7a7b9e5636a597d7973facfe5d3ea4d39e9c9`; its three installed copies were not the behavioral baseline, did not contain the tested repository-main handoff text, and remained unchanged.
 - Python used for static validation: 3.12.14
 - Validator: `/root/.codex/skills/.system/skill-creator/scripts/quick_validate.py`
 - Exact model deployment, token counts, fees, and comparable end-to-end latency were not exposed.
@@ -23,7 +25,7 @@ Candidate acceptance was frozen at R01–R10 = 10/10 with no T2/T3 regression.
 ## Runs and integrity
 
 - Inputs are four public synthetic tasks in `cases.md`; the rubric was stored separately and not shown to producers.
-- Baseline and candidate producers received the same four tasks and the same list of installed/unavailable modules.
+- Baseline and candidate producers received the same four tasks and the same simulated list of installed/unavailable modules. This availability list modeled the personal environment; it did not assert that the personal files were byte-identical to repository main.
 - The first candidate run read the repository coordinator even though it was not installed. It was rejected before scoring and is not archived as a scored output.
 - The scored candidate rerun was restricted to the same three professional entrypoints used by the baseline and explicitly prohibited reading the coordinator or missing modules.
 - Raw scored outputs are preserved without summarization in `baseline-output.md` and `candidate-output.md`.
