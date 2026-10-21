@@ -1,0 +1,442 @@
+{
+  "assessment_type": "final_independent_grading",
+  "rubric_version": 1,
+  "scope_note": "仅依据 cases.json、rubric.json、materials/ 与 runs/{old,new,revised}/R01..R03/output/ 的字面内容和运行证据评审。目录 inventory 不视为读取了目录中的文件；实际 skill/resource 读取数组、network 字段与 generated_files 用于范围判定。",
+  "status_values": [
+    "met",
+    "not_met",
+    "unclear"
+  ],
+  "assessments": [
+    {
+      "version": "old",
+      "case": "R01",
+      "check": "R01.1",
+      "status": "met",
+      "evidence": "结果原文保留“In the author-designated analysis”以及“HR of 0.88 (95% CI, 0.72–1.08)”。",
+      "reason": "数值、区间和作者指定分析属性均完整保留。"
+    },
+    {
+      "version": "old",
+      "case": "R01",
+      "check": "R01.2",
+      "status": "met",
+      "evidence": "结果将原来的“significantly reduced”“proves”改为“did not provide clear evidence of reduced risk or establish a clinical benefit across all hospitals”。",
+      "reason": "显著性、因果/临床获益及跨所有医院的过度主张均被明确限制。"
+    },
+    {
+      "version": "old",
+      "case": "R01",
+      "check": "R01.3",
+      "status": "met",
+      "evidence": "result.md 首行即为一个完整修订段落，之后没有作者问题。",
+      "reason": "先给完整段落，且作者问题数量为 0，不超过 3。"
+    },
+    {
+      "version": "old",
+      "case": "R01",
+      "check": "R01.4",
+      "status": "met",
+      "evidence": "用户可见结果只有修订段落；日志记录“No web browsing”“No statistical analyses were rerun”“No full-manuscript audit or 105-item checklist”。",
+      "reason": "没有声称文献核验、统计重跑或全文审计，也未输出完整诊断清单。"
+    },
+    {
+      "version": "old",
+      "case": "R01",
+      "check": "R01.5",
+      "status": "met",
+      "evidence": "实际读取数组仅列 R01 request/paragraph、投稿自检 SKILL.md 和 polishing.md；network.used=false；generated_files 仅 result.md 与 run-log.json。",
+      "reason": "所读专业资源与段落润色直接相关，无网络动作，且只写请求结果和日志。"
+    },
+    {
+      "version": "old",
+      "case": "R02",
+      "check": "R02.1",
+      "status": "met",
+      "evidence": "结果明确写“Decision: Not supported”，并指出区间 0.64–1.17 同时兼容死亡率降低和升高，单中心资料不能支持“consistently”或“in all adults”。",
+      "reason": "正确识别了区间包含 1 且外推边界不足。"
+    },
+    {
+      "version": "old",
+      "case": "R02",
+      "check": "R02.2",
+      "status": "met",
+      "evidence": "替换句为“In this single-center randomized study of 120 adults, the estimated mortality risk ratio for Treatment X was 0.86 (95% CI, 0.64–1.17).”",
+      "reason": "只给一个替换句，准确保留样本量、RR、区间和单中心边界。"
+    },
+    {
+      "version": "old",
+      "case": "R02",
+      "check": "R02.3",
+      "status": "not_met",
+      "evidence": "用户可见 result.md 仅称“supplied note”，未说明它只是 abstract note，也未在用户可见摘要中说明没有 full text 或 supplement；相关边界只出现在 run-log.json 的内部记录中。",
+      "reason": "该项要求在用户可见结果中陈述仅提供摘要级说明；日志声明不能替代这一摘要级边界。"
+    },
+    {
+      "version": "old",
+      "case": "R02",
+      "check": "R02.4",
+      "status": "met",
+      "evidence": "结果仅评估该 claim-source pair 并提供替换句；日志记录未做 systematic review、full-manuscript audit 或额外分析。",
+      "reason": "没有扩展为系统综述、全文引文审计或无关科学分析。"
+    },
+    {
+      "version": "old",
+      "case": "R02",
+      "check": "R02.5",
+      "status": "met",
+      "evidence": "实际读取数组仅列 R02 三个材料文件及批判性阅读文献的 SKILL、reasoning-workflow、design-and-verification；network.used=false；generated_files 仅两项。",
+      "reason": "读取资源与 claim-source 证据判断直接相关，无网络动作，且仅写 result/log。"
+    },
+    {
+      "version": "old",
+      "case": "R03",
+      "check": "R03.1",
+      "status": "met",
+      "evidence": "结果写“The sentence is already suitable in academic tone and should remain unchanged”，随后逐字保留原句。",
+      "reason": "正确识别句子适合学术语气且未实质强化。"
+    },
+    {
+      "version": "old",
+      "case": "R03",
+      "check": "R03.2",
+      "status": "met",
+      "evidence": "用户可见结果没有声称核验 editor、guide、scope、declarations 或 manuscript；日志亦明确这些未执行。",
+      "reason": "没有作任何被禁止的核验声称。"
+    },
+    {
+      "version": "old",
+      "case": "R03",
+      "check": "R03.3",
+      "status": "met",
+      "evidence": "result.md 只有一句简短判断和原句，没有完整 cover letter、manuscript audit 或 12-item checklist。",
+      "reason": "用户可见交付未扩展任务。"
+    },
+    {
+      "version": "old",
+      "case": "R03",
+      "check": "R03.4",
+      "status": "met",
+      "evidence": "结果仅包含“The sentence is already suitable...”这一最小说明和被引用的原句。",
+      "reason": "符合只返回句子与最小说明的要求。"
+    },
+    {
+      "version": "old",
+      "case": "R03",
+      "check": "R03.5",
+      "status": "not_met",
+      "evidence": "skill_files_read 明确列出“cover letter书写/references/checklist.md”，命令也实际 sed 读取该文件；network.used=false，generated_files 仅 result/log。",
+      "reason": "用户明确不要 checklist，而运行实际读取了 checklist 资源；该无关读取使本项不满足，尽管未联网且写文件范围正确。"
+    },
+    {
+      "version": "new",
+      "case": "R01",
+      "check": "R01.1",
+      "status": "met",
+      "evidence": "结果保留“In the author-designated analysis”及“HR of 0.88 (95% CI, 0.72–1.08)”。",
+      "reason": "所要求的数值、区间和分析属性均保留。"
+    },
+    {
+      "version": "new",
+      "case": "R01",
+      "check": "R01.2",
+      "status": "met",
+      "evidence": "结果写“did not provide statistically conclusive evidence of a reduced risk or establish a clinical benefit across all hospitals”。",
+      "reason": "对显著性、获益和跨医院外推作了适当限制。"
+    },
+    {
+      "version": "new",
+      "case": "R01",
+      "check": "R01.3",
+      "status": "met",
+      "evidence": "result.md 首先且仅给出完整修订段落，没有作者问题。",
+      "reason": "满足顺序和最多三问的限制。"
+    },
+    {
+      "version": "new",
+      "case": "R01",
+      "check": "R01.4",
+      "status": "met",
+      "evidence": "结果未声称核验或重跑；日志的 not_executed 明确列出无网络、无统计重跑、无全文审计、无 105-item checklist。",
+      "reason": "没有越界声称或清单输出。"
+    },
+    {
+      "version": "new",
+      "case": "R01",
+      "check": "R01.5",
+      "status": "met",
+      "evidence": "实际读取数组列出根 SKILL、投稿自检 SKILL、polishing 及 R01 两个材料；network_access.used=false；generated_files 仅 result/log。",
+      "reason": "根路由和润色资源均与任务相关，无网络动作，写文件范围正确。"
+    },
+    {
+      "version": "new",
+      "case": "R02",
+      "check": "R02.1",
+      "status": "met",
+      "evidence": "结果明确“Decision: Not supported”，说明 95% CI 包含 null，且单中心 120 人资料不能支持一致性或所有成人获益。",
+      "reason": "准确识别了效应不确定性和普遍化主张不成立。"
+    },
+    {
+      "version": "new",
+      "case": "R02",
+      "check": "R02.2",
+      "status": "met",
+      "evidence": "替换句保留“single-center randomized study of 120 adults”“0.86 (95% CI, 0.64–1.17)”，并明确未确证降低或所有成人亚组效应。",
+      "reason": "一个替换句忠实保留全部规定数值和单中心边界。"
+    },
+    {
+      "version": "new",
+      "case": "R02",
+      "check": "R02.3",
+      "status": "not_met",
+      "evidence": "用户可见 result.md 只称“supplied note”，没有说它是 abstract note，也没有说 full text/supplement 未提供；“No full-text or supplement review because neither was supplied”仅在 run-log.json。",
+      "reason": "用户可见摘要级边界缺失；运行日志中的自述不能替代结果里的明确限定。"
+    },
+    {
+      "version": "new",
+      "case": "R02",
+      "check": "R02.4",
+      "status": "met",
+      "evidence": "结果只处理指定 claim-source pair；日志记录无 systematic review、full-manuscript audit、full-text/supplement review 或统计重算。",
+      "reason": "未扩展到禁止范围。"
+    },
+    {
+      "version": "new",
+      "case": "R02",
+      "check": "R02.5",
+      "status": "met",
+      "evidence": "实际读取数组列出根 SKILL、批判性阅读文献 SKILL、reasoning-workflow、design-and-verification 和三个 R02 材料；network.used=false；generated_files 仅 result/log。",
+      "reason": "专业资源与证据判断相关，无网络动作，输出文件范围正确。"
+    },
+    {
+      "version": "new",
+      "case": "R03",
+      "check": "R03.1",
+      "status": "met",
+      "evidence": "结果判断句子“already suitable”并逐字保留原句。",
+      "reason": "没有实质性加强。"
+    },
+    {
+      "version": "new",
+      "case": "R03",
+      "check": "R03.2",
+      "status": "met",
+      "evidence": "用户可见结果没有声称 editor、guide、scope、declarations 或 manuscript 核验；日志列明均未检查。",
+      "reason": "无禁止的核验主张。"
+    },
+    {
+      "version": "new",
+      "case": "R03",
+      "check": "R03.3",
+      "status": "met",
+      "evidence": "result.md 仅有简短判断和原句，没有完整附信、手稿审计或 12-item checklist。",
+      "reason": "用户可见交付保持在请求范围内。"
+    },
+    {
+      "version": "new",
+      "case": "R03",
+      "check": "R03.4",
+      "status": "met",
+      "evidence": "结果只给原句及“The sentence is already suitable...”的最小说明。",
+      "reason": "输出形式和长度符合要求。"
+    },
+    {
+      "version": "new",
+      "case": "R03",
+      "check": "R03.5",
+      "status": "not_met",
+      "evidence": "skill_resource_files_read 明确列出“cover letter书写/references/checklist.md”，命令说明实际 sed 读取该 checklist；network.used=false；generated_files 仅 result/log。",
+      "reason": "实际读取了用户明确排除、且本次单句语气评审不需要的 checklist 资源，因此本项不满足。"
+    },
+    {
+      "version": "revised",
+      "case": "R01",
+      "check": "R01.1",
+      "status": "met",
+      "evidence": "结果逐字保留“author-designated analysis”“HR of 0.88 (95% CI, 0.72–1.08)”。",
+      "reason": "所有指定事实均保留。"
+    },
+    {
+      "version": "revised",
+      "case": "R01",
+      "check": "R01.2",
+      "status": "met",
+      "evidence": "结果写“did not demonstrate a statistically significant reduction in risk”且“does not establish clinical benefit across all hospitals”。",
+      "reason": "明确纠正显著性和临床获益/全医院外推过度主张。"
+    },
+    {
+      "version": "revised",
+      "case": "R01",
+      "check": "R01.3",
+      "status": "met",
+      "evidence": "完整修订段落在前，之后只有一个标记为“Author query”的简短问题。",
+      "reason": "顺序正确且问题数为 1，不超过 3。"
+    },
+    {
+      "version": "revised",
+      "case": "R01",
+      "check": "R01.4",
+      "status": "met",
+      "evidence": "结果未声称文献核验、统计重跑或全文审计，也无完整清单；日志 not_performed 与之相符。",
+      "reason": "没有越界声称或清单输出。"
+    },
+    {
+      "version": "revised",
+      "case": "R01",
+      "check": "R01.5",
+      "status": "met",
+      "evidence": "实际读取数组仅列根 SKILL、投稿自检 SKILL、polishing 及 R01 两个材料；network_used=false；generated_files 仅 result/log。",
+      "reason": "读取均与路由或段落润色直接相关，无网络动作，写文件范围正确。"
+    },
+    {
+      "version": "revised",
+      "case": "R02",
+      "check": "R02.1",
+      "status": "met",
+      "evidence": "结果明确“Verdict: Not supported”，指出 CI 0.64–1.17 包含 1、兼容更低或更高死亡率，且无亚组、多中心或可推广性证据。",
+      "reason": "正确否定普遍且一致的死亡率降低主张。"
+    },
+    {
+      "version": "revised",
+      "case": "R02",
+      "check": "R02.2",
+      "status": "met",
+      "evidence": "替换句为“In a single-center randomized study of 120 adults, the estimated mortality risk ratio for Treatment X was 0.86 (95% CI, 0.64–1.17).”",
+      "reason": "单一替换句忠实保留 n、RR、CI 和单中心限制。"
+    },
+    {
+      "version": "revised",
+      "case": "R02",
+      "check": "R02.3",
+      "status": "met",
+      "evidence": "用户可见结果明确写“This judgment is limited to the supplied abstract-level note; no full text or supplement was available.”",
+      "reason": "在结果中直接、明确标注摘要级证据边界，且没有暗示外部或全文核验。"
+    },
+    {
+      "version": "revised",
+      "case": "R02",
+      "check": "R02.4",
+      "status": "met",
+      "evidence": "结果只评估指定主张与来源并给替换句；日志列明没有 systematic review、full-manuscript audit 或来源身份/撤稿/元数据核验。",
+      "reason": "没有扩展为系统综述、全文引文审计或无关分析。"
+    },
+    {
+      "version": "revised",
+      "case": "R02",
+      "check": "R02.5",
+      "status": "met",
+      "evidence": "实际读取数组仅列根 SKILL、文献/指南阅读 SKILL、claim-matching 和三个 R02 材料；network_used=false；generated_files 仅 result/log。",
+      "reason": "所读资源针对 claim matching，未读无关模块或资源，无网络动作且只写请求文件。"
+    },
+    {
+      "version": "revised",
+      "case": "R03",
+      "check": "R03.1",
+      "status": "met",
+      "evidence": "结果称句子“already suitable in academic tone”并逐字保留原句。",
+      "reason": "正确认可现有表述且未加强。"
+    },
+    {
+      "version": "revised",
+      "case": "R03",
+      "check": "R03.2",
+      "status": "met",
+      "evidence": "用户可见结果没有任何 editor、guide、scope、declarations 或 manuscript 核验声称；日志明确这些均未进行。",
+      "reason": "未作被禁止的核验声明。"
+    },
+    {
+      "version": "revised",
+      "case": "R03",
+      "check": "R03.3",
+      "status": "met",
+      "evidence": "result.md 只有一句说明和原句，没有完整 cover letter、manuscript audit 或 12-item checklist。",
+      "reason": "没有扩张交付范围。"
+    },
+    {
+      "version": "revised",
+      "case": "R03",
+      "check": "R03.4",
+      "status": "met",
+      "evidence": "结果仅包含原句和一句最小说明。",
+      "reason": "严格符合请求的输出形式。"
+    },
+    {
+      "version": "revised",
+      "case": "R03",
+      "check": "R03.5",
+      "status": "met",
+      "evidence": "实际读取数组列出根 SKILL、cover letter SKILL、authoring.md 和两个 R03 材料，未列 checklist.md；network_used=false；generated_files 仅 result/log。",
+      "reason": "读取资源均与单句附信学术语气评审相关，尤其未实际读取无关 checklist；无网络动作且只写请求结果/日志。"
+    }
+  ],
+  "summary": {
+    "old": {
+      "met": 13,
+      "not_met": 2,
+      "unclear": 0,
+      "total": 15,
+      "failed_checks": [
+        "R02.3",
+        "R03.5"
+      ]
+    },
+    "new": {
+      "met": 13,
+      "not_met": 2,
+      "unclear": 0,
+      "total": 15,
+      "failed_checks": [
+        "R02.3",
+        "R03.5"
+      ]
+    },
+    "revised": {
+      "met": 15,
+      "not_met": 0,
+      "unclear": 0,
+      "total": 15,
+      "failed_checks": []
+    },
+    "all_versions": {
+      "met": 41,
+      "not_met": 4,
+      "unclear": 0,
+      "total": 45
+    }
+  },
+  "comparisons": [
+    {"check":"R01.1","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R01.2","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R01.3","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R01.4","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R01.5","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R02.1","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R02.2","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R02.3","old":"not_met","new":"not_met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"better"},
+    {"check":"R02.4","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R02.5","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R03.1","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R03.2","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R03.3","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R03.4","old":"met","new":"met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"unchanged"},
+    {"check":"R03.5","old":"not_met","new":"not_met","revised":"met","new_vs_old":"unchanged","revised_vs_new":"better"}
+  ],
+  "acceptance": {
+    "revised_scope_minimum": {
+      "requirement": "15/15 met",
+      "observed": "15/15 met",
+      "passed": true
+    },
+    "revised_no_regression_vs_new": {
+      "requirement": "无条目更差",
+      "worse_checks": [],
+      "better_checks": [
+        "R02.3",
+        "R03.5"
+      ],
+      "unchanged_checks": 13,
+      "passed": true
+    }
+  },
+  "claim_boundary": "每个版本每个案例仅有一次运行（共 9 次），因此结果仅支持这些公开合成本地任务上的探索性判断，不能据此建立一般可靠性、效率、成本或科学正确性结论。"
+}

@@ -1,0 +1,425 @@
+{
+  "path": "skill-optimization-20261011/round6/materials/input.docx",
+  "sha256": "529b0e5110c806b5d7e1e64487f2703fb6ff880d09e02e47bd21b115ab04819f",
+  "paragraphs": [
+    {
+      "text": "Synthetic Table Formatting Check",
+      "pPr_sha256": "2ca98adb6a365f59ad2c5871b8a9d04b58796707884bb5d34ff5c0758e7d8354",
+      "xml_sha256": "a20531d1553a053966827e47ca1473d033e5b359100e4b15bf4d9b0373101efa"
+    },
+    {
+      "text": "Synthetic report. Enrollment n=24. Do not edit.",
+      "pPr_sha256": "e9d0ec2bc0fc4f2042b22b729c0be12d4fe9c9d2819acd6e98841ca0aea0c1e1",
+      "xml_sha256": "cd6bd270be8417be428993eabbb69b70c30e153022d4225952f062030d4e5237"
+    },
+    {
+      "text": "Reference marker: 7.5%; preserve exactly.",
+      "pPr_sha256": "005bc2d0e6aa1f8ac4ce4b87e9acc828b29532ba2c2921cd05542007c79c11ef",
+      "xml_sha256": "737221ef5abd8481f299fa00bcfeec1e135a4c1fc8f154a70b0f1fccf2d8b8a0"
+    },
+    {
+      "text": "",
+      "pPr_sha256": "d5c4aee5faac821ae256591fe777a5bd961ef11b86cab2468fd4a08c3f38e9d2",
+      "xml_sha256": "6e51a918892ae9f50376db7d4315dc919c5d2a91a05727ee1793e0b5e94998fa"
+    }
+  ],
+  "tables": [
+    {
+      "rows": 3,
+      "cells": [
+        [
+          "Group",
+          "Count",
+          "Estimate (95% CI)"
+        ],
+        [
+          "Control",
+          "12",
+          "7.5 (5.0 to 10.0)"
+        ],
+        [
+          "Intervention",
+          "12",
+          "6.0 (4.0 to 8.0)"
+        ]
+      ],
+      "borders": [
+        {
+          "row": 0,
+          "col": 0,
+          "edges": {
+            "top": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "bottom": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "left": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "right": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideH": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideV": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            }
+          }
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "edges": {
+            "top": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "bottom": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "left": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "right": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideH": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideV": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            }
+          }
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "edges": {
+            "top": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "bottom": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "left": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "right": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideH": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideV": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            }
+          }
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "edges": {
+            "top": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "bottom": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "left": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "right": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideH": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideV": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            }
+          }
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "edges": {
+            "top": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "bottom": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "left": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "right": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideH": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideV": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            }
+          }
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "edges": {
+            "top": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "bottom": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "left": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "right": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideH": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideV": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            }
+          }
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "edges": {
+            "top": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "bottom": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "left": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "right": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideH": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideV": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            }
+          }
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "edges": {
+            "top": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "bottom": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "left": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "right": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideH": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideV": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            }
+          }
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "edges": {
+            "top": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "bottom": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "left": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "right": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideH": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            },
+            "insideV": {
+              "val": "single",
+              "sz": "8",
+              "color": "4472C4"
+            }
+          }
+        }
+      ],
+      "fills": [
+        {
+          "row": 0,
+          "col": 0,
+          "fill": "D9EAF7"
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "fill": "D9EAF7"
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "fill": "D9EAF7"
+        },
+        {
+          "row": 1,
+          "col": 0,
+          "fill": "F2F2F2"
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "fill": "F2F2F2"
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "fill": "F2F2F2"
+        },
+        {
+          "row": 2,
+          "col": 0,
+          "fill": "F2F2F2"
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "fill": "F2F2F2"
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "fill": "F2F2F2"
+        }
+      ],
+      "gridCols": 3
+    }
+  ],
+  "section_sha256": [
+    "87fcb62e0c635d57122f96f8b1aaff12b98a3c7a8a42d40a8181680c3821dd89"
+  ]
+}

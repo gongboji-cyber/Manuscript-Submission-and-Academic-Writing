@@ -1,0 +1,56 @@
+{
+  "verified_at": "2026-10-11",
+  "scope": "Mechanical replay and artifact-integrity checks; not independent scientific validation",
+  "checks": [
+    {
+      "check": "baseline local snapshot matches main Git blob identities",
+      "result": "104/104 passed"
+    },
+    {
+      "check": "candidate inherited module files match main Git blob identities",
+      "result": "104/104 passed"
+    },
+    {
+      "check": "candidate workflow-entry files match the Round 3 candidate snapshot",
+      "result": "6/6 passed"
+    },
+    {
+      "check": "skill-creator quick validation",
+      "command": "python3 -B /root/.codex/skills/oai/skill-creator/scripts/quick_validate.py skill-optimization-20261011/candidate",
+      "exit_code": 0,
+      "result": "Skill is valid!"
+    },
+    {
+      "check": "old U02 normal and boundary replay match saved JSON",
+      "result": "passed"
+    },
+    {
+      "check": "new U02 normal and boundary replay match saved JSON",
+      "result": "passed"
+    },
+    {
+      "check": "old and new duplicate-ID negative fixture",
+      "result": "both rejected with exit code 2 and exact error ERROR: line 3: duplicate ID DUP"
+    },
+    {
+      "check": "skill snapshots unchanged after executor runs",
+      "result": "old 104/104; new 110/110"
+    },
+    {
+      "check": "input copies identical across variants",
+      "result": "passed"
+    },
+    {
+      "check": "rubric and machine-readable logs parse",
+      "result": "passed"
+    }
+  ],
+  "telemetry": {
+    "old_executor_self_reported_interval_seconds": 238,
+    "new_executor_self_reported_interval_seconds": 216,
+    "timing_comparability": "not established; independent agents and scheduling overhead prevent an efficiency comparison",
+    "token_usage": null,
+    "cost": null,
+    "complete_tool_event_export": null
+  }
+}

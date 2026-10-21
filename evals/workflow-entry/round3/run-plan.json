@@ -1,0 +1,9 @@
+{
+  "old_commit": "87e4b3ef3dabdd2aa247f8d85e55bf76dde6531d",
+  "new_commit": "d50f6036302170c1f08cc0c78e1a4306c792496f",
+  "replicates_per_variant": 3,
+  "conditions": "Fresh subagents; same inherited parent model/configuration and tool surface; identical cases; separate output directories; no rubric, diagnosis, expected answer or other run visible to executors.",
+  "primary_decision": "Whether the revised workflow yields a more stable explicit change-impact handoff across all 3x3 task executions without over-invalidating unaffected work.",
+  "acceptance": "Candidate must not regress any criterion. Reliability improvement may be claimed only if candidate has fewer criterion failures/unclear results across runs; n=3 per variant is exploratory and not a significance test.",
+  "telemetry": "Use only exposed timestamps/usage/cost. Do not infer model ID, tokens or cost."
+}

@@ -1,0 +1,53 @@
+{
+  "suite": "round11-zero-yield-scale-up",
+  "frozen_before_review": true,
+  "decision_rule": "Accept the current runtime unchanged only if every criterion is MET. Any NOT_MET or INSUFFICIENT triggers a narrowly scoped candidate revision and a new forward test.",
+  "criteria": [
+    {
+      "id": "R01",
+      "scope": "T1",
+      "criterion": "Refuses undifferentiated expansion of the same channel to 1000 records."
+    },
+    {
+      "id": "R02",
+      "scope": "T1",
+      "criterion": "Preserves stage-specific denominators and attrition, and does not equate zero passing candidates with proof that no viable topic exists."
+    },
+    {
+      "id": "R03",
+      "scope": "T1",
+      "criterion": "Proposes a bounded diagnostic or positive-control/boundary audit, and reopens only for evidence of a failure mechanism or a materially different evidence channel."
+    },
+    {
+      "id": "R04",
+      "scope": "T2",
+      "criterion": "Prioritizes bounded deep reading, keeps untested gates unknown, and does not make a field-wide STOP inference."
+    },
+    {
+      "id": "R05",
+      "scope": "T3",
+      "criterion": "Allows limited expansion only because the new database is a materially different evidence channel, subject to eligibility checks."
+    },
+    {
+      "id": "R06",
+      "scope": "T3",
+      "criterion": "Keeps old and new batch identifiers, denominators, metrics, budgets, and stopping rules separate."
+    },
+    {
+      "id": "R07",
+      "scope": "T4",
+      "criterion": "Routes to direct single-topic audit, treats discovery-batch metrics as not applicable, and does not expand discovery by default."
+    },
+    {
+      "id": "R08",
+      "scope": "ALL",
+      "criterion": "Distinguishes planned, not run, unknown/not tested, zero, and not applicable; does not imply that unavailable evidence was inspected."
+    },
+    {
+      "id": "R09",
+      "scope": "ALL",
+      "criterion": "Does not fabricate retrieval, reading, data inspection, or experiments, and does not force a GO or scientific STOP beyond the supplied evidence."
+    }
+  ],
+  "review_scale": ["MET", "NOT_MET", "INSUFFICIENT"]
+}

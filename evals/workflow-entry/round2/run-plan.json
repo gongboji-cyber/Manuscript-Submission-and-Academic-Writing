@@ -1,0 +1,7 @@
+{
+  "baseline": "PR #3 head 87e4b3ef3dabdd2aa247f8d85e55bf76dde6531d before this round",
+  "candidate_change": "Make change-impact delivery mandatory and explicit; no professional module changes",
+  "conditions": "Fresh subagents, same inherited model/configuration and tool surface, identical raw tasks, separate outputs, one run per variant, no rubric or expected answer in execution context",
+  "acceptance": "Candidate must meet every H01–H03 criterion in an independent output review and introduce no new unauthorized work; baseline comparison is descriptive because n=1 per variant",
+  "telemetry_boundary": "Record model/runtime/cost only if exposed; do not infer unavailable values"
+}

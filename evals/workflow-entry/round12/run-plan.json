@@ -1,0 +1,10 @@
+{
+  "suite": "round12-patent-handoff-readiness",
+  "suspected_defect": "The workflow may conflate a draft that can be sent for professional review with a package that has satisfied the skill's own technical readiness conditions, or may collapse per-reference verification states into one batch label.",
+  "baseline_commit": "f4a7fb87b9d72daea43b419202ba63bf5d5c8be8",
+  "candidate": "working tree with one delivery-state paragraph added to 专利书写规范/SKILL.md",
+  "conditions": "One fresh executor per version received the current root coordinator, patent skill, and the same four raw tasks, but not the defect statement, rubric, prior output, or expected dispositions.",
+  "review": "Two fresh blind reviewers per version received only that version's output and the frozen rubric.",
+  "completion_condition": "All frozen criteria are MET without adding a legal conclusion, scientific rule, or patentability threshold.",
+  "stop_rule": "If the candidate passes, do not extend the change beyond handoff/readiness semantics. Reopen only after observed state loss, an ambiguous review-only/ready label, or a change to the patent audit template's readiness conditions."
+}

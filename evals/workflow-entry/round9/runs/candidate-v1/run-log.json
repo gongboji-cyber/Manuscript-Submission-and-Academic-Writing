@@ -1,0 +1,72 @@
+{
+  "run_type": "isolated_skill_forward_test",
+  "candidate_snapshot": "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1",
+  "prompt_source": "/tmp/msaw-round9-o2uxIJ/repo/evals/workflow-entry/round9/cases.json",
+  "batch_started_at_utc": "2026-10-12T04:38:49.799501524Z",
+  "batch_ended_at_utc": "2026-10-12T04:40:21.362274064Z",
+  "files_read": [
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/SKILL.md",
+    "/tmp/msaw-round9-o2uxIJ/repo/evals/workflow-entry/round9/cases.json (id and prompt fields only)",
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/research-topic-selection/SKILL.md",
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/research-topic-selection/references/feasibility-and-decision-gates.md",
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/research-topic-selection/references/novelty-and-problem-choice.md",
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/方法学/统计学指导/SKILL.md",
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/方法学/统计学指导/assets/analysis-plan-template.md",
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/方法学/统计学指导/references/statistical-methods.md",
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/论文投稿前的自检/SKILL.md",
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/论文投稿前的自检/references/polishing.md",
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/references/workflow-handoff.md",
+    "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v1/assets/workflow-record-template.md"
+  ],
+  "cases": [
+    {
+      "id": "T01-topic-triage",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "timing_note": "Case-level boundaries were not separately observable because the four responses were composed in one batch.",
+      "status": "completed"
+    },
+    {
+      "id": "T02-approved-sap",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "timing_note": "Case-level boundaries were not separately observable because the four responses were composed in one batch.",
+      "status": "completed"
+    },
+    {
+      "id": "T03-rejection-reframe",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "timing_note": "Case-level boundaries were not separately observable because the four responses were composed in one batch.",
+      "status": "completed"
+    },
+    {
+      "id": "T04-local-polish",
+      "started_at_utc": null,
+      "ended_at_utc": null,
+      "timing_note": "Case-level boundaries were not separately observable because the four responses were composed in one batch.",
+      "status": "completed"
+    }
+  ],
+  "tools": [
+    "functions.exec with exec_command",
+    "functions.exec with apply_patch"
+  ],
+  "model": {
+    "runtime": "Codex agent",
+    "model_family": "GPT-5",
+    "exact_build_identifier": null,
+    "note": "The runtime instructions identify the agent as GPT-5-based; no exact build identifier was exposed."
+  },
+  "network_used": false,
+  "grading_files_read": false,
+  "repository_modified": false,
+  "outputs": [
+    "/tmp/msaw-round9-o2uxIJ/runner-candidate/outputs.md",
+    "/tmp/msaw-round9-o2uxIJ/runner-candidate/run-log.json"
+  ],
+  "unfinished_items": [
+    "No requested simulation output is unfinished.",
+    "Literature retrieval, data checks, experiments, and statistical runs were intentionally not performed and remain unverified in the simulated user scenarios."
+  ]
+}

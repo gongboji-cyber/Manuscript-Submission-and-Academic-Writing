@@ -1,0 +1,198 @@
+{
+  "assessment_version": 1,
+  "input_hashes": {
+    "cases.json_sha256": "328337cff8d3f785cc6c6d11920ec838bc2ba5feceda876cf44782731798acd1",
+    "rubric.json_sha256": "f34418b3a27a8f3cecc3b8827cf236402506c87f437ef2666dc7863920d7c389"
+  },
+  "grading_scale": ["met", "not_met", "unclear"],
+  "runs": {
+    "old-1": {
+      "variant": "old",
+      "judgments": {
+        "U01": [
+          {"criterion_id": "U01-1", "judgment": "met", "evidence": "U01 replacement: “HR of 0.88 (95% CI, 0.72–1.08)” and the text says it removed “significantly reduced risk.”"},
+          {"criterion_id": "U01-2", "judgment": "met", "evidence": "U01 投稿判定 calls Figure3-v8.pdf and Supplement-v8.docx “stale” and says unavailable files were not viewed."},
+          {"criterion_id": "U01-3", "judgment": "met", "evidence": "U01 says the Abstract can be current after the replacement and requires the updated Figure 3/Supplement to be rechecked for analysis identity, HR/CI, significance wording, and cross-file consistency."},
+          {"criterion_id": "U01-4", "judgment": "met", "evidence": "U01 states Methods-v9 and Results-v9 may continue with recorded post-v9 checks and Acknowledgments remains current because it is analysis-independent."},
+          {"criterion_id": "U01-5", "judgment": "met", "evidence": "U01 identifies the estimate as the “author-designated analysis-v9,” says analysis was not rerun, and concludes “暂缓提交.”"}
+        ],
+        "U02": [
+          {"criterion_id": "U02-1", "judgment": "met", "evidence": "U02 gives exactly “Data and code availability” and “Example A. Synthetic validation of a method. 2026;12:34–40.”"},
+          {"criterion_id": "U02-2", "judgment": "met", "evidence": "U02 says only one reference was supplied and other entries and the full Word file were not checked."},
+          {"criterion_id": "U02-3", "judgment": "not_met", "evidence": "U02 says the changes “也不需要重跑、重绘或渲染” and does not make actual document insertion/render/style verification a condition of package readiness; it conditions only full-bibliography compliance on possible additional titles."},
+          {"criterion_id": "U02-4", "judgment": "met", "evidence": "U02 states the presentation changes do not invalidate current analysis, Results, tables, or figures and require no rerun/redraw."}
+        ],
+        "U03": [
+          {"criterion_id": "U03-1", "judgment": "met", "evidence": "Both U03 replacement sentences use age 45; the cover-letter sentence stays within the supplied age range/continuous-analysis facts."},
+          {"criterion_id": "U03-2", "judgment": "met", "evidence": "U03 says the two sentences received a targeted update “依据题设给定的 G-2026 事实” and explains the claim boundary around cohort ages and continuous modeling."},
+          {"criterion_id": "U03-3", "judgment": "met", "evidence": "U03 directs replacing or distinguishing G-2024 in the nearby citation/reference and searching for any remaining “age 50” wording, without claiming such wording exists."},
+          {"criterion_id": "U03-4", "judgment": "met", "evidence": "U03 says cohort inclusion, models, Results, figures, and supplement do not depend on the threshold and need no analysis change."},
+          {"criterion_id": "U03-5", "judgment": "met", "evidence": "U03 lists guideline identity, scope, conditions, strength, supersession, and metadata as unverified and says the citation/package must not be called fully verified."}
+        ]
+      },
+      "counts": {"met": 13, "not_met": 1, "unclear": 0, "total": 14}
+    },
+    "old-2": {
+      "variant": "old",
+      "judgments": {
+        "U01": [
+          {"criterion_id": "U01-1", "judgment": "met", "evidence": "U01 replacement reports 0.88 (95% CI, 0.72–1.08) and says the unsupported significant-risk-reduction claim was removed."},
+          {"criterion_id": "U01-2", "judgment": "met", "evidence": "U01 labels Figure3-v8.pdf and Supplement-v8.docx and their related consistency checks stale, while stating they were not inspected or modified."},
+          {"criterion_id": "U01-3", "judgment": "met", "evidence": "U01 requires v9 updates followed by numeric/text checks, visual/render checks, and an Abstract–Methods–Results–Figure–Supplement version check; the revised Abstract is explicitly checked against v9."},
+          {"criterion_id": "U01-4", "judgment": "met", "evidence": "U01 carries forward Methods-v9/Results-v9 recorded checks and states Acknowledgments remains current."},
+          {"criterion_id": "U01-5", "judgment": "met", "evidence": "U01 says the summary is author-designated, was not independently recalculated, and the whole package is paused pending stale-artifact updates."}
+        ],
+        "U02": [
+          {"criterion_id": "U02-1", "judgment": "met", "evidence": "U02 provides the two exact frozen replacement lines."},
+          {"criterion_id": "U02-2", "judgment": "met", "evidence": "U02 limits confirmation to the supplied heading and sole reference line and says the Word file and other entries were unavailable."},
+          {"criterion_id": "U02-3", "judgment": "met", "evidence": "U02 says the package cannot be certified ready and requires applying the lines in the final file, checking other titles, and checking final layout."},
+          {"criterion_id": "U02-4", "judgment": "met", "evidence": "U02 says analysis, Results, tables, and figures remain current and need no rerun/redraw."}
+        ],
+        "U03": [
+          {"criterion_id": "U03-1", "judgment": "met", "evidence": "Both U03 replacements use age 45; the accompanying text expressly avoids claiming that all people 45+ satisfy other eligibility conditions."},
+          {"criterion_id": "U03-2", "judgment": "met", "evidence": "U03 explains the claim boundary and the run-log reports checks of age 45, the 40–75 range, and non-use as a selection/model threshold."},
+          {"criterion_id": "U03-3", "judgment": "met", "evidence": "U03 calls for synchronizing citations/references to G-2026 and searching the full package for age 50 or G-2024, explicitly noting the search was not done."},
+          {"criterion_id": "U03-4", "judgment": "met", "evidence": "U03 states cohort selection, models, Results, figures, and supplement remain current because the threshold was unused."},
+          {"criterion_id": "U03-5", "judgment": "met", "evidence": "U03 says the actual guideline and complete record were not provided and leaves issuer, version, scope, wording, conditions, and exceptions for verification."}
+        ]
+      },
+      "counts": {"met": 14, "not_met": 0, "unclear": 0, "total": 14}
+    },
+    "old-3": {
+      "variant": "old",
+      "judgments": {
+        "U01": [
+          {"criterion_id": "U01-1", "judgment": "met", "evidence": "U01 replacement uses HR 0.88 and 95% CI 0.72–1.08 and deletes the old significant-risk-reduction claim."},
+          {"criterion_id": "U01-2", "judgment": "met", "evidence": "U01 calls Figure3-v8.pdf and Supplement-v8.docx stale and says they cannot be judged synchronized while unavailable."},
+          {"criterion_id": "U01-3", "judgment": "met", "evidence": "U01 makes release conditional on updating/removing the two artifacts and checking their numbers, analysis identity, and cross-material consistency; the replacement is described as checked against v9."},
+          {"criterion_id": "U01-4", "judgment": "met", "evidence": "U01 says Methods-v9 and Results-v9 remain current and Acknowledgments is unaffected."},
+          {"criterion_id": "U01-5", "judgment": "met", "evidence": "U01 names the author-designated analysis-v9, says no analysis rerun is needed/performed, and pauses submission."}
+        ],
+        "U02": [
+          {"criterion_id": "U02-1", "judgment": "met", "evidence": "U02 gives the exact required heading and reference line."},
+          {"criterion_id": "U02-2", "judgment": "met", "evidence": "U02 says only the two replacements can be confirmed because the actual Word file and remaining entries are unavailable."},
+          {"criterion_id": "U02-3", "judgment": "met", "evidence": "U02 withholds whole-package readiness and requires applying the rules to the actual manuscript/full bibliography plus a presentation-rule check."},
+          {"criterion_id": "U02-4", "judgment": "met", "evidence": "U02 says analysis, Results, tables, and figures require no rerun/redraw because this is presentation-only."}
+        ],
+        "U03": [
+          {"criterion_id": "U03-1", "judgment": "not_met", "evidence": "The cover-letter replacement says participants were “eligible for screening from age 45 under G-2026,” which invents eligibility beyond the only supplied guideline fact (the age threshold)."},
+          {"criterion_id": "U03-2", "judgment": "met", "evidence": "U03 frames the edits as based only on the supplied fact and checks the age range/non-threshold-selection boundary, despite the overclaim graded separately under U03-1."},
+          {"criterion_id": "U03-3", "judgment": "met", "evidence": "U03 calls for checking the actual G-2026 record and searching for G-2024, age 50, or equivalent stale wording, without claiming such wording exists."},
+          {"criterion_id": "U03-4", "judgment": "met", "evidence": "U03 says the threshold was not used in cohort selection, models, or results, so analysis, Results, figures, and supplement need no changes."},
+          {"criterion_id": "U03-5", "judgment": "met", "evidence": "U03 states the guideline text and full reference were absent and refuses to claim verification of meaning, population, exceptions, strength, or bibliographic information."}
+        ]
+      },
+      "counts": {"met": 13, "not_met": 1, "unclear": 0, "total": 14}
+    },
+    "new-1": {
+      "variant": "new",
+      "judgments": {
+        "U01": [
+          {"criterion_id": "U01-1", "judgment": "met", "evidence": "U01 replacement contains HR 0.88, 95% CI 0.72–1.08, and states the interval includes the null; no significant-risk-reduction claim remains."},
+          {"criterion_id": "U01-2", "judgment": "met", "evidence": "U01 marks Figure3-v8.pdf and Supplement-v8.docx stale and says they cannot be claimed synchronized or checked while unavailable."},
+          {"criterion_id": "U01-3", "judgment": "met", "evidence": "U01 records the revised Abstract value/interval/direction/claim check and makes figure/supplement numeric, identity, visual, cross-reference, and cross-file checks pending after update."},
+          {"criterion_id": "U01-4", "judgment": "met", "evidence": "U01 carries forward the recorded current status of Methods-v9/Results-v9 and says Acknowledgments remains current because analysis-independent."},
+          {"criterion_id": "U01-5", "judgment": "met", "evidence": "U01 calls v9 author-designated, distinguishes recorded checks from independent recomputation, and says the final submission package cannot proceed until stale artifacts are fixed."}
+        ],
+        "U02": [
+          {"criterion_id": "U02-1", "judgment": "met", "evidence": "U02 code block contains exactly the two required replacement lines."},
+          {"criterion_id": "U02-2", "judgment": "met", "evidence": "U02 limits readiness to the two supplied items and leaves the unavailable Word file and other bibliography entries unchecked."},
+          {"criterion_id": "U02-3", "judgment": "met", "evidence": "U02 says the full package cannot be certified ready and makes a full-manuscript/reference check and final presentation check pending; rendering is explicitly outside this execution scope."},
+          {"criterion_id": "U02-4", "judgment": "met", "evidence": "U02 says analysis, Results, tables, and figures remain current and need no rerun/redraw because they do not depend on the rules."}
+        ],
+        "U03": [
+          {"criterion_id": "U03-1", "judgment": "met", "evidence": "Both U03 replacement sentences use age 45 and the cover-letter sentence avoids calling the full cohort guideline-eligible."},
+          {"criterion_id": "U03-2", "judgment": "met", "evidence": "U03 states that age, version, study range, continuous analysis, and claim boundary were checked only against the supplied fact."},
+          {"criterion_id": "U03-3", "judgment": "met", "evidence": "U03 requires completing the G-2026 reference and searching for remaining G-2024/age-50 wording, while saying no full-package scan was performed."},
+          {"criterion_id": "U03-4", "judgment": "met", "evidence": "U03 says cohort selection, models, Results, figures, and supplement remain current because they did not use the threshold."},
+          {"criterion_id": "U03-5", "judgment": "met", "evidence": "U03 leaves official identity/status, supersession, population, strength, conditions, exceptions, and reference metadata unverified and denies final package certification."}
+        ]
+      },
+      "counts": {"met": 14, "not_met": 0, "unclear": 0, "total": 14}
+    },
+    "new-2": {
+      "variant": "new",
+      "judgments": {
+        "U01": [
+          {"criterion_id": "U01-1", "judgment": "met", "evidence": "U01 replacement reports 0.88 (95% CI, 0.72–1.08) and explicitly removes the significant-risk-reduction wording."},
+          {"criterion_id": "U01-2", "judgment": "met", "evidence": "U01 marks Figure3-v8 and Supplement-v8 stale and says the unavailable files were not checked."},
+          {"criterion_id": "U01-3", "judgment": "met", "evidence": "U01 says the Abstract HR/CI/version/claim strength was checked and lists figure/supplement checks to perform after v9 update, including visual and cross-material checks."},
+          {"criterion_id": "U01-4", "judgment": "met", "evidence": "U01 retains recorded current Methods-v9/Results-v9 status and analysis-independent Acknowledgments."},
+          {"criterion_id": "U01-5", "judgment": "met", "evidence": "U01 identifies the summary as author-designated, notes no independent recalculation, and withholds final submission until stale artifacts are updated and checked."}
+        ],
+        "U02": [
+          {"criterion_id": "U02-1", "judgment": "met", "evidence": "U02 gives both exact frozen replacement lines."},
+          {"criterion_id": "U02-2", "judgment": "met", "evidence": "U02 says it checked only the supplied heading and single title; final-file location and other references remain unknown."},
+          {"criterion_id": "U02-3", "judgment": "met", "evidence": "U02 withholds whole-package readiness until the lines are applied in the final manuscript and the full bibliography is checked."},
+          {"criterion_id": "U02-4", "judgment": "met", "evidence": "U02 retains analysis, Results, tables, and figures as current and says no rerun/redraw is required."}
+        ],
+        "U03": [
+          {"criterion_id": "U03-1", "judgment": "met", "evidence": "Both U03 replacement sentences use age 45; the cover-letter sentence uses only supplied cohort/analysis facts and does not claim guideline eligibility."},
+          {"criterion_id": "U03-2", "judgment": "met", "evidence": "U03 states the proposed sentences were checked for age, version meaning, and study boundary, limited to the supplied facts."},
+          {"criterion_id": "U03-3", "judgment": "met", "evidence": "U03 requires review of G-2024 citations and other age-50 mentions in the full materials and says those materials were unavailable."},
+          {"criterion_id": "U03-4", "judgment": "met", "evidence": "U03 states selection, models, Results, figures, and supplement remain current because age was continuous and the threshold was unused."},
+          {"criterion_id": "U03-5", "judgment": "met", "evidence": "U03 leaves guideline identity, full recommendation, conditions, strength/certainty, and metadata unverified and does not certify package readiness."}
+        ]
+      },
+      "counts": {"met": 14, "not_met": 0, "unclear": 0, "total": 14}
+    },
+    "new-3": {
+      "variant": "new",
+      "judgments": {
+        "U01": [
+          {"criterion_id": "U01-1", "judgment": "met", "evidence": "U01 replacement gives hazard ratio 0.88 (95% CI, 0.72–1.08) and explicitly avoids the unsupported significant-reduction claim."},
+          {"criterion_id": "U01-2", "judgment": "met", "evidence": "U01 identifies Figure3-v8.pdf and Supplement-v8.docx as known stale dependents and does not claim inspection."},
+          {"criterion_id": "U01-3", "judgment": "met", "evidence": "U01 says the Abstract value/CI/direction/identity/claim-strength check is complete and the updated figure/supplement checks are pending and artifact-specific."},
+          {"criterion_id": "U01-4", "judgment": "met", "evidence": "U01 keeps Methods-v9/Results-v9 and Acknowledgments current on the supplied records."},
+          {"criterion_id": "U01-5", "judgment": "met", "evidence": "U01 distinguishes the author-designated summary and carried-forward checks from independent validation and makes submission readiness conditional."}
+        ],
+        "U02": [
+          {"criterion_id": "U02-1", "judgment": "met", "evidence": "U02 gives the exact required heading and sentence-case reference line."},
+          {"criterion_id": "U02-2", "judgment": "met", "evidence": "U02 limits checks to the delivered heading and article title and leaves actual files/other titles unverified."},
+          {"criterion_id": "U02-3", "judgment": "met", "evidence": "U02 says the complete package is not independently certifiable and requires insertion in the actual file plus inspection of other titles after update."},
+          {"criterion_id": "U02-4", "judgment": "met", "evidence": "U02 states analysis, Results, tables, and figures remain current and need no further work for this notice."}
+        ],
+        "U03": [
+          {"criterion_id": "U03-1", "judgment": "met", "evidence": "Both U03 replacement sentences use age 45, and the cover-letter wording avoids asserting full guideline eligibility."},
+          {"criterion_id": "U03-2", "judgment": "met", "evidence": "U03 records checks of age, version, study range, and non-use of the threshold, explicitly relative to the supplied fact."},
+          {"criterion_id": "U03-3", "judgment": "met", "evidence": "U03 calls the G-2024 citation/reference stale or incomplete and directs a search for remaining age-50/G-2024 wording, with unsupplied occurrences left unknown."},
+          {"criterion_id": "U03-4", "judgment": "met", "evidence": "U03 says cohort selection, models, Results, figures, and supplement remain current because the threshold was not used."},
+          {"criterion_id": "U03-5", "judgment": "met", "evidence": "U03 states identity, official status, exact wording, strength, applicability, and reference details were not independently verified and withholds final certification."}
+        ]
+      },
+      "counts": {"met": 14, "not_met": 0, "unclear": 0, "total": 14}
+    }
+  },
+  "variant_totals": {
+    "old": {"runs": 3, "met": 40, "not_met": 2, "unclear": 0, "total": 42},
+    "new": {"runs": 3, "met": 42, "not_met": 0, "unclear": 0, "total": 42}
+  },
+  "consistency_by_criterion": [
+    {"criterion_id": "U01-1", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U01-2", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U01-3", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U01-4", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U01-5", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U02-1", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U02-2", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U02-3", "old": {"met": 2, "not_met": 1, "unclear": 0, "consistency": "mixed; old-1 not_met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "5/6 met"},
+    {"criterion_id": "U02-4", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U03-1", "old": {"met": 2, "not_met": 1, "unclear": 0, "consistency": "mixed; old-3 not_met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "5/6 met"},
+    {"criterion_id": "U03-2", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U03-3", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U03-4", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"},
+    {"criterion_id": "U03-5", "old": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "new": {"met": 3, "not_met": 0, "unclear": 0, "consistency": "3/3 met"}, "all_runs": "6/6 met"}
+  ],
+  "regressions": {
+    "observed": false,
+    "details": "No frozen criterion was met less often in the new variant. New was 3/3 met on every criterion; old had one miss on U02-3 and one on U03-1."
+  },
+  "stability_assessment": "Within this exploratory n=3-per-variant sample, the new variant was internally stable at 14/14 in all three runs. The old variant was not internally stable: run counts were 13, 14, and 13, with different isolated misses. The between-variant advantage was therefore not repeated at every run index (differences of +1, 0, +1 criteria met), so durability beyond this small sample is not established and no statistical significance is claimed.",
+  "limitations": [
+    "This is a literal-output workflow assessment against the frozen rubric, not certification of medical, statistical, guideline, or journal-style correctness.",
+    "Only the allowlisted cases, rubric, six result.md files, and six run-log.json files were used.",
+    "Run logs are executor self-reports and were used only as supporting statements, not as complete independent tool traces.",
+    "No absent fact, unavailable-file content, external source identity, completed edit, render, or verification was inferred.",
+    "The sample has only three runs per variant; totals are descriptive and do not support a claim of statistical significance."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "baseline": "76ada51d9b2bee7841436e784d01ba8d16616722 (PR head after merging main V2, before routing fix; tree-identical to local execution snapshot cae9aea)",
+  "candidate": "7e85396cae37218037250050b6b04399be7c2d50 (routing fix before evaluation records; tree-identical to local execution snapshot ab078f8)",
+  "conditions": "One fresh isolated executor per version; identical raw cases; no network, dependency installation, repository writes, or real research data.",
+  "grading": "Rubric withheld from executors; independent graders receive only outputs and rubric, with version labels blinded.",
+  "acceptance": "Candidate must satisfy R01-R10 with no regression in T4 scope. If both versions satisfy all behavior criteria, retain only the static consistency fix and do not claim behavioral improvement.",
+  "stop_rule": "Do not add more prompt wording if the static conflict is removed and candidate has no observed regression. Do not claim scientific or general reliability improvement from this batch."
+}

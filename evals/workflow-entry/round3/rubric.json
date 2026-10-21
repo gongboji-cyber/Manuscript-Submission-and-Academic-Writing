@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "frozen_before_runs": true,
+  "scope": "Three unseen public synthetic tasks, each run three times per variant; workflow reliability only, not scientific validity",
+  "checks": {
+    "U01": [
+      "Abstract uses v9 HR 0.88 and 95% CI 0.72 to 1.08 without a significant-risk-reduction claim",
+      "Figure3-v8 and Supplement-v8 are stale/awaiting update without invented inspection",
+      "Post-update checks are tied to the new figure and supplement; Abstract numeric/version/claim check is reported on the revised sentence",
+      "Methods-v9 and Results-v9 remain current and may continue; analysis-independent Acknowledgments is not invalidated",
+      "Author-designated summary is distinguished from independent recomputation and package readiness remains conditional on stale artifacts"
+    ],
+    "U02": [
+      "Exact replacements are “Data and code availability” and “Example A. Synthetic validation of a method. 2026;12:34–40.”",
+      "Only the supplied line and heading are claimed checked; no whole bibliography or Word readiness is invented",
+      "The unavailable document remains awaiting actual edit/render/style verification before package-ready status",
+      "Analysis, Results, tables and figures remain current and may continue without rerun/redraw because the rule is presentation-only"
+    ],
+    "U03": [
+      "Both supplied sentences use age 45 and do not invent unsupplied guideline details",
+      "Revised sentences receive a bounded fact/version/claim check against the supplied G-2026 fact",
+      "The G-2024 reference/version and other threshold-dependent wording are identified for targeted review without claiming they exist",
+      "Cohort selection, models, Results, figures and supplement remain current and may continue because they do not use the threshold",
+      "Actual guideline identity/full wording and complete reference record remain unverified; no medical recommendation is certified"
+    ]
+  },
+  "grading": "Each criterion is met/not_met/unclear from literal output evidence. Report per-run and all-run stability; no weighted score, statistical significance, guessed cost or scientific-validity certification."
+}
