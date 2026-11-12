@@ -13,10 +13,10 @@ from typing import Dict, List
 
 
 VALUE_RE = re.compile(
-    r"(?:1[,.\s]?400|1400|2[,.\s]?500|2500|1[,.\s]?620|1620)\s*(?:cases?)?(?:\s+of\s+pneumonia)?\s*(?:per\s*100[,\s]?000|/100[,\s]?000)",
+    r"(?:123|456|789)\s*(?:events?)?(?:\s+of\s+condition\s+a)?\s*(?:per\s*10[,\s]?000|/10[,\s]?000)",
     re.IGNORECASE,
 )
-SOURCE_RE = re.compile(r"UNICEF|Wahl|data\.unicef\.org|S2214-109X", re.IGNORECASE)
+SOURCE_RE = re.compile(r"Agency\s+X|Study\s+Alpha|example\.org/source", re.IGNORECASE)
 
 
 def extract_contexts(text: str, width: int = 500) -> List[str]:
@@ -39,13 +39,13 @@ def provisional_dimensions(passages: List[str]) -> List[str]:
     has_incidence = re.search(r"\bincidence\b", text) is not None
     has_prevalence = re.search(r"\bprevalence\b|\bprevalent\b", text) is not None
     has_pretest = re.search(r"pre[- ]?test\s+probability|prior\s+probability|pretest", text) is not None
-    has_infant = re.search(r"\binfant\b|\bneonatal\b|\bneonate\b", text) is not None
+    has_subgroup = re.search(r"\bsubgroup\s+beta\b|\bgroup\s+beta\b", text) is not None
 
     if has_pretest:
         codes.add("D5")
     if has_prevalence and not has_incidence:
         codes.add("D1")
-    if has_infant and re.search(r"(?:1[,.\s]?400|1400)", text):
+    if has_subgroup and re.search(r"(?:123)", text):
         codes.add("D2")
     if not codes and has_incidence:
         codes.add("P0")

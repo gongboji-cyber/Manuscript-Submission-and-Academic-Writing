@@ -28,7 +28,7 @@ def test_build_registry_flags_prior_known_and_status():
     records = json.loads(_fixture_path("sample_records.json").read_text(encoding="utf-8"))
     rows = build_registry_rows(records, prior_known_dois={"10.0000/syn1"})
     by_title = {r["title"]: r for r in rows}
-    assert by_title["Synthetic preserved childhood pneumonia citation"]["status"] == "PRIOR_KNOWN_CASE"
+    assert by_title["Synthetic preserved Condition A incidence citation"]["status"] == "PRIOR_KNOWN_CASE"
     assert by_title["Synthetic irrelevant record"]["status"] == "EXCLUDED_NOT_RELEVANT"
 
 
@@ -46,7 +46,7 @@ def test_extract_builds_evidence_rows():
     with open(registry_tmp, "w", newline="", encoding="utf-8") as handle:
         writer = csv.writer(handle)
         writer.writerow(["record_id", "doi", "title"])
-        writer.writerow(["SYN1", "10.0000/syn1", "Synthetic preserved childhood pneumonia citation"])
+        writer.writerow(["SYN1", "10.0000/syn1", "Synthetic preserved Condition A incidence citation"])
     rows = build_evidence_rows(_fixture_path("passages"), registry_tmp)
     assert any(r["record_id"] == "SYN1" and r["provisional_dimensions"] == "P0" for r in rows)
     registry_tmp.unlink()

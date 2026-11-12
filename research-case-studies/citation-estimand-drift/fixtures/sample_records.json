@@ -2,9 +2,9 @@
   {
     "openalex_id": "https://openalex.org/SYN1",
     "doi": "https://doi.org/10.0000/syn1",
-    "title": "Synthetic preserved childhood pneumonia citation",
+    "title": "Synthetic preserved Condition A incidence citation",
     "publication_year": 2025,
-    "abstract_inverted_index": {"Global": [0], "incidence": [1], "is": [2], "1400": [3], "cases": [4], "per": [5], "100000": [6], "children": [7], "UNICEF": [8]},
+    "abstract_inverted_index": {"Annual": [0], "incidence": [1], "was": [2], "123": [3], "events": [4], "per": [5], "10000": [6], "residents": [7], "Agency": [8], "X": [9]},
     "_frame": "B:value"
   },
   {
@@ -13,6 +13,6 @@
     "title": "Synthetic irrelevant record",
     "publication_year": 2024,
     "abstract_inverted_index": null,
-    "_frame": "A:cites_wahl"
+    "_frame": "A:cites_study_alpha"
   }
 ]

@@ -68,8 +68,8 @@ def deduplicate(records: Iterable[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]]
 
 def target_value_regex() -> re.Pattern[str]:
     return re.compile(
-        r"(?:1[,.\s]?400|1400|2[,.\s]?500|2500|1[,.\s]?620|1620)"
-        r"\s*(?:cases?)?(?:\s+of\s+pneumonia)?\s*(?:per\s*100[,\s]?000|/100[,\s]?000)",
+        r"(?:123|456|789)"
+        r"\s*(?:events?)?(?:\s+of\s+condition\s+a)?\s*(?:per\s*10[,\s]?000|/10[,\s]?000)",
         re.IGNORECASE,
     )
 
@@ -78,7 +78,7 @@ def classify_metadata(record: Dict[str, Any], abstract: str) -> str:
     text = ((record.get("title") or "") + " " + abstract).lower()
     if target_value_regex().search(text):
         return "CANDIDATE_NUMERICAL_REUSE"
-    if "pneumonia" in text or "unicef" in text:
+    if "condition a" in text or "agency x" in text:
         return "CANDIDATE_RELEVANT"
     return "EXCLUDED_NOT_RELEVANT"
 
