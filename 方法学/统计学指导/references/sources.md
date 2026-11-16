@@ -1,6 +1,6 @@
 # 来源台账与使用边界
 
-核查日期：2026-10-09。链接以官方组织、作者入口、原始论文或其 PubMed/作者存档为准。以下不代表逐页读完所有教材或通过正式工具认证。记录实际可读范围；正文受限时只采用可核实信息。指南的完整表格和评分规则请阅读原版，不从本模块反向重建。实际研究须再次核查更新及适用扩展。
+核查日期：2026-10-09；2026-10-20 新增软件随机性来源（其余条目未在本次统一重查）。链接以官方组织、作者入口、原始论文或其 PubMed/作者存档为准。以下不代表逐页读完所有教材或通过正式工具认证。记录实际可读范围；正文受限时只采用可核实信息。指南的完整表格和评分规则请阅读原版，不从本模块反向重建。实际研究须再次核查更新及适用扩展。
 
 ## 教材、声明与指南
 
@@ -36,6 +36,13 @@
 | S15 | Sterne JAC et al. *Multiple imputation for missing data in epidemiological and clinical research: potential and pitfalls*. BMJ 2009;338:b2393；doi:10.1136/bmj.b2393；[PubMed](https://pubmed.ncbi.nlm.nih.gov/19564179/) | 元数据/摘要；PMC正文访问被拦截 | 作为MI专门进一步阅读；本模块缺失实施原则同时由S02支撑，不把摘要当MI全教程 |
 | S16 | Van Calster B et al. *Calibration: the Achilles heel of predictive analytics*. BMC Med 2019;17:230；doi:10.1186/s12916-019-1466-7；[PubMed](https://pubmed.ncbi.nlm.nih.gov/31842878/) | 原始作者/期刊摘要检索文本，强调校准评价 | 不能凭该综述证明某算法或本数据已校准；具体方法读全文 |
 | S17 | Morris TP, White IR, Crowther MJ. *Using simulation studies to evaluate statistical methods*. Stat Med 2019;38:2074–2102；doi:10.1002/sim.8086；[作者预印本全文](https://arxiv.org/html/1712.03198v3) | 作者公开全文ADEMP/表现指标/Monte Carlo不确定性相关部分；PMC访问受限 | 仿真情景内的方法评估，不是方法普遍优越证明；参数与失败机制必须具体化 |
+
+## 软件文档与公开代码案例
+
+| ID | 来源/固定版本 | 实际读取范围 | 采用规则、边界与重查条件 |
+|---|---|---|---|
+| S20 | scikit-learn 1.9.1 官方文档：[Common pitfalls §12.3](https://scikit-learn.org/stable/common_pitfalls.html#controlling-randomness)、[RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) | 读取 `random_state` 对重复 `fit` 的整数/`None` 行为及随机森林自助抽样、特征抽样的随机性说明；本地最小试验实际版本为1.8.0 | 支持“逐层传递种子并做相同输入重复检查”；不支持“固定种子即可证明方法有效或跨环境逐位一致”。升级 scikit-learn、并行后端或文档稳定版后重查 |
+| C01 | MolPAL 官方 `publication` 标签，commit [`fc0b913`](https://github.com/coleygroup/molpal/tree/fc0b913c87200e28bfc2e36028f559961f2f438b) | 读取 `molpal/models/sklmodels.py` 第23–48行：`RFModel` 构造 `RandomForestRegressor` 时未传 `random_state` | 只作为公开失败模式和最小反事实的触发案例，不证明论文数值错误或其他软件同样失控；审计其他 MolPAL 版本或模型时重新读取对应 commit |
 
 ## 开源 skill：借鉴结构，独立实现
 
