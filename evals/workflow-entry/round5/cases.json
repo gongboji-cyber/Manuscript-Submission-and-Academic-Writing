@@ -1,0 +1,17 @@
+{
+  "suite": "module-routing-and-scope-control",
+  "cases": [
+    {
+      "id": "R01",
+      "request_file": "materials/R01/request.md"
+    },
+    {
+      "id": "R02",
+      "request_file": "materials/R02/request.md"
+    },
+    {
+      "id": "R03",
+      "request_file": "materials/R03/request.md"
+    }
+  ]
+}

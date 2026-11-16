@@ -1,0 +1,70 @@
+{
+  "evaluated_at": "2026-10-16",
+  "repository": "gongboji-cyber/Manuscript-Submission-and-Academic-Writing",
+  "baseline": {
+    "pr_head": "f6b3eba0cf0f19081c62b393ef6931d5768acd24",
+    "main_head": "b896589083ebcfedad7ad0b73e926497d0c050a5",
+    "status_against_main": "diverged",
+    "behind_by": 1,
+    "old_flow_blob": "5a663bc8f752df92ecbef32faf7f6d93d977f373",
+    "snapshot_main": "304fea0148c630d2c36b5dcb07551e12bd1c2c00"
+  },
+  "candidate": {
+    "merge_commit": "b40fbaccabfdbd6085a765c93e03819f87d55699",
+    "parents": [
+      "f6b3eba0cf0f19081c62b393ef6931d5768acd24",
+      "b896589083ebcfedad7ad0b73e926497d0c050a5"
+    ],
+    "status_against_main": "ahead",
+    "ahead_by": 21,
+    "behind_by": 0,
+    "runtime_skill_count": 13,
+    "frontmatter_names_present": 13,
+    "unique_frontmatter_names": 13,
+    "missing_relative_links": 0,
+    "root_research_flow_diagrams_mentions": 1,
+    "flow_blob": "ff4896ea8fe3e518d0fe8fe2e73c84f63336ccae",
+    "main_flow_blob": "ff4896ea8fe3e518d0fe8fe2e73c84f63336ccae"
+  },
+  "core_eight": [
+    {
+      "path": "论文投稿前的自检/SKILL.md",
+      "sha": "8d309c6847c51f1ea4881b5d7e4354479d16dddd"
+    },
+    {
+      "path": "cover letter书写/SKILL.md",
+      "sha": "ff179bbbcd1f8f374b5119c4ff9d98540da32edb"
+    },
+    {
+      "path": "Word文档格式/SKILL.md",
+      "sha": "072b7dbf4a0b3a260527361a53d01d9016e3994e"
+    },
+    {
+      "path": "补充材料书写skill/SKILL.md",
+      "sha": "e6583cc96838918f8cf3674a8bcb783092fbb7ac"
+    },
+    {
+      "path": "批判性阅读文献/SKILL.md",
+      "sha": "6bab959d420ad9c4466220dce127bbf1a21bf083"
+    },
+    {
+      "path": "科研统计学作图/SKILL.md",
+      "sha": "a991b2cb833d1d31d26d5d46eb12c257f84c2ee7"
+    },
+    {
+      "path": "方法学/统计学指导/SKILL.md",
+      "sha": "0f53911257a8df353e3e9141c17bdd713a85bc36"
+    },
+    {
+      "path": "文献/指南阅读板块/SKILL.md",
+      "sha": "fe31f610eccda005e950215594b646c9e6dc5fcd"
+    }
+  ],
+  "limitations": [
+    "static verification only",
+    "no model behavior run",
+    "no diagram render or visual QA",
+    "no scientific or legal correctness certification",
+    "no comparable token, cost, latency or end-to-end time"
+  ]
+}

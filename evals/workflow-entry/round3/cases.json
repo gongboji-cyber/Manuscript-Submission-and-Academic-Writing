@@ -1,0 +1,17 @@
+{
+  "scope": "Public synthetic tasks; no real manuscript, patient information, journal rule or medical recommendation",
+  "tasks": [
+    {
+      "id": "U01",
+      "request": "A synthetic submission now designates analysis-v9 as current after replacing a row-level interval calculation with a patient-clustered calculation. v9 reports HR 0.88 (95% CI, 0.72 to 1.08); superseded v8 reported HR 0.70 (95% CI, 0.58 to 0.85). The current Abstract sentence is: “The intervention significantly reduced risk (HR, 0.70; 95% CI, 0.58–0.85).” Figure3-v8.pdf and Supplement-v8.docx are known to use v8 but are unavailable. Methods-v9 and Results-v9 already identify the patient-clustered calculation and the v9 estimate, and their post-v9 numerical and consistency checks are recorded complete. The Acknowledgments text is current and analysis-independent. Replace only the supplied Abstract sentence using the author-designated v9 summary and tell me whether the submission can move forward. Do not rerun analysis, inspect unavailable files, create documents or invent checks."
+    },
+    {
+      "id": "U02",
+      "request": "A synthetic journal style notice J-2026b supersedes J-2026a. It changes only two presentation rules: the heading “Data availability” must become “Data and code availability”, and article titles in references must use sentence case. The supplied heading is “Data availability”. The only supplied reference line is “Example A. SYNTHETIC VALIDATION OF A METHOD. 2026;12:34–40.” Its identity and scientific content are already verified and unchanged. The manuscript analysis, Results, tables and figures are current and do not depend on these presentation rules. Give the exact two replacement lines and say whether the package is ready. No Word file or other bibliography entries are available; do not render, rerun, redraw or create files."
+    },
+    {
+      "id": "U03",
+      "request": "For this synthetic exercise, guideline record G-2026 supersedes G-2024 and changes a screening eligibility age from 50 to 45 years. The supplied Background sentence is: “The guideline recommends screening from age 50.” The supplied cover-letter sentence is: “Our study addresses the population eligible for screening from age 50.” The study itself enrolled adults aged 40–75 and analysed age continuously; no eligibility threshold was used in cohort selection, models, Results, figures or supplement, and those artifacts are recorded current. Revise only the two supplied sentences from the provided G-2026 fact and tell me what else needs attention. The actual guideline document and complete reference record are not provided; do not browse, change the analysis or create files."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "suite": "round11-zero-yield-scale-up",
+  "input_policy": "Executor receives only raw tasks; suspected defect and rubric are withheld.",
+  "cases": [
+    {
+      "id": "T1",
+      "task": "We ran 49 GEO queries and deduplicated 218 GSE records. The recorded funnel is N1=0, N2=0, N3=0. Please decide whether to expand the same process to 1000 datasets and state the minimum next step and the denominators that must be reported."
+    },
+    {
+      "id": "T2",
+      "task": "A scan found 300 titles: 280 were reviewed only at metadata level and 20 only at abstract level. No Methods, Results, or Supplement was read, and the budget is exhausted. Decide whether to keep searching, rewrite combinations, stop, or do something else. State what can and cannot be concluded."
+    },
+    {
+      "id": "T3",
+      "task": "A completed batch went from 120 leads to 35 problem clusters, 8 source-bound hypotheses, 3 L3 candidates, and 1 candidate passing G0-G4. A genuinely new public database with independent experimental labels has now appeared. Decide whether expansion is justified and how to record it."
+    },
+    {
+      "id": "T4",
+      "task": "There is one already-defined research topic, no prior discovery batch, and the author wants an audit of the nearest full text and data eligibility. Decide the task mode, whether expansion is needed, and what should be recorded."
+    }
+  ]
+}

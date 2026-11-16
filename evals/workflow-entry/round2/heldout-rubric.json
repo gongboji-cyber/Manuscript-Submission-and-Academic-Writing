@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "frozen_before_runs": true,
+  "scope": "Three public synthetic tasks testing explicit change-impact handoff; not scientific-validity certification",
+  "checks": {
+    "H01": [
+      "Revised Results uses analysis-v3, B−A −0.012 and CI −0.040 to 0.016 without superiority",
+      "Results is distinguished as text updated from author-designated summary, not independent analysis verification",
+      "Figure4-v2 and Supplement-v2 are explicitly stale/awaiting synchronization without invented inspection",
+      "Checks to repeat are tied to the updated artifacts, including Results numeric/claim check, Figure re-export plus visual QA, and Supplement consistency/cross-reference checks",
+      "Acknowledgments is explicitly unaffected/current and may continue unchanged because it does not depend on analysis-v3"
+    ],
+    "H02": [
+      "Only the supplied punctuation is changed to “2026: 12:34–40”",
+      "The updated line receives a bounded style check; no whole-bibliography completion is claimed",
+      "Analysis, scientific content and figures are explicitly unaffected and may remain current; prohibited reruns or files are not produced"
+    ],
+    "H03": [
+      "No artifact is marked stale and no completed check is repeated without a new change",
+      "Submission work may continue using v5, while workflow status is not presented as independent scientific certification",
+      "Conclusion is tied to the supplied package record and would require reassessment if a listed dependency or requirement changes"
+    ]
+  },
+  "grading": "Per-check met/not_met/unclear with literal evidence. No weighted score, inferred model cost, or scientific correctness certification. The evaluator receives outputs and rubric only after execution."
+}

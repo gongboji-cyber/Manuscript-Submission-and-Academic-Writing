@@ -1,0 +1,72 @@
+{
+  "verified_at_utc": "2026-10-11T15:06:16Z",
+  "input_sha256": "529b0e5110c806b5d7e1e64487f2703fb6ff880d09e02e47bd21b115ab04819f",
+  "runtime": {
+    "python": "3.12.14",
+    "python_docx": "1.2.0",
+    "lxml": "6.1.1",
+    "renderer": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5"
+  },
+  "runs": {
+    "old": {
+      "assigned_ref": "5cb757140c2d7e85229f9ca3d86dca2b6c125d7d",
+      "output_sha256": "ff5f3f40efab01b4d1df29fdf1a8e67a8944f1fb95fe660da6b4637c238b89f9",
+      "read_full_checklist": true,
+      "emitted_full_checklist": false,
+      "only_document_xml_changed": true,
+      "non_target_xml_equal": true,
+      "outside_table_paragraph_xml_equal": true,
+      "section_xml_equal": true,
+      "table_shape": [3, 3, 3],
+      "table_text_equal": true,
+      "merge_markers_equal": true,
+      "shading_element_count": 9,
+      "borders_all_expected": true,
+      "page_count": 1,
+      "page_png_sha256": "aa6c8172740347a5e6be00ebd9a249fc84c76abcc73b77f86063728355a9fb70"
+    },
+    "candidate": {
+      "assigned_ref": "9268e180c22e9158ff8815fc305a3c04c8a40546",
+      "output_sha256": "464214754385e566874eb20a172045ce4dc9bae74a7a815e2ccd7d8fa10b51bf",
+      "read_full_checklist": true,
+      "emitted_full_checklist": true,
+      "only_document_xml_changed": true,
+      "non_target_xml_equal": true,
+      "outside_table_paragraph_xml_equal": true,
+      "section_xml_equal": true,
+      "table_shape": [3, 3, 3],
+      "table_text_equal": true,
+      "merge_markers_equal": true,
+      "shading_element_count": 0,
+      "borders_all_expected": true,
+      "page_count": 1,
+      "page_png_sha256": "aa6c8172740347a5e6be00ebd9a249fc84c76abcc73b77f86063728355a9fb70"
+    },
+    "revised_v3": {
+      "assigned_snapshot": "round6/revised/skills after the third routing revision",
+      "skill_sha256": "547b9b6c5a8d75219f037e53a2927ace68861de4126b97f664ae020c5783c8f5",
+      "three_line_reference_sha256": "027a09eb7e503daf424f6b2f569d9b8338f86a505d0edcd0668c43969ff3ee4f",
+      "output_sha256": "e9e349f20a7aed9cdf3d7f23608636ea0a2ffdb892b36997054c0991dd8b0f2a",
+      "read_full_checklist": true,
+      "emitted_full_checklist": false,
+      "only_document_xml_changed": true,
+      "non_target_xml_equal": true,
+      "outside_table_paragraph_xml_equal": true,
+      "section_xml_equal": true,
+      "table_shape": [3, 3, 3],
+      "table_text_equal": true,
+      "merge_markers_equal": true,
+      "shading_element_count": 0,
+      "borders_all_expected": true,
+      "page_count": 1,
+      "page_png_sha256": "aa6c8172740347a5e6be00ebd9a249fc84c76abcc73b77f86063728355a9fb70"
+    }
+  },
+  "visual_review": "Parent rendered old and candidate independently, opened the full candidate page at high detail, and compared output page PNG bytes. Old, candidate, and revised-v3 output page PNG hashes are identical. The page has the complete top, header-bottom, and bottom rules, no visible grid/fill, and no clipping, overlap, missing glyphs, or unexpected page break.",
+  "measurement_limits": [
+    "One run per baseline/candidate and three successive revised attempts do not estimate general success probability.",
+    "The full internal tool event stream, model identifier, token count, and cost were not exposed; file-read evidence is executor self-report.",
+    "Identical LibreOffice page pixels do not prove identical behavior in every Word renderer.",
+    "This synthetic formatting case does not validate scientific correctness or journal compliance."
+  ]
+}

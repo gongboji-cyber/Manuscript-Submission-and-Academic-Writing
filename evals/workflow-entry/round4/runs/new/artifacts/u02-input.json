@@ -1,0 +1,17 @@
+{
+  "format": "MEDFMTX 1.2",
+  "records": [
+    {
+      "id": "A01",
+      "value": 12.5
+    },
+    {
+      "id": "B_02",
+      "value": null
+    },
+    {
+      "id": "C3",
+      "value": 88
+    }
+  ]
+}

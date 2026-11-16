@@ -1,0 +1,70 @@
+{
+  "round": 15,
+  "source_main": "304fea0148c630d2c36b5dcb07551e12bd1c2c00",
+  "merge_candidate": "98ba730727b41abcd4f906df67dba10ab88e61d6",
+  "previous_candidate": "5edbbaa160528c656d7d824395a4b71c2e63b33e",
+  "checks": [
+    {
+      "id": "V01",
+      "status": "PASS",
+      "evidence": "main advanced by exactly 2 commits; changed only supplement SKILL and new source-code supplement template"
+    },
+    {
+      "id": "V02",
+      "status": "PASS",
+      "evidence": "candidate route contains stable names write-manuscript-supplement and prepare-cn-software-copyright with explicit SCI-versus-registration separation"
+    },
+    {
+      "id": "V03",
+      "status": "PASS",
+      "evidence": "source snapshot records main@304fea0148c630d2c36b5dcb07551e12bd1c2c00 and 12 professional modules"
+    },
+    {
+      "id": "V04",
+      "status": "PASS",
+      "evidence": "upstream supplement SKILL blob e6583cc96838918f8cf3674a8bcb783092fbb7ac reused unchanged"
+    },
+    {
+      "id": "V05",
+      "status": "PASS",
+      "evidence": "upstream source-code supplement template blob fc34ef2a92e6131a291cab529444dba6a55f8a7e reused unchanged"
+    },
+    {
+      "id": "V06",
+      "status": "PASS",
+      "evidence": "merge commit has parents 5edbbaa160528c656d7d824395a4b71c2e63b33e and 304fea0148c630d2c36b5dcb07551e12bd1c2c00; branch was ahead 19 and behind 0 immediately after merge"
+    },
+    {
+      "id": "V07",
+      "status": "PASS",
+      "evidence": "runtime tree contains root plus 12 professional SKILL.md files; all 13 frontmatter names present and unique"
+    },
+    {
+      "id": "V08",
+      "status": "PASS",
+      "evidence": "0 missing relative links across the 13 runtime SKILL.md files"
+    },
+    {
+      "id": "V09",
+      "status": "PASS",
+      "evidence": "cases.json parses with 4 raw-input cases; rubric.json parses with 8 criteria"
+    },
+    {
+      "id": "V10",
+      "status": "CORRECTED",
+      "evidence": "initial recursive check counted 5 archived eval bundle SKILL.md fixtures and falsely reported duplicate runtime names; corrected check excludes evals/ and records 13 unique runtime entries"
+    },
+    {
+      "id": "V11",
+      "status": "NOT_RUN",
+      "evidence": "no independent model behavior runner available; R01-R05 remain unverified behavior cases"
+    }
+  ],
+  "candidate_blobs": {
+    "root_skill": "b08c6115fbf023694e392c382249edf428036dbf",
+    "workflow_sources": "ae49b1226b88501e886b318427611ca8457dcafa",
+    "cases": "525d6dc8e3335dda0191177a0d2f0181f5eaf5e6",
+    "rubric": "941b2e5956394e6d7060f82834b3ea8f52d65b11",
+    "evaluation": "cfa328aecd9333c93e525ad9443a8b6fb6e1e570"
+  }
+}

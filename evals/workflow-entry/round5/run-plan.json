@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-10-11T10:35:38Z",
+  "defect_under_test": "The unified entry may misroute narrow tasks or expand local editing and claim-matching requests into unrelated modules, full-manuscript audits, external searches or unnecessary checklists.",
+  "baseline_commit": "5cb757140c2d7e85229f9ca3d86dca2b6c125d7d",
+  "candidate_commit": "05ad62611ae2799a66cc1ca1fda1bc898ddc6c6e",
+  "pull_request": 3,
+  "variants": {
+    "old": "byte-exact 104-file main skill collection",
+    "new": "byte-exact 110-file current candidate runtime, excluding evaluation artifacts"
+  },
+  "snapshot_checks": {
+    "old_matches_current_main_git_blobs": "104/104",
+    "new_matches_current_candidate_runtime_git_blobs": "110/110"
+  },
+  "cases_sha256": "56b0cd4d4ec986eac9b202302ccdae8cd568a80e9cfcb7fcaf1a98899ed2a6d8",
+  "rubric_sha256": "0da8b0354fc6cec40fb3f2516a0be06100265c94abd6eba0fcd06dd468c1787e",
+  "rubric_frozen_before_launch": true,
+  "runs": "One fresh execution context for each case and variant; six total.",
+  "execution_context": "fork_turns=none; inherited same parent model/configuration; each executor sees one raw request/material directory, one skill snapshot and its own output only; no rubric, expected answer, other case or other run.",
+  "model_id": null,
+  "model_note": "Actual model identifier is not exposed; no model override is used.",
+  "restrictions": [
+    "local public synthetic materials only",
+    "no network",
+    "no dependency installation",
+    "read only assigned skill and case-material roots",
+    "write only assigned output root",
+    "record actual skill/resource reads separately from user materials"
+  ],
+  "telemetry": {
+    "token_usage": null,
+    "cost": null,
+    "comparable_runtime": null,
+    "complete_tool_event_export": null
+  },
+  "publication_boundary": "All inputs are synthetic and public. The suite tests routing and scope behavior, not scientific or editorial validity."
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "科研任务总控"
+  short_description: "按问题与证据缺口分流科研任务，管理模块交接、版本和交付边界"
+  default_prompt: "使用 $coordinate-research-workflow 分流当前研究任务，处理知识与材料缺口，并交付可追溯成果。"

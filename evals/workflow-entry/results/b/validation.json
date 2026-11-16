@@ -1,0 +1,111 @@
+{
+  "checks": [
+    {
+      "check": "CSV header and exactly 3 rows",
+      "status": "passed"
+    },
+    {
+      "check": "leading zero IDs preserved",
+      "status": "passed"
+    },
+    {
+      "check": "10 mm equals 1 cm and 25 mm equals 2.5 cm",
+      "status": "passed"
+    },
+    {
+      "check": "NA remains NA, distinct from zero",
+      "status": "passed"
+    },
+    {
+      "check": "duplicate CLI did not create output",
+      "status": "passed"
+    },
+    {
+      "check": "zero, negative, fractional, exponent and CSV quoting",
+      "status": "passed"
+    },
+    {
+      "check": "long decimal is converted without float rounding",
+      "status": "passed"
+    },
+    {
+      "check": "reject wrong version and preserve existing output",
+      "status": "passed",
+      "error": "invalid UNITROWS/1 header"
+    },
+    {
+      "check": "reject wrong column header and preserve existing output",
+      "status": "passed",
+      "error": "invalid UNITROWS/1 header"
+    },
+    {
+      "check": "reject too many columns and preserve existing output",
+      "status": "passed",
+      "error": "line 3: expected exactly two columns"
+    },
+    {
+      "check": "reject too few columns and preserve existing output",
+      "status": "passed",
+      "error": "line 3: expected exactly two columns"
+    },
+    {
+      "check": "reject blank row and preserve existing output",
+      "status": "passed",
+      "error": "line 3: expected exactly two columns"
+    },
+    {
+      "check": "reject empty ID and preserve existing output",
+      "status": "passed",
+      "error": "line 3: empty ID"
+    },
+    {
+      "check": "reject duplicate ID and preserve existing output",
+      "status": "passed",
+      "error": "line 4: duplicate ID '01'"
+    },
+    {
+      "check": "reject NaN and preserve existing output",
+      "status": "passed",
+      "error": "line 3: expected finite real or exact NA"
+    },
+    {
+      "check": "reject infinity and preserve existing output",
+      "status": "passed",
+      "error": "line 3: expected finite real or exact NA"
+    },
+    {
+      "check": "reject negative infinity and preserve existing output",
+      "status": "passed",
+      "error": "line 3: expected finite real or exact NA"
+    },
+    {
+      "check": "reject lowercase missing and preserve existing output",
+      "status": "passed",
+      "error": "line 3: expected finite real or exact NA"
+    },
+    {
+      "check": "reject padded missing and preserve existing output",
+      "status": "passed",
+      "error": "line 3: expected finite real or exact NA"
+    },
+    {
+      "check": "reject empty value and preserve existing output",
+      "status": "passed",
+      "error": "line 3: expected finite real or exact NA"
+    },
+    {
+      "check": "input overwrite forbidden",
+      "status": "passed"
+    },
+    {
+      "check": "supplied inputs unchanged during boundary checks",
+      "status": "passed"
+    }
+  ],
+  "passed": 22,
+  "source_sha256": {
+    "input.unitrows": "3b03ec62181b8185e6b10a2b03634cb8e1aded46136f5b4603201faafb722703",
+    "duplicate.unitrows": "bab46326cf25c013ddf5704fe8be465a7e483e9d2659d01d8cf64149486aeaff",
+    "format.md": "29e1408dece2d2fb8b5bb2b52de917e1ecc8af63d5a2e8b936aa8e392ea66549"
+  }
+}

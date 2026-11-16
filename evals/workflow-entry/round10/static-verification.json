@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "module_count_is_11": true,
+    "coordinator_routes_g1_support_before_decision": true,
+    "coordinator_routes_methods_before_decision": true,
+    "coordinator_blocks_writing_until_g5": true,
+    "stale_post_gate_methods_text_removed": true,
+    "topic_v2_defines_g0_g5": true,
+    "topic_v2_requires_methods_when_needed": true,
+    "topic_v2_blocks_writing_until_g5": true,
+    "source_snapshot_matches_main": true,
+    "source_snapshot_records_v2_handoffs": true,
+    "relative_links_resolve": true
+  },
+  "module_count": 11,
+  "missing_links": [],
+  "all_pass": true
+}

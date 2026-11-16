@@ -1,0 +1,37 @@
+{
+  "scope": "Structural and byte-preservation checks; no scientific or deployment certification",
+  "original_file_count": 104,
+  "checks": {
+    "original_blobs_unchanged": true,
+    "root_relative_links_resolve": true,
+    "skill_creator_validate": true,
+    "rubric_frozen_hash": true,
+    "identical_raw_case_inputs": true,
+    "tested_candidate_core_unchanged": true
+  },
+  "links": {
+    "批判性阅读文献/SKILL.md": true,
+    "文献/指南阅读板块/SKILL.md": true,
+    "方法学/统计学指导/SKILL.md": true,
+    "论文投稿前的自检/SKILL.md": true,
+    "补充材料书写skill/SKILL.md": true,
+    "科研统计学作图/SKILL.md": true,
+    "research-flow-diagrams/SKILL.md": true,
+    "cover%20letter书写/SKILL.md": true,
+    "Word文档格式/SKILL.md": true,
+    "专利书写规范/SKILL.md": true,
+    "references/unknown-situation.md": true,
+    "references/workflow-handoff.md": true,
+    "assets/workflow-record-template.md": true,
+    "references/workflow-sources.md": true
+  },
+  "validation_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/root/.codex/skills/oai/skill-creator/scripts/quick_validate.py",
+    "/workspace/scratch/46b39df32326/skill-optimization-20261011/candidate"
+  ],
+  "validation_exit_code": 0,
+  "stdout": "Skill is valid!\n",
+  "stderr": ""
+}

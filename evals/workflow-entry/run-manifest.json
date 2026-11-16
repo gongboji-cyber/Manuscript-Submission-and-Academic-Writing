@@ -1,0 +1,64 @@
+{
+  "recorded_at": "2026-10-11T04:47:14.978772+00:00",
+  "baseline_commit": "5cb757140c2d7e85229f9ca3d86dca2b6c125d7d",
+  "baseline_tree": "ae02e52bb051d6257782d1258d0123887e317676",
+  "baseline_public_files": 104,
+  "variants": {
+    "a": "byte-exact baseline skill collection",
+    "b": "same collection plus six workflow-entry files"
+  },
+  "candidate_core_sha256": {
+    "SKILL.md": "d7051ba6f35e2327209856129f301fba82fdd6a91e3c4bac4f796309723701cd",
+    "agents/openai.yaml": "77e8f5d94d7b47f4404be819409a7aba5c58c0f06303dda679239a39b9be4c00",
+    "assets/workflow-record-template.md": "85573e11be19598ffa1358d58280d64e10c10667ce5ca2266dd100f1e517eca7",
+    "references/workflow-sources.md": "83863732c6a394f0dc6e9beecb74b853733661301c023a67426769ecd1fb62b4",
+    "references/unknown-situation.md": "f7a3b569c4af4b6ae74c62bb5cf45f4808d7cab7a71f01fb225532b8aa92ef4a",
+    "references/workflow-handoff.md": "6216ecf9933a55ab214a7f7a7cd076abfb8991fde04ef02a0589d61700487f68"
+  },
+  "rubric_sha256": "9c5a47af1070fd313588be657f5b7aba2b77cd0dd7ea753b7b38de2d8260bf8c",
+  "raw_inputs_sha256": {
+    "duplicate.unitrows": "bab46326cf25c013ddf5704fe8be465a7e483e9d2659d01d8cf64149486aeaff",
+    "cases.json": "4dc7a0f827d34f46e81f1c81b8e1c23bae3c8f407c6f7e1c4f97f870b1d89991",
+    "format.md": "29e1408dece2d2fb8b5bb2b52de917e1ecc8af63d5a2e8b936aa8e392ea66549",
+    "input.unitrows": "3b03ec62181b8185e6b10a2b03634cb8e1aded46136f5b4603201faafb722703"
+  },
+  "runs_per_variant": 1,
+  "model_id": null,
+  "model_note": "Fresh subagents inherited the same parent model/configuration; actual model identifier was not exposed. No override used.",
+  "execution_context": "fork_turns=none; same four original tasks, tools and restrictions; separate directories; no rubric or other run in execution context",
+  "start_record": {
+    "started_at": "2026-10-11T04:41:17.407490+00:00",
+    "baseline_commit": "5cb757140c2d7e85229f9ca3d86dca2b6c125d7d",
+    "model_id": null,
+    "model_note": "fresh subagents inherit the same parent configuration; model identifier not exposed",
+    "conditions": "same four inputs, same tool surface, separate output directories; one run per variant; no graders passed to execution agents"
+  },
+  "launch_records": [
+    {
+      "variant": "a",
+      "skills_root": "evaluation-a/skills",
+      "materials_root": "evaluation-a/materials",
+      "output_root": "evaluation-a/output",
+      "context": "fresh subagent, fork_turns=none, no model override",
+      "prompt_summary": "依据该分支技能仓库完成materials/cases.json的四个请求；若有根SKILL.md先读；只读该运行的skills/materials与自身output；不读取父目录、其他运行或评分；不联网安装；W04实际运行代码；交result.md与自报run-log.json。",
+      "prompt_note": "Task message summarized here, not a raw conversation export; each executor received only its own skill/material/output paths and the same restrictions."
+    },
+    {
+      "variant": "b",
+      "skills_root": "evaluation-b/skills",
+      "materials_root": "evaluation-b/materials",
+      "output_root": "evaluation-b/output",
+      "context": "fresh subagent, fork_turns=none, no model override",
+      "prompt_summary": "依据该分支技能仓库完成materials/cases.json的四个请求；若有根SKILL.md先读；只读该运行的skills/materials与自身output；不读取父目录、其他运行或评分；不联网安装；W04实际运行代码；交result.md与自报run-log.json。",
+      "prompt_note": "Task message summarized here, not a raw conversation export; each executor received only its own skill/material/output paths and the same restrictions."
+    }
+  ],
+  "telemetry": {
+    "token_usage": null,
+    "cost": null,
+    "comparable_runtime": null,
+    "tool_calls": null
+  },
+  "trace_boundary": "run-log.json is executor-authored and preserved byte-for-byte, not an exported complete tool/event transcript. Replay JSON contains real parent subprocess commands/results. Exact original tool-call timeline and model usage are unavailable.",
+  "publication": "All tasks and format fixtures synthetic/public; no manuscript, patient data, private messages or credentials. Logs include only this scratch task path and runtime interpreter path. Existing personal skills remain unchanged; candidate not installed."
+}

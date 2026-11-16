@@ -1,0 +1,4 @@
+{
+  "id": "W02-regression",
+  "request": "Synthetic materials. Revise the Results sentence and cover-letter contribution to the author-designated current analysis-v2, and list other submission materials needing synchronization. Do not generate a figure, Word file, or rerun the analysis. analysis-v2 fixes the paired analysis unit and reports A−B 0.020 (95% CI, −0.005 to 0.045), with patients weighted equally. Superseded analysis-v1 reported 0.035 (95% CI, 0.010 to 0.060). Current Results: “Method A was superior to B, with a mean difference of 0.035 (95% CI, 0.010–0.060).” Current cover letter: “Our method demonstrably improves clinical outcomes over existing methods.” Figure2.pdf and Supplement-v1 are known to still use v1, but their contents are unavailable. Only the summary values and the author’s statement about the paired-unit fix are available; no source data, code, or run logs are provided."
+}

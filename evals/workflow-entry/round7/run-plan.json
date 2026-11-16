@@ -1,0 +1,39 @@
+{
+  "round": 7,
+  "baseline_ref": "8a2537768962f3bee756a1ef41ccfdc4cabf3841",
+  "candidate_base_ref": "8a2537768962f3bee756a1ef41ccfdc4cabf3841",
+  "decision": "Can an execution-layer bundle expose only the Word resources needed for the assigned scope, while preserving safe local editing, explicit stop behavior, and the complete-audit path?",
+  "cases": [
+    {
+      "id": "P01",
+      "class": "normal",
+      "assignment": "Convert the only simple data table to a three-line table and verify the rendered DOCX.",
+      "comparison": ["full-snapshot", "local-three-line bundle"]
+    },
+    {
+      "id": "P02",
+      "class": "boundary",
+      "assignment": "Handle a two-row header whose vertical merge crosses into the first body row.",
+      "comparison": ["local-three-line bundle"]
+    },
+    {
+      "id": "P03",
+      "class": "reverse/full-audit",
+      "assignment": "Perform a complete Word-format audit and return F01-F20.",
+      "comparison": ["full-audit bundle"]
+    },
+    {
+      "id": "P04",
+      "class": "not-applicable",
+      "assignment": "Reject a complete-manuscript audit requested through the local-table bundle and identify the required scope switch.",
+      "comparison": ["local-three-line bundle"]
+    }
+  ],
+  "same_conditions": "Fresh executor per case and arm; raw request, assigned synthetic input, assigned bundle/snapshot, identical document runtime and permissions. Executors do not receive rubric.json.",
+  "measurement_limits": [
+    "Model identifier, token count, price, and complete internal tool event stream may be unavailable.",
+    "One synthetic run per case cannot estimate a general success rate or scientific correctness.",
+    "Executor-declared file reads are auditable artifacts but are not an OS-level access trace.",
+    "LibreOffice rendering does not prove identical behavior in every Microsoft Word version."
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "snapshot_path": "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v2/SKILL.md",
+  "output_path": "/tmp/msaw-round9-o2uxIJ/runner-candidate-v2/outputs.md",
+  "batch_time": {
+    "recording_started_at_utc": "2026-10-12T04:44:00Z",
+    "recording_completed_at_utc": "2026-10-12T04:44:53Z",
+    "case_level_timestamps": "unavailable; prompts were processed as one batch"
+  },
+  "files_read": [
+    {
+      "path": "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v2/SKILL.md",
+      "scope": "complete"
+    },
+    {
+      "path": "/tmp/msaw-round9-o2uxIJ/repo/evals/workflow-entry/round9/cases.json",
+      "scope": "jq projection of id and prompt fields only"
+    },
+    {
+      "path": "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v2/research-topic-selection/SKILL.md",
+      "scope": "complete"
+    },
+    {
+      "path": "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v2/research-topic-selection/references/feasibility-and-decision-gates.md",
+      "scope": "complete"
+    },
+    {
+      "path": "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v2/方法学/统计学指导/SKILL.md",
+      "scope": "complete"
+    },
+    {
+      "path": "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v2/方法学/统计学指导/assets/analysis-plan-template.md",
+      "scope": "complete"
+    },
+    {
+      "path": "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v2/论文投稿前的自检/SKILL.md",
+      "scope": "complete"
+    },
+    {
+      "path": "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v2/论文投稿前的自检/references/polishing.md",
+      "scope": "complete"
+    }
+  ],
+  "files_explicitly_not_read": [
+    "rubric files",
+    "run-plan files",
+    "evaluation files",
+    "grading files"
+  ],
+  "network": {
+    "used": false
+  },
+  "tools": {
+    "used": [
+      "exec_command",
+      "apply_patch"
+    ],
+    "notes": "Shell was used only for bounded local reads, directory creation, UTC timestamps, and later validation. apply_patch created the two requested artifacts."
+  },
+  "model": {
+    "role": "Codex",
+    "family": "GPT-5",
+    "exact_deployment_identifier": "unavailable in runtime context"
+  },
+  "cases": [
+    {
+      "id": "T01-topic-triage",
+      "status": "completed as a plan and current verdict",
+      "uncompleted": [
+        "nearest-neighbor literature search",
+        "dataset, label, license, lineage, and independence verification",
+        "pilot execution"
+      ]
+    },
+    {
+      "id": "T02-approved-sap",
+      "status": "completed as a formal SAP handoff skeleton",
+      "uncompleted": [
+        "population, comparison, outcome, time horizon, and study-design-specific fields require the approved source documents",
+        "no data or code analysis was run",
+        "SAP freeze and approval remain pending"
+      ]
+    },
+    {
+      "id": "T03-rejection-reframe",
+      "status": "completed as a staged rework decision and current verdict",
+      "uncompleted": [
+        "nearest-neighbor and contrary-evidence review",
+        "independent-evidence feasibility verification",
+        "minimal pilot and any manuscript rewrite"
+      ]
+    },
+    {
+      "id": "T04-local-polish",
+      "status": "completed within the supplied sentence",
+      "uncompleted": [
+        "citation-content verification",
+        "cross-manuscript consistency review",
+        "methodological or full-manuscript audit"
+      ]
+    }
+  ],
+  "repository_modified": false,
+  "limitations": [
+    "No web retrieval, dataset access, statistical execution, experiment, or external verification was performed.",
+    "Answers are bounded to information in the four prompts and the listed candidate snapshot files."
+  ]
+}

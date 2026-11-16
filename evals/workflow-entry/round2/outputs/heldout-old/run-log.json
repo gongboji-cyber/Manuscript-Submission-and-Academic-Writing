@@ -1,0 +1,130 @@
+{
+  "run_id": "round2-baseline-handoff",
+  "scope": "Process H01-H03 from baseline/cases.json using only the designated baseline skills repository.",
+  "status": "completed",
+  "timestamps_utc": {
+    "environment_capture": "2026-10-11T05:43:11Z",
+    "completed": "2026-10-11T05:44:09Z"
+  },
+  "runtime": {
+    "cwd": "/workspace/scratch/46b39df32326",
+    "os": "Linux 6.18.44 x86_64",
+    "shell": "GNU bash 5.2.21(1)-release",
+    "available_cli_versions": {
+      "jq": "1.7",
+      "ripgrep": "15.2.0"
+    },
+    "model_id": "not recorded because no verified runtime value was available",
+    "token_usage": "not recorded because no verified runtime value was available",
+    "cost": "not recorded because no verified runtime value was available"
+  },
+  "constraints_observed": {
+    "network_used": false,
+    "software_installed": false,
+    "accounts_accessed": false,
+    "skills_or_inputs_modified": false,
+    "statistical_analysis_run": false,
+    "task_artifacts_created": false,
+    "written_files": [
+      "output/result.md",
+      "output/run-log.json"
+    ],
+    "directories_outside_round2_baseline_read": false,
+    "grading_or_eval_material_read": false,
+    "personal_skill_copy_read": false
+  },
+  "inventory_action": {
+    "command_summary": "Listed paths under round2/baseline only with rg --files to locate the root skill, cases file, and routed resources; file names were listed but unrelated file contents were not opened.",
+    "network": false
+  },
+  "content_reads_in_order": [
+    {
+      "path": "skills/SKILL.md",
+      "purpose": "Read the required root coordinator instructions first.",
+      "sha256": "d7051ba6f35e2327209856129f301fba82fdd6a91e3c4bac4f796309723701cd"
+    },
+    {
+      "path": "cases.json",
+      "purpose": "Read the three synthetic requests after the root skill.",
+      "sha256": "e19e76cbeb966fc94649db3e49cf744302a94dc9994d0327d075975c529fd48d"
+    },
+    {
+      "path": "skills/论文投稿前的自检/SKILL.md",
+      "purpose": "Apply the routed rules for local manuscript sentence revision, protected facts, and scoped verification.",
+      "sha256": "fb59f94c43820cb634a15fc761e724956408289e240dcd2a334f6471ca9e2ab9"
+    },
+    {
+      "path": "skills/references/workflow-handoff.md",
+      "purpose": "Apply version freshness, change propagation, handoff, and no-unnecessary-repeat rules.",
+      "sha256": "6216ecf9933a55ab214a7f7a7cd076abfb8991fde04ef02a0589d61700487f68"
+    },
+    {
+      "path": "skills/论文投稿前的自检/references/polishing.md",
+      "purpose": "Apply the required protected-fact and final-fidelity checks before revising supplied text.",
+      "sha256": "b8943cf8f3694c043b692a01a907ec10797f566f87a8e07364ab6be9b84cc349"
+    }
+  ],
+  "case_actions": [
+    {
+      "id": "H01",
+      "actions": [
+        "Revised only the supplied Results sentence to use analysis-v3 and a neutral quantitative claim.",
+        "Left the verified analysis-independent Acknowledgments sentence unchanged.",
+        "Marked known v2-dependent Figure4-v2.pdf and Supplement-v2.docx stale and listed artifact-specific regeneration and recheck requirements without inventing unavailable contents.",
+        "Identified independent work that may continue."
+      ],
+      "checks": [
+        "Verified comparison direction B-A.",
+        "Verified minus signs and point estimate -0.012.",
+        "Verified 95% CI endpoints -0.040 and 0.016.",
+        "Verified the interval includes zero and therefore removed the unsupported superiority wording.",
+        "Verified the Acknowledgments statement was not altered."
+      ],
+      "not_done": [
+        "No analysis run or independent numerical reproduction.",
+        "No access to, inspection of, or edits to Figure4-v2.pdf or Supplement-v2.docx.",
+        "No whole-manuscript consistency or scientific-validity audit."
+      ]
+    },
+    {
+      "id": "H02",
+      "actions": [
+        "Changed only the punctuation after publication year 2026 from semicolon to colon.",
+        "Recorded the local impact and unchanged citation/scientific fields."
+      ],
+      "checks": [
+        "Confirmed the revised substring is 2026: 12:34–40. with the supplied en dash preserved.",
+        "Confirmed no author, title, year, volume, page, identity, or scientific-content change."
+      ],
+      "not_done": [
+        "No inspection of other bibliography entries.",
+        "No analysis, figure redraw, or Word rendering."
+      ]
+    },
+    {
+      "id": "H03",
+      "actions": [
+        "Performed a status-only dependency and freshness audit from the supplied package record.",
+        "Kept all listed v5 artifacts and completed checks current; did not reopen unchanged checks.",
+        "Stated allowed continuation work and evidence boundary."
+      ],
+      "checks": [
+        "Checked the stated version identity across analysis-v5 and all four v5 artifacts.",
+        "Checked that numerical comparison, cross-material consistency, PDF export, and visual QA were stated as post-generation completions.",
+        "Checked the supplied no-change condition for source, method, requirement, and artifact."
+      ],
+      "not_done": [
+        "No artifact opened or independently inspected.",
+        "No numerical recomputation, PDF re-export, or new visual QA.",
+        "No certification of scientific validity, file integrity, full journal compliance, or submission readiness."
+      ]
+    }
+  ],
+  "completion_checks": {
+    "json_parse": "passed with jq empty",
+    "required_case_sections": "passed: H01, H02, and H03 headings present",
+    "exact_text_checks": "passed: revised H01 Results, unchanged Acknowledgments, and revised H02 line found exactly",
+    "output_file_scope": "passed: output contains exactly result.md and run-log.json",
+    "input_integrity": "passed: SHA-256 values of all content-read inputs were unchanged after writing outputs"
+  }
+}

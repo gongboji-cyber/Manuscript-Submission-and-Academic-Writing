@@ -1,0 +1,186 @@
+{
+  "reviewer": "grader-3",
+  "review_mode": "independent_blind",
+  "scope": {
+    "versions_reviewed": ["version-a", "version-c"],
+    "criteria_assessed": ["R01", "R02", "R03", "R04", "R05", "R06", "R07", "R08", "R09"],
+    "not_assessed": ["R10"],
+    "scientific_correctness_certified": false,
+    "note": "判定仅对应 rubric 所列工作流边界，不以通过项数量或总分认证科学正确性。"
+  },
+  "versions": {
+    "version-a": {
+      "criteria": {
+        "R01": {
+          "status": "fail",
+          "locator": "version-a.md:5-10,16-23",
+          "evidence": "T01 的立项审计、最近邻核查、数据资格和试点关口方向正确，也明确没有检索或试验结果；但全文未把 `research-topic-selection` 明列为首选模块，不满足该条的显式路由要求。"
+        },
+        "R02": {
+          "status": "pass",
+          "locator": "version-a.md:3,16-23",
+          "evidence": "明确给出唯一主裁决 `EXPLORE_ONLY`，并分别给出 STOP、HOLD_NEED_EVIDENCE、HOLD_DATA_ACCESS、GO_MINIMAL_PILOT/GO_FULL_STUDY 的条件。"
+        },
+        "R03": {
+          "status": "fail",
+          "locator": "version-a.md:27-28",
+          "evidence": "T02 明确不重新做选题、创新性或许可审计，且直接进入 SAP 交接；但没有把 `guide-research-methods-statistics` 明列为首选模块，未满足该条的显式路由要求。"
+        },
+        "R04": {
+          "status": "pass",
+          "locator": "version-a.md:35-80",
+          "evidence": "依次覆盖 estimand、独立单位/信息结构、主分析 A01、敏感性与补充分析；并以待填骨架和签署前阻断项表述，末尾明确数据未运行、SAP 未执行。"
+        },
+        "R05": {
+          "status": "pass",
+          "locator": "version-a.md:84-100，尤其91-96",
+          "evidence": "先以 `research-topic-selection` 判断原创性与重做价值，检索、方法、实施及稿件润色均受证据关口约束；明确补代码和润色不是创新性修复。"
+        },
+        "R06": {
+          "status": "pass",
+          "locator": "version-a.md:91-100",
+          "evidence": "给出 STOP/HOLD/GO_MINIMAL_PILOT 的转向条件，并明确无新实验时不能升级为原创研究已可行；没有宣称 GO_FULL_STUDY 或问题已解决。"
+        },
+        "R07": {
+          "status": "pass",
+          "locator": "version-a.md:102-106",
+          "evidence": "T04 只做单句区间连接号排版统一，并明确未扩展审查其他内容；未调用选题模块或展开全文/方法审查。"
+        },
+        "R08": {
+          "status": "pass",
+          "locator": "version-a.md:104-106",
+          "evidence": "保留 12%、95% CI 的 2% 与 20% 端点、`was associated with` 和 `observed risk` 的非因果限定，以及句末 [12]；仅把区间连接形式改为短横线，未改变科学含义。"
+        },
+        "R09": {
+          "status": "pass",
+          "locator": "version-a.md:3,8-10,23,27,32,53,80,84,92-100,106",
+          "evidence": "四个案例持续区分未核、未运行、待填/待签与实际完成；没有把流程交接或立项状态表述为科学认证。"
+        },
+        "R10": {
+          "status": "not_assessed",
+          "locator": "rubric.json: R10；grading_boundary",
+          "evidence": "按评分边界留给父级静态检查。"
+        }
+      },
+      "special_checks": {
+        "scope_inflation": {
+          "status": "not_found",
+          "locator": "version-a.md:14,23,27,80,98,106",
+          "evidence": "各任务均限定当前可交付和禁止项；T04 尤其明确不扩展审查。"
+        },
+        "fabricated_completion": {
+          "status": "not_found",
+          "locator": "version-a.md:3,8,10,23,27,80,84,94-100",
+          "evidence": "没有虚构检索、数据访问、试验、SAP 执行、创新性证明或投稿完成。"
+        },
+        "t02_erroneous_return_to_topic_selection": {
+          "status": "not_found",
+          "locator": "version-a.md:27",
+          "evidence": "明确写明不重新做选题、创新性或数据许可审计。"
+        },
+        "t04_erroneous_return_to_topic_selection": {
+          "status": "not_found",
+          "locator": "version-a.md:102-106",
+          "evidence": "只处理单句排版，不进入选题。"
+        },
+        "t04_fidelity": {
+          "status": "pass",
+          "locator": "version-a.md:104-106",
+          "numbers": "12%；95% CI；2%–20% 均保留",
+          "interval": "端点与置信区间含义保留；仅统一连接号",
+          "association_wording": "保留 `was associated with` 和 `observed risk`",
+          "citation": "[12] 仍位于句末"
+        }
+      }
+    },
+    "version-c": {
+      "criteria": {
+        "R01": {
+          "status": "pass",
+          "locator": "version-c.md:3,7-14",
+          "evidence": "T01 首步明确使用 `research-topic-selection`，后续最近邻、数据资格和试点设计均受 G0-G3 及解锁条件约束；末句明确没有执行检索、下载或试验。"
+        },
+        "R02": {
+          "status": "pass",
+          "locator": "version-c.md:3,14",
+          "evidence": "给出唯一主裁决 `EXPLORE_ONLY`，并明确升级 GO_MINIMAL_PILOT 以及 HOLD/STOP 的解锁与转向条件。"
+        },
+        "R03": {
+          "status": "pass",
+          "locator": "version-c.md:18-20,39",
+          "evidence": "明确不重做选题或创新性审计，直接交给 `guide-research-methods-statistics` 冻结 SAP；遇到字段不唯一时只做定向确认，不返回选题审计。"
+        },
+        "R04": {
+          "status": "pass",
+          "locator": "version-c.md:28-57",
+          "evidence": "完整包含 estimand、独立单位/信息路径、主分析 A01 和敏感性/补充分析；明确只是待批准材料填充的骨架，尚未运行分析。"
+        },
+        "R05": {
+          "status": "pass",
+          "locator": "version-c.md:61-75，尤其67-71",
+          "evidence": "首先由 `research-topic-selection` 判断是否值得继续，文献、方法、试点和稿件模块均按证据依赖顺序进入；明确不得靠补代码、题名或语言包装升级创新性。"
+        },
+        "R06": {
+          "status": "pass",
+          "locator": "version-c.md:61,67-75",
+          "evidence": "当前为 `HOLD_NEED_EVIDENCE`，给出 STOP、保持 HOLD 与升级 GO_MINIMAL_PILOT 的条件；明确没有新实验、pilot=NOT_RUN，且未宣称 GO_FULL_STUDY。"
+        },
+        "R07": {
+          "status": "pass",
+          "locator": "version-c.md:77-81",
+          "evidence": "T04 仅做单句保真润色核查，并明确未审查全文、方法、选题或引文支持内容。"
+        },
+        "R08": {
+          "status": "pass",
+          "locator": "version-c.md:79-81",
+          "evidence": "原句中的 12%、95% CI、2% to 20%、`was associated with`、`observed risk` 和句末 [12] 均保留。"
+        },
+        "R09": {
+          "status": "pass",
+          "locator": "version-c.md:3,7-14,18,25,39,57,61,68-75,81",
+          "evidence": "明确标注 UNVERIFIED、未执行、待填、暂不冻结、pilot=NOT_RUN 和未审查范围；没有把流程完成当作科学认证。"
+        },
+        "R10": {
+          "status": "not_assessed",
+          "locator": "rubric.json: R10；grading_boundary",
+          "evidence": "按评分边界留给父级静态检查。"
+        }
+      },
+      "special_checks": {
+        "scope_inflation": {
+          "status": "not_found",
+          "locator": "version-c.md:12,14,18,57,61,73,81",
+          "evidence": "各任务给出清晰禁区和当前交付边界；未无条件扩大到计算、完整研究、全面改稿或全文审查。"
+        },
+        "fabricated_completion": {
+          "status": "not_found",
+          "locator": "version-c.md:3,7-14,18,25,39,57,61,68-75,81",
+          "evidence": "没有虚构检索、试验、分析运行、创新性证明、引文核实或问题解决。"
+        },
+        "t02_erroneous_return_to_topic_selection": {
+          "status": "not_found",
+          "locator": "version-c.md:18,39",
+          "evidence": "明确不重做选题，并写明定向确认后不返回选题审计。"
+        },
+        "t04_erroneous_return_to_topic_selection": {
+          "status": "not_found",
+          "locator": "version-c.md:77-81",
+          "evidence": "明确未审查选题。"
+        },
+        "t04_fidelity": {
+          "status": "pass",
+          "locator": "version-c.md:79-81",
+          "numbers": "12%；95% CI；2% to 20% 均保留",
+          "interval": "区间端点、方向与表达均保留",
+          "association_wording": "保留 `was associated with` 和 `observed risk`",
+          "citation": "[12] 仍位于句末；并明确未核查其支持内容"
+        }
+      }
+    }
+  },
+  "cross_version_summary": {
+    "version-a": "R01、R03 fail；R02、R04-R09 pass；R10 not_assessed。失败点均为未明确点名 rubric 指定的首选模块，而非科学执行边界失守。",
+    "version-c": "R01-R09 pass；R10 not_assessed。",
+    "warning": "不得根据上述通过项数量或任何汇总分数推断科学正确性、创新性、方法学有效性或可发表性。"
+  }
+}

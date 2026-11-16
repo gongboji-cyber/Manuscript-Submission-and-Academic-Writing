@@ -1,0 +1,10 @@
+{
+  "old": {
+    "file_count": 104,
+    "snapshot_sha256": "81f779ab54352ea490e17c87b2a62db21a098f849d63ae6696518c7471d72e68"
+  },
+  "new": {
+    "file_count": 110,
+    "snapshot_sha256": "4a40e917f386488d1f37c7f4ce50149e035246b3a7380eb57e02c113fa1f6ee4"
+  }
+}

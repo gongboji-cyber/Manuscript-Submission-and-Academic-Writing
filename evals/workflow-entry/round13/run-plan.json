@@ -1,0 +1,17 @@
+{
+  "suite": "round13-acquisition-throughput",
+  "frozen_before_run": true,
+  "baseline_commit": "aba0a9a6332ca92458cf100657b5de64b554b6eb",
+  "variant": "current runtime only; no candidate patch unless a defect is reproduced",
+  "runs": 1,
+  "independent_graders": 2,
+  "execution_context": "fresh subagent; fork_turns=none; raw cases and current skill only; no rubric, diagnosis, prior evals, network, installation or real data",
+  "acceptance": "R01-R09 all MET by independent review; otherwise patch minimally and rerun under the same cases and rubric",
+  "model_id": null,
+  "telemetry": {
+    "token_usage": null,
+    "cost": null,
+    "comparable_runtime": null
+  },
+  "publication": "public synthetic inputs only; no manuscript, patient data, private messages or credentials"
+}

@@ -1,0 +1,25 @@
+{
+  "frozen_before_candidate_change": true,
+  "defect": "In Round 6, a local one-table request still caused every executor to read references/checklist.md even after three prompt-level revisions. The repository offered no enforceable way to stage a task-specific resource set.",
+  "completion_conditions": [
+    "A deterministic standard-library-only staging command produces a local-three-line bundle and a full-audit bundle from the same Word skill source.",
+    "The local bundle contains no checklist.md, no F01-F20 text, and no unrelated manuscript modules; its manifest enumerates every included file with source-relative path and SHA-256.",
+    "The full-audit bundle includes checklist.md and preserves a runnable Word audit entry point.",
+    "Staging refuses an unknown scope, a missing source, and a non-empty output directory without deleting or overwriting user files.",
+    "P01 local bundle produces a readable rendered DOCX with the correct three-line table, unchanged content/structure outside authorized table formatting, and no full-checklist read or output.",
+    "P01 full-snapshot arm reproduces the previously observed checklist over-read under the same raw task, or the result is reported as non-reproduction rather than forced.",
+    "P02 detects the cross-boundary vertical merge before mutation, creates no formatted output, and reports the exact manual-review blocker without claiming success.",
+    "P03 full-audit bundle reads checklist.md and returns one auditable status for every F01-F20 item; unavailable evidence remains unable-to-verify rather than invented.",
+    "P04 local bundle performs no DOCX mutation and directs the caller to restage the full-audit scope instead of reconstructing or inventing the missing checklist.",
+    "Any produced DOCX is structurally inspected and rendered with every page image visually reviewed; a structure-only result is not called a visual pass.",
+    "An independent reviewer receives only the frozen rubric, raw requests, execution logs, parent verification, outputs and render images, and reports per-condition met/not_met/unclear with evidence."
+  ],
+  "ratings": ["met", "not_met", "unclear"],
+  "commit_gate": "Commit the architecture candidate only if all deterministic staging tests pass, P01/P02/P03/P04 meet their case-specific conditions, and independent review is completed. If independent review is unavailable, retain the candidate locally or commit only as explicitly unverified evidence on the existing draft PR; never merge.",
+  "stop_rules": [
+    "Do not add another synonym-only prompt revision if a local bundle still accesses the full checklist.",
+    "Stop after two materially identical execution failures and report the specific blocker or change the validation path.",
+    "Do not weaken the cross-boundary merge guard to make P02 produce an output.",
+    "Do not expose checklist.md to P04 merely to satisfy the requested full audit; the correct action is scope escalation."
+  ]
+}

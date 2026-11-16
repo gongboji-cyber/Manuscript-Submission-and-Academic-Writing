@@ -1,0 +1,168 @@
+{
+  "round": 7,
+  "review_type": "independent_evidence_only",
+  "overall": "met",
+  "counts": {
+    "met": 11,
+    "not_met": 0,
+    "unclear": 0
+  },
+  "scope_statement": "Reviewed only the frozen rubric, run plan, raw requests, supplied execution logs and requested outputs, parent-verification.json, and supplied render images. Did not inspect implementation, repository, bundle contents, prior evaluations, or source snapshots.",
+  "conditions": [
+    {
+      "id": "CC01",
+      "rating": "met",
+      "condition": "A deterministic standard-library-only staging command produces a local-three-line bundle and a full-audit bundle from the same Word skill source.",
+      "evidence": [
+        "parent-verification.json states deterministic_local_manifest=true.",
+        "Two local-three-line commands and one full-audit command succeeded with the same declared --source-root.",
+        "The two local runs are summarized by the same manifest SHA-256.",
+        "The AST import audit lists argparse, hashlib, json, os, pathlib, shutil, and tempfile; it states that this exact set matches the allowed standard-library modules and standard_library_only=true."
+      ],
+      "measurement_boundary": "Standard-library-only status is established by the supplied AST import audit rather than direct implementation inspection; runtime dynamic imports or non-import external process use are not separately traced. Determinism is demonstrated for the two recorded local runs, not every environment."
+    },
+    {
+      "id": "CC02",
+      "rating": "met",
+      "condition": "The local bundle contains no checklist.md, no F01-F20 text, and no unrelated manuscript modules; its manifest enumerates every included file with source-relative path and SHA-256.",
+      "evidence": [
+        "parent-verification.json states local_excludes_checklist_and_ids=true.",
+        "The local entry list contains only SKILL.md, references/formatting.md, references/three-line-tables.md, and scripts/word_format_helpers.py.",
+        "Every entry records bundle_path, source_path, SHA-256, and byte count, and the overall manifest SHA-256 is recorded."
+      ],
+      "measurement_boundary": "Manifest completeness and hashes are accepted from parent verification rather than independently recomputed from prohibited bundle contents. The generated local SKILL.md uses the explicit provenance marker <generated:local-three-line>; all copied entries use source-relative paths."
+    },
+    {
+      "id": "CC03",
+      "rating": "met",
+      "condition": "The full-audit bundle includes checklist.md and preserves a runnable Word audit entry point.",
+      "evidence": [
+        "parent-verification.json lists references/checklist.md and states full_includes_checklist=true.",
+        "P03 ran the full-audit path successfully, logged the checklist read, and produced audit.md with F01-F20."
+      ],
+      "measurement_boundary": "Demonstrated on one supplied synthetic DOCX; general behavior on arbitrary files is not established."
+    },
+    {
+      "id": "CC04",
+      "rating": "met",
+      "condition": "Staging refuses an unknown scope, a missing source, and a non-empty output directory without deleting or overwriting user files.",
+      "evidence": [
+        "parent-verification.json records negative_cases_refused=3.",
+        "Unknown scope returned 2; missing source returned 1; non-empty output returned 1.",
+        "nonempty_sentinel_preserved=true."
+      ],
+      "measurement_boundary": "Sentinel preservation is summarized by parent verification; no full filesystem access trace is supplied."
+    },
+    {
+      "id": "CC05",
+      "rating": "met",
+      "condition": "P01 local bundle produces a readable rendered DOCX with the correct three-line table, unchanged content/structure outside authorized table formatting, and no full-checklist read or output.",
+      "evidence": [
+        "The local execution log records successful one-page rendering and original-detail visual review of the final formatted.docx.",
+        "parent-verification.json reports outside_table_xml_equal=true, text_and_shape_equal=true, and three_line_ooxml=true.",
+        "The supplied local page render is readable and byte-identical to the supplied full-snapshot render (SHA-256 a2d7eb5a...e540c19d).",
+        "The declared read list omits checklist.md, and no checklist output exists."
+      ],
+      "measurement_boundary": "Read evidence is executor-declared rather than an OS-level trace; structural findings rely on parent verification; LibreOffice rendering does not prove identical behavior in all Word versions."
+    },
+    {
+      "id": "CC06",
+      "rating": "met",
+      "condition": "P01 full-snapshot arm reproduces the previously observed checklist over-read under the same raw task, or the result is reported as non-reproduction rather than forced.",
+      "evidence": [
+        "The full-snapshot log uses the P01 request and explicitly states that no full-audit checklist or unrelated module was opened.",
+        "Its enumerated read list omits checklist.md, documenting non-reproduction rather than forcing the earlier behavior."
+      ],
+      "measurement_boundary": "Same-condition assignment comes from run-plan.json; reads are executor-declared; one run does not estimate a reproduction rate."
+    },
+    {
+      "id": "CC07",
+      "rating": "met",
+      "condition": "P02 detects the cross-boundary vertical merge before mutation, creates no formatted output, and reports the exact manual-review blocker without claiming success.",
+      "evidence": [
+        "P02 reports vMerge=restart at physical row 2, column 1 and vMerge=continue at row 3, column 1, crossing the two-row header boundary.",
+        "The helper was not called and formatted.docx was not created; parent-verification.json confirms p02_no_formatted_output=true.",
+        "The log states the required human decision about intended spanning versus incorrect row classification and makes no visual-pass claim."
+      ],
+      "measurement_boundary": "Merge topology is taken from the execution log; independent DOCX structural inspection was prohibited."
+    },
+    {
+      "id": "CC08",
+      "rating": "met",
+      "condition": "P03 full-audit bundle reads checklist.md and returns one auditable status for every F01-F20 item; unavailable evidence remains unable-to-verify rather than invented.",
+      "evidence": [
+        "P03 logs reading references/checklist.md; parent-verification.json states p03_checklist_read_logged=true.",
+        "parent-verification.json states p03_all_twenty_ids_once=true.",
+        "audit.md gives each F01-F20 one allowed status plus location, evidence, action, and review status.",
+        "F13 and F17 are unable-to-verify, and F01 is only partial, because target journal/template evidence was unavailable."
+      ],
+      "measurement_boundary": "Assesses completeness and evidence discipline for the supplied synthetic document, not general or scientific audit accuracy."
+    },
+    {
+      "id": "CC09",
+      "rating": "met",
+      "condition": "P04 local bundle performs no DOCX mutation and directs the caller to restage the full-audit scope instead of reconstructing or inventing the missing checklist.",
+      "evidence": [
+        "P04 stops on scope mismatch, creates no DOCX output, and provides no reconstructed F01-F20 list.",
+        "It directs rerouting to a full-document academic Word formatting-audit scope/resource bundle explicitly defining F01-F20.",
+        "parent-verification.json confirms p04_no_docx_output=true."
+      ],
+      "measurement_boundary": "Non-mutation is supported by logs and output absence, not a system-call trace."
+    },
+    {
+      "id": "CC10",
+      "rating": "met",
+      "condition": "Any produced DOCX is structurally inspected and rendered with every page image visually reviewed; a structure-only result is not called a visual pass.",
+      "evidence": [
+        "Both P01 arms produced DOCX files and log post-edit structural checks, final-file rendering, and original-detail review of their sole pages.",
+        "Parent verification records structural equality and three-line OOXML for both arms.",
+        "The supplied parent P01 page images and P03 audit page image were visually reviewed for this assessment.",
+        "P02 and P04 produced no DOCX and did not claim a visual pass."
+      ],
+      "measurement_boundary": "All supplied documents are one page, so multi-page coverage is untested; structure relies on parent verification; rendering uses LibreOffice."
+    },
+    {
+      "id": "CC11",
+      "rating": "met",
+      "condition": "An independent reviewer receives only the frozen rubric, raw requests, execution logs, parent verification, outputs and render images, and reports per-condition met/not_met/unclear with evidence.",
+      "evidence": [
+        "This review used only the permitted evidence categories and reports all 11 conditions with a frozen rating, direct evidence, and a measurement boundary.",
+        "No implementation, source repository, bundle contents, prior evaluation, or source snapshot was inspected."
+      ],
+      "measurement_boundary": "Independence is procedural and self-reported; no external attestation mechanism is present."
+    }
+  ],
+  "cases": [
+    {
+      "id": "P01-local",
+      "class": "normal",
+      "rating": "met",
+      "summary": "Correct editable three-line DOCX, preserved content/structure, one-page visual review, and no checklist read/output."
+    },
+    {
+      "id": "P01-full-snapshot",
+      "class": "normal-comparison",
+      "rating": "met",
+      "summary": "Prior checklist over-read did not reproduce and was reported absent rather than forced."
+    },
+    {
+      "id": "P02",
+      "class": "boundary",
+      "rating": "met",
+      "summary": "Cross-boundary merge detected before mutation; no output; exact manual-review decision reported."
+    },
+    {
+      "id": "P03",
+      "class": "reverse/full-audit",
+      "rating": "met",
+      "summary": "Checklist read; every F01-F20 appears once with an auditable allowed status; unavailable evidence was not invented."
+    },
+    {
+      "id": "P04",
+      "class": "not-applicable",
+      "rating": "met",
+      "summary": "No DOCX mutation/output and no fabricated checklist; explicit reroute to full-audit scope."
+    }
+  ],
+  "determination": "All four case classes and all 11 frozen completion conditions are met within the stated measurement boundaries."
+}

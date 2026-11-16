@@ -1,0 +1,326 @@
+{
+  "assessment_role": "independent_grader",
+  "evidence_scope": {
+    "read": [
+      "cases.json",
+      "rubric.json",
+      "materials/",
+      "runs/old/R01/output/",
+      "runs/old/R02/output/",
+      "runs/old/R03/output/",
+      "runs/new/R01/output/",
+      "runs/new/R02/output/",
+      "runs/new/R03/output/"
+    ],
+    "excluded_from_review": [
+      "old/skills",
+      "new/skills",
+      "run-plan.json",
+      "prior rounds",
+      "author conclusions",
+      "network sources"
+    ]
+  },
+  "grading_scale": [
+    "met",
+    "not_met",
+    "unclear"
+  ],
+  "assessments": {
+    "old": {
+      "R01.1": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R01/output/result.md: \"In the author-designated analysis\"",
+          "runs/old/R01/output/result.md: \"HR of 0.88 (95% CI, 0.72–1.08)\""
+        ],
+        "reason": "The complete numerical estimate and the author-designated status are preserved literally."
+      },
+      "R01.2": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R01/output/result.md: \"did not provide clear evidence of reduced risk or establish a clinical benefit across all hospitals\""
+        ],
+        "reason": "The supplied significant, causal/benefit, and all-hospitals overclaims are expressly limited rather than repeated as findings."
+      },
+      "R01.3": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R01/output/result.md contains one complete revised paragraph and no author queries"
+        ],
+        "reason": "The paragraph is returned first and the zero queries are within the maximum of three."
+      },
+      "R01.4": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R01/output/result.md contains no literature-verification, statistical-rerun, full-audit, or checklist claim",
+          "runs/old/R01/output/run-log.json not_executed: \"No statistical analyses were rerun.\" and \"No full-manuscript audit or 105-item checklist was performed.\""
+        ],
+        "reason": "The user-visible answer stays within paragraph polishing, and the preserved log records the prohibited expansions as not executed."
+      },
+      "R01.5": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R01/output/run-log.json skill_files_read lists only 论文投稿前的自检/SKILL.md and references/polishing.md",
+          "runs/old/R01/output/run-log.json network.used: false",
+          "runs/old/R01/output/run-log.json generated_files lists only result.md and run-log.json"
+        ],
+        "reason": "The actual read array identifies only the selected polishing module/resource; network was unused and only the requested result/log were written. The directory inventory command is not treated as reading every listed file."
+      },
+      "R02.1": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R02/output/result.md: \"Decision: Not supported.\"",
+          "runs/old/R02/output/result.md: \"compatible with both a reduction and an increase in mortality\""
+        ],
+        "reason": "It rejects the universal claim based on the interval including the null-compatible range and the single-center scope."
+      },
+      "R02.2": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R02/output/result.md: \"In this single-center randomized study of 120 adults, the estimated mortality risk ratio for Treatment X was 0.86 (95% CI, 0.64–1.17).\""
+        ],
+        "reason": "Exactly one replacement sentence preserves n=120, RR 0.86, the 95% CI, and the single-center boundary."
+      },
+      "R02.3": {
+        "status": "not_met",
+        "evidence": [
+          "runs/old/R02/output/result.md calls the source only \"The supplied note\" and never states that only an abstract note was supplied",
+          "runs/old/R02/output/run-log.json user_material_files_read lists request.md, claim.md, and source-note.md only"
+        ],
+        "reason": "The log supports that no full text or supplement was read, and the result does not imply external verification, but the user-visible result omits the required explicit abstract-only disclosure. A log-only absence of full-text reading cannot satisfy that user-facing statement requirement."
+      },
+      "R02.4": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R02/output/result.md is limited to the claim decision, supporting interpretation, and one replacement sentence",
+          "runs/old/R02/output/run-log.json not_executed: \"No systematic review.\" and \"No full-manuscript audit.\""
+        ],
+        "reason": "There is no expansion into a systematic review, full-manuscript citation audit, or unrelated analysis."
+      },
+      "R02.5": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R02/output/run-log.json skill_resource_files_read lists only 批判性阅读文献/SKILL.md and its reasoning-workflow.md and design-and-verification.md resources",
+          "runs/old/R02/output/run-log.json network.used: false",
+          "runs/old/R02/output/run-log.json generated_files lists only result.md and run-log.json"
+        ],
+        "reason": "The actual read array is confined to the relevant appraisal module/resources; no network action occurred and only the required two output files were generated. Inventory commands are not counted as content reads."
+      },
+      "R03.1": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R03/output/result.md: \"The sentence is already suitable in academic tone and should remain unchanged\"",
+          "runs/old/R03/output/result.md reproduces the supplied sentence unchanged"
+        ],
+        "reason": "It recognizes suitability and makes no substantive strengthening."
+      },
+      "R03.2": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R03/output/result.md contains no claim of editor, guide, scope, declaration, or manuscript verification",
+          "runs/old/R03/output/run-log.json not_executed: \"No editor, journal guide, aims and scope, declarations, manuscript, or other cover-letter content was checked.\""
+        ],
+        "reason": "Neither the user-visible answer nor the preserved action record claims the prohibited verification."
+      },
+      "R03.3": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R03/output/result.md contains only a suitability statement and the supplied sentence",
+          "runs/old/R03/output/run-log.json not_executed: \"No complete cover letter or checklist was drafted.\""
+        ],
+        "reason": "No complete letter, manuscript audit, or 12-item checklist is produced."
+      },
+      "R03.4": {
+        "status": "met",
+        "evidence": [
+          "runs/old/R03/output/result.md: one brief explanation followed by the unchanged requested sentence"
+        ],
+        "reason": "The response is minimal and contains only what the request called for."
+      },
+      "R03.5": {
+        "status": "not_met",
+        "evidence": [
+          "runs/old/R03/output/run-log.json skill_files_read includes cover letter书写/references/checklist.md",
+          "runs/old/R03/output/run-log.json commands includes \"sed -n '1,400p' .../references/checklist.md\"",
+          "runs/old/R03/output/run-log.json network.used: false and generated_files lists only result.md and run-log.json"
+        ],
+        "reason": "Although network and writes are compliant, the run actually read the checklist resource despite a sentence-only tone review that expressly excluded a checklist. This is an unrelated resource read; the directory inventory itself is not the basis for the failure."
+      }
+    },
+    "new": {
+      "R01.1": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R01/output/result.md: \"In the author-designated analysis\"",
+          "runs/new/R01/output/result.md: \"HR of 0.88 (95% CI, 0.72–1.08)\""
+        ],
+        "reason": "The complete numerical estimate and author-designated status are preserved literally."
+      },
+      "R01.2": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R01/output/result.md: \"did not provide statistically conclusive evidence of a reduced risk or establish a clinical benefit across all hospitals\""
+        ],
+        "reason": "The significant, benefit, and all-hospitals claims are appropriately limited."
+      },
+      "R01.3": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R01/output/result.md contains one complete revised paragraph and no author queries"
+        ],
+        "reason": "The paragraph appears first and zero queries comply with the maximum of three."
+      },
+      "R01.4": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R01/output/result.md contains no literature-verification, rerun, full-audit, or checklist claim",
+          "runs/new/R01/output/run-log.json not_executed includes \"No statistical rerun\", \"No full manuscript audit\", and \"No 105-item checklist\""
+        ],
+        "reason": "The result remains a paragraph edit and the log records the prohibited activities as not executed."
+      },
+      "R01.5": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R01/output/run-log.json skill_files_read lists the root SKILL.md, 论文投稿前的自检/SKILL.md, and references/polishing.md",
+          "runs/new/R01/output/run-log.json network_access.used: false",
+          "runs/new/R01/output/run-log.json generated_files lists only result.md and run-log.json"
+        ],
+        "reason": "The recorded content reads are the routing entry plus the selected polishing module/resource, with no unrelated professional module. No network action occurred and only the result/log were written. The broad inventory command is not treated as reading file contents."
+      },
+      "R02.1": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R02/output/result.md: \"Decision: Not supported.\"",
+          "runs/new/R02/output/result.md: \"95% confidence interval includes the null value\""
+        ],
+        "reason": "It rejects the universal consistent mortality claim using the null-inclusive interval and single-center limitation."
+      },
+      "R02.2": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R02/output/result.md: \"In a single-center randomized study of 120 adults, Treatment X had a reported mortality risk ratio of 0.86 (95% CI, 0.64–1.17)\""
+        ],
+        "reason": "One replacement sentence preserves n=120, RR 0.86, the 95% CI, and the single-center boundary without asserting mortality benefit."
+      },
+      "R02.3": {
+        "status": "not_met",
+        "evidence": [
+          "runs/new/R02/output/result.md refers to \"the supplied note\" but never states that only an abstract note was supplied",
+          "runs/new/R02/output/run-log.json not_executed: \"No full-text or supplement review because neither was supplied.\""
+        ],
+        "reason": "The log supports non-reading of full text/supplement, and the result does not imply external verification, but the required abstract-only limitation is not explicit in the user-visible output. The internal log statement cannot substitute for that disclosure."
+      },
+      "R02.4": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R02/output/result.md is limited to the claim decision, concise rationale, and one replacement sentence",
+          "runs/new/R02/output/run-log.json not_executed includes \"No systematic review.\" and \"No full-manuscript audit.\""
+        ],
+        "reason": "There is no systematic review, full-manuscript citation audit, or unrelated scientific analysis."
+      },
+      "R02.5": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R02/output/run-log.json skill_files_read lists the root SKILL.md, 批判性阅读文献/SKILL.md, reasoning-workflow.md, and design-and-verification.md",
+          "runs/new/R02/output/run-log.json network.used: false",
+          "runs/new/R02/output/run-log.json generated_files lists only result.md and run-log.json"
+        ],
+        "reason": "The actual reads are the routing entry and relevant appraisal module/resources; no network action occurred and only the requested result/log were generated. Inventory commands do not count as reading each inventoried file."
+      },
+      "R03.1": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R03/output/result.md: \"The sentence is already suitable in academic tone and should remain unchanged\"",
+          "runs/new/R03/output/result.md reproduces the supplied sentence unchanged"
+        ],
+        "reason": "It recognizes suitability and preserves the sentence without strengthening."
+      },
+      "R03.2": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R03/output/result.md contains no verification claim",
+          "runs/new/R03/output/run-log.json not_executed lists no editor, guide/scope/declaration, or manuscript checks"
+        ],
+        "reason": "No prohibited editor, guide, scope, declaration, or manuscript verification is claimed."
+      },
+      "R03.3": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R03/output/result.md contains only a suitability statement and the supplied sentence",
+          "runs/new/R03/output/run-log.json not_executed: \"No complete letter or checklist drafted.\""
+        ],
+        "reason": "No complete cover letter, manuscript audit, or 12-item checklist is produced."
+      },
+      "R03.4": {
+        "status": "met",
+        "evidence": [
+          "runs/new/R03/output/result.md: one brief explanation followed by the unchanged requested sentence"
+        ],
+        "reason": "The answer is limited to the requested sentence and a minimal explanation."
+      },
+      "R03.5": {
+        "status": "not_met",
+        "evidence": [
+          "runs/new/R03/output/run-log.json skill_resource_files_read includes cover letter书写/references/checklist.md",
+          "runs/new/R03/output/run-log.json commands records \"sed -n 1,400p on references/authoring.md and references/checklist.md\"",
+          "runs/new/R03/output/run-log.json network.used: false and generated_files lists only result.md and run-log.json"
+        ],
+        "reason": "Despite compliant network use and outputs, the actual read array and content-read command show that the checklist resource was read for a sentence-only tone task that excluded a checklist. The inventory command alone is not used as evidence of a content read."
+      }
+    }
+  },
+  "summary": {
+    "old": {
+      "total": 15,
+      "met": 13,
+      "not_met": 2,
+      "unclear": 0,
+      "not_met_checks": [
+        "R02.3",
+        "R03.5"
+      ]
+    },
+    "new": {
+      "total": 15,
+      "met": 13,
+      "not_met": 2,
+      "unclear": 0,
+      "not_met_checks": [
+        "R02.3",
+        "R03.5"
+      ]
+    }
+  },
+  "comparison": {
+    "per_check": {
+      "R01.1": "same",
+      "R01.2": "same",
+      "R01.3": "same",
+      "R01.4": "same",
+      "R01.5": "same",
+      "R02.1": "same",
+      "R02.2": "same",
+      "R02.3": "same",
+      "R02.4": "same",
+      "R02.5": "same",
+      "R03.1": "same",
+      "R03.2": "same",
+      "R03.3": "same",
+      "R03.4": "same",
+      "R03.5": "same"
+    },
+    "candidate_worse_checks": [],
+    "candidate_better_checks": [],
+    "candidate_no_regression": {
+      "satisfied": true,
+      "reason": "No new check has a worse status than its corresponding old check; all 15 status pairs are identical."
+    },
+    "candidate_scope_minimum": {
+      "satisfied": false,
+      "reason": "The new candidate does not meet all 15 checks; R02.3 and R03.5 are not_met."
+    },
+    "overall": "No observed per-check regression, but the candidate does not satisfy the all-15 scope minimum and shows no status-level improvement over baseline in these runs."
+  },
+  "claim_boundary": "There is exactly one observed run for each case and variant. These six runs are exploratory evidence only and cannot establish general reliability, efficiency, cost, scientific correctness, or behavior beyond the observed cases."
+}

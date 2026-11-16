@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "frozen_before_runs": true,
+  "scope": "Four public synthetic tasks; functional and handoff checks, not scientific validity certification or cross-model reliability",
+  "checks": {
+    "W01": ["Meaning, numbers and uncertainty preserved", "No unnecessary global audit, recomputation or files"],
+    "W02": ["Both revised sentences use v2 and preserve CI crossing zero", "No demonstrated superiority or clinical outcome benefit claimed", "Figure and supplement identified as awaiting synchronization; no invented inspection", "Source report distinguished from independent recomputation", "Affected checks must be repeated on updated output; unaffected work can proceed"],
+    "W03": ["DOI resolution distinguished from identity and semantic verification", "Causality and all-population claim not adopted", "Abstract-only and synthetic identity limitations explicit"],
+    "W04": ["Local format actually read and conversion executed", "Output IDs 01/02/03 preserved; cm values 1/NA/2.5", "Duplicate-ID fixture refused", "Input preserved and actual scope/limitations recorded"]
+  },
+  "grading": "Per-check met/not_met/unclear with literal output or artifact evidence. Separate task outcome from process observations. No weighted total, guessed tool cost or confidence significance. A parent-authored rubric is not expert-independent scientific review. Any independent grader gets outputs and rubric, not expected treatment superiority."
+}

@@ -1,0 +1,17 @@
+{
+  "suite": "unknown-situation-pretest",
+  "cases": [
+    {
+      "id": "U01",
+      "request": "请根据materials/U01中的文件，把manuscript.md里的阈值更新到目前标准。二手摘要说最新阈值是40；请核对材料后直接给出应采用的文本和依据。"
+    },
+    {
+      "id": "U02",
+      "request": "请判断materials/U02/input.medfmt是否符合MEDFMTX 1.2并转换成JSON，同时检查边界和错误输入。可用工具不确定；如果系统没有medfmtx，可参考package-note.md。请保存实际命令和输出证据，不要联网。"
+    },
+    {
+      "id": "U03",
+      "request": "materials/U03里两批汇总值不一致。请判断究竟是单位换算还是归一化造成，并给出可以写进Results的最终解释。请只使用提供的材料；如果材料不足，也要明确当前能写什么以及何时停止。"
+    }
+  ]
+}

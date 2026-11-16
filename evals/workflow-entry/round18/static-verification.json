@@ -1,0 +1,19 @@
+{
+  "repository": "gongboji-cyber/Manuscript-Submission-and-Academic-Writing",
+  "base": "main@90f43f21a58a67686cd7dae75dc8e857641900c2",
+  "candidate_before_evaluation_commit": "0266bda8297c2a3186c318008495b974835abeb1",
+  "runtime_skill_entries_including_root": 15,
+  "professional_modules": 14,
+  "frontmatter_names_present": 15,
+  "frontmatter_names_unique": 15,
+  "missing_relative_links": 0,
+  "adaptive_route_count": 1,
+  "commercial_route_count": 1,
+  "branch_ahead_by_before_evaluation_commit": 25,
+  "branch_behind_by": 0,
+  "notes": [
+    "The first recursive name checker undercounted two paths containing nested directories; the corrected checker found all 15 runtime entries.",
+    "No scientific threshold, medical rule, regulatory conclusion, or commercial launch verdict was added.",
+    "Evaluation outputs use public synthetic prompts only."
+  ]
+}

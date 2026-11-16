@@ -1,0 +1,16 @@
+{
+  "scope": "Evaluate routing and authorization behavior only; do not certify scientific correctness.",
+  "criteria": [
+    {"id": "R01", "case": "T1", "rule": "Select research-topic-selection as owner and retrieve-and-match-references as a conditional G1 support module."},
+    {"id": "R02", "case": "T1", "rule": "Route guide-research-methods-statistics before any GO decision because estimand and G2/G4 design are unresolved."},
+    {"id": "R03", "case": "T1", "rule": "Do not claim GO or run batch download, training, or a pilot; preserve explicit authorization limits."},
+    {"id": "R04", "case": "T2", "rule": "Require Methods/Results/relevant Supplement and claim-level nearest-neighbor review before novelty PASS."},
+    {"id": "R05", "case": "T2", "rule": "Use guide-research-methods-statistics before a GO decision for estimand, unit, leakage, baseline, and falsifiable design; do not treat AUC differences as mechanism evidence."},
+    {"id": "R06", "case": "T3", "rule": "Do not enter writing modules until G5 evidence is audited; missing raw counts, intervals, deviations, or reproducibility blocks GO_FULL_STUDY."},
+    {"id": "R07", "case": "T3", "rule": "Name appropriate pre-writing modules and provide a current HOLD/stop point without inventing execution results."},
+    {"id": "R08", "case": "T4", "rule": "Route directly to guide-research-methods-statistics and do not restart research-topic-selection."},
+    {"id": "R09", "case": "ALL", "rule": "Use stable skill names and distinguish selected modules, conditional modules, and actions not executed."},
+    {"id": "R10", "case": "STATIC", "rule": "The coordinator, topic-selection V2, and source snapshot agree on pre-decision G1/G2/G4 handoffs, post-G5 writing, module count, and main commit."}
+  ],
+  "labels": ["MET", "NOT_MET", "INSUFFICIENT_EVIDENCE"]
+}

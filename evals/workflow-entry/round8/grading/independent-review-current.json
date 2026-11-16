@@ -1,0 +1,234 @@
+{
+  "reviewer_role": "independent_evaluator",
+  "scope": "round8_authorized_paths_only",
+  "summary": {
+    "met": 10,
+    "not_met": 1,
+    "unclear": 0,
+    "met_ids": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "R11"
+    ],
+    "not_met_ids": [
+      "R10"
+    ],
+    "unclear_ids": []
+  },
+  "canonical_pages_inspected": {
+    "p01-current": [
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-1.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-2.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-3.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-4.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-5.png"
+    ],
+    "p02-current": [
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-1.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-2.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-3.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-4.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-5.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-6.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-7.png",
+      "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-8.png"
+    ]
+  },
+  "criteria": [
+    {
+      "id": "R01",
+      "status": "met",
+      "basis": "Independent DOCX comparison found identical XML text-token sequences, body block order, table-external canonical XML, section XML, table dimensions, grid, cell text, and merge signatures for p01 and p02; p03 produced no output.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/input.docx",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/formatted.docx",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/input.docx",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/formatted.docx",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-structural.json",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/parent-verification.json"
+      ],
+      "executor_claims": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/execution-log.md",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/execution-log.md"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "R02",
+      "status": "met",
+      "basis": "Five p01 pages each show the complete two-row header; extracted row identifiers are R001-R072 exactly once and in order.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/formatted.pdf",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-1.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-2.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-3.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-4.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-5.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/parent-verification.json"
+      ],
+      "executor_claims": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/execution-log.md"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "R03",
+      "status": "met",
+      "basis": "OOXML contains only the intended first-row top, second-header-row bottom, and final-row bottom rules; all five p01 pages lack forbidden vertical, internal-grid, diagonal, double, or shaded decoration.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/formatted.docx",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-1.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-2.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-3.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-4.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-5.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/parent-verification.json"
+      ],
+      "executor_claims": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/execution-log.md"
+      ],
+      "limitations": [
+        "Rule thickness was verified from OOXML as well as from rendered pixels; continuation-boundary rules are renderer behavior allowed by the bundle reference."
+      ]
+    },
+    {
+      "id": "R04",
+      "status": "met",
+      "basis": "Direct inspection of all five p01 pages found no clipping, overlap, missing glyph, blank continuation page, or excessive pagination gap attributable to row keeping.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-1.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-2.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-3.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-4.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-5.png"
+      ],
+      "executor_claims": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/execution-log.md"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "R05",
+      "status": "met",
+      "basis": "The caption is visibly attached to the table start on page 1, and the note is visibly attached after the final row/rule on page 5; DOCX body block order is unchanged.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/formatted.docx",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-1.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/render-qa/page-5.png"
+      ],
+      "executor_claims": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/execution-log.md"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "R06",
+      "status": "met",
+      "basis": "p02 explicitly removes cantSplit only from the over-page body row while preserving the repeating non-splitting header; all 180 tokens and the sentinel survive visibly and extractably across eight pages.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/input.docx",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/formatted.docx",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-structural.json",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/formatted.pdf",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/parent-verification.json"
+      ],
+      "executor_claims": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/execution-log.md"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "R07",
+      "status": "met",
+      "basis": "All eight p02 canonical pages were independently inspected, and PDF extraction contains TOKEN-001 through TOKEN-180 exactly once, in order, with page-by-page continuity.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/formatted.pdf",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/formatted.txt",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-1.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-2.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-3.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-4.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-5.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-6.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-7.png",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/qa-render/page-8.png"
+      ],
+      "executor_claims": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/execution-log.md"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "R08",
+      "status": "met",
+      "basis": "The p03 table is explicitly a title-page author-information layout container; the bundle excludes layout tables. Input identity matches the expected hash, and neither formatted.docx nor a render directory exists.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p03-current/input.docx",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p03-current/bundle/SKILL.md",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p03-current/bundle/references/three-line-tables.md",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/parent-verification.json"
+      ],
+      "executor_claims": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p03-current/execution-log.md"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "R09",
+      "status": "met",
+      "basis": "All three bundle file sets, byte sizes, and hashes exactly match their manifests; no checklist.md, F01/F20 text, cache, log, or intermediate file is present inside a bundle.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/bundles/p01-current/bundle-manifest.json",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/bundles/p02-current/bundle-manifest.json",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/bundles/p03-current/bundle-manifest.json",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/bundle/SKILL.md",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/bundle/SKILL.md",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p03-current/bundle/SKILL.md",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/parent-verification.json"
+      ],
+      "executor_claims": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/execution-log.md",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/execution-log.md",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p03-current/execution-log.md"
+      ],
+      "limitations": [
+        "A post-execution snapshot cannot prove a transient file was created and later deleted; the exact final manifest match, python -B usage, and absence of residue are treated as sufficient evidence."
+      ]
+    },
+    {
+      "id": "R10",
+      "status": "not_met",
+      "basis": "p01 and p02 fully record runtime versions, exact commands, hashes, renderer, page count, and separate structural/visual findings. p03 records a narrative action list rather than exact commands and omits runtime versions, although output/render fields are correctly not applicable after the safe stop.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current/execution-log.md",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current/execution-log.md",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p03-current/execution-log.md"
+      ],
+      "executor_claims": [],
+      "limitations": [
+        "This grading applies R10 to all three execution records. Under an unstated completed-runs-only interpretation, p01 and p02 would meet R10."
+      ]
+    },
+    {
+      "id": "R11",
+      "status": "met",
+      "basis": "The authorized raw artifacts were sufficient to decide every criterion without receiving a diagnosis or intended fix.",
+      "direct_evidence": [
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/grading/criteria.json",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/parent-verification.json",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p01-current",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p02-current",
+        "/workspace/scratch/46b39df32326/skill-optimization-20261011/round8/runs/p03-current"
+      ],
+      "executor_claims": [],
+      "limitations": []
+    }
+  ]
+}

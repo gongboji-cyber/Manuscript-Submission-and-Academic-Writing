@@ -1,0 +1,78 @@
+{
+  "verified_at_utc": "2026-10-11T13:43:07Z",
+  "repository": "gongboji-cyber/Manuscript-Submission-and-Academic-Writing",
+  "branch": "optimize/workflow-entry",
+  "pre_publish_head": "05ad62611ae2799a66cc1ca1fda1bc898ddc6c6e",
+  "main_head": "5cb757140c2d7e85229f9ca3d86dca2b6c125d7d",
+  "pull_request": {
+    "number": 3,
+    "state": "open",
+    "draft": true
+  },
+  "frozen_inputs": {
+    "cases_sha256": "56b0cd4d4ec986eac9b202302ccdae8cd568a80e9cfcb7fcaf1a98899ed2a6d8",
+    "rubric_sha256": "0da8b0354fc6cec40fb3f2516a0be06100265c94abd6eba0fcd06dd468c1787e",
+    "rubric_frozen_before_all_execution_runs": true
+  },
+  "snapshot_integrity": {
+    "old_files": 104,
+    "old_unchanged_after_runs": "104/104",
+    "new_files": 110,
+    "new_unchanged_after_runs": "110/110",
+    "revised_files": 110,
+    "revised_differs_from_new_only_in": [
+      "cover letter书写/SKILL.md",
+      "文献/指南阅读板块/references/claim-matching.md"
+    ]
+  },
+  "runtime_changes": [
+    {
+      "path": "cover letter书写/SKILL.md",
+      "purpose": "Make the full 12-item checklist conditional on full drafting/audit and keep sentence-level tone checks local.",
+      "sha256": "4a04242143f408db56efd250b87e76786261f37536cadb0ba7d67c94c45754c2"
+    },
+    {
+      "path": "文献/指南阅读板块/references/claim-matching.md",
+      "purpose": "Require an abstract-only/full-text-not-read boundary in the user-visible decision when only abstract-level material is supplied.",
+      "sha256": "63e01d6a265ab68ce4d9f0293017c7910941b602f58f2118921dc2ef9f3e86f6"
+    }
+  ],
+  "structural_validation": {
+    "skill_md_files_checked": 11,
+    "frontmatter_or_local_link_errors": 0,
+    "note": "Local deterministic check only; it does not certify scientific correctness."
+  },
+  "run_artifacts": {
+    "final_runs": 9,
+    "all_run_logs_parseable_json": true,
+    "each_final_output_directory_contains_only_result_and_log": true,
+    "network_used": false,
+    "dependency_installation_attempted": false,
+    "discarded_or_hidden_runs": false,
+    "intermediate_failed_revision_preserved": "runs/revised/R02/attempt1"
+  },
+  "independent_review": {
+    "assessment_sha256": "71de148ade1e64a8e47156d29bfe07c592177ae913eea8f976c1e7fccb473ad2",
+    "review_sha256": "ff8f3daae4cc2a8be5566c93d17d1d01fd7145fac7fbef24f9aa12cb4dd29695",
+    "old": "13/15 met",
+    "new": "13/15 met",
+    "revised": "15/15 met",
+    "revised_better_checks": ["R02.3", "R03.5"],
+    "revised_worse_checks": [],
+    "acceptance_passed": true
+  },
+  "measurement_limits": {
+    "runs_per_case_per_final_variant": 1,
+    "model_id": null,
+    "token_usage": null,
+    "cost": null,
+    "comparable_runtime": null,
+    "complete_tool_event_export": null,
+    "scientific_validity_certified": false
+  },
+  "installation_state": {
+    "repository_candidate_updated": true,
+    "main_updated": false,
+    "personal_installed_skills_updated": false
+  }
+}

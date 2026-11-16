@@ -1,0 +1,99 @@
+{
+  "reviewer_scope": {
+    "mode": "blind evidence-only independent review",
+    "rubric": "grading/criteria.json",
+    "inspected": [
+      "parent-verification-final.json",
+      "permitted P01, P02, and P03 requests, inputs, outputs, execution logs, manifests, and matching run-bundle trees",
+      "P01 and P02 canonical PDFs and page PNGs"
+    ],
+    "excluded": [
+      "candidate source",
+      "prior review files",
+      "prior rounds",
+      "diagnosis",
+      "intended fix"
+    ],
+    "pass_claim_treatment": "Run-log PASS statements were treated as claims, not proof.",
+    "evidence_composition": {
+      "p01": "regression run; document algorithm and already-complete command log unchanged by final command-recording clarification",
+      "p02": "regression run; document algorithm and already-complete command log unchanged by final command-recording clarification",
+      "p03": "fresh run with the final bundle"
+    }
+  },
+  "pages_inspected": [
+    "runs/p01-revised/qa-render/page-1.png",
+    "runs/p01-revised/qa-render/page-2.png",
+    "runs/p01-revised/qa-render/page-3.png",
+    "runs/p01-revised/qa-render/page-4.png",
+    "runs/p01-revised/qa-render/page-5.png",
+    "runs/p02-revised/qa-formatted-v2/page-1.png",
+    "runs/p02-revised/qa-formatted-v2/page-2.png",
+    "runs/p02-revised/qa-formatted-v2/page-3.png",
+    "runs/p02-revised/qa-formatted-v2/page-4.png"
+  ],
+  "criteria": [
+    {
+      "id": "R01",
+      "status": "met",
+      "evidence": "Independent DOCX checks found identical ordered paragraph text and table text, one table in each input/output, unchanged dimensions (P01 74x4; P02 2x2), byte-identical parsed table-external paragraph XML, and identical section XML. The recorded P01 merge signature is unchanged. Actual hashes match the logs and parent verification."
+    },
+    {
+      "id": "R02",
+      "status": "met",
+      "evidence": "P01 has 5 rendered pages. Every canonical page visibly repeats the complete two-row header. Independent PDF extraction finds exactly 72 unique row IDs in order with page ranges R001-R013, R014-R028, R029-R043, R044-R058, and R059-R072. XML flags only header rows 1-2 as repeating."
+    },
+    {
+      "id": "R03",
+      "status": "met",
+      "evidence": "P01 pages show intended top and header-bottom rules and the final page shows the bottom rule; no vertical borders, body grid, diagonals, doubles, or table shading are visible. XML confirms 1 pt top, 0.5 pt header-bottom, 1 pt final-bottom rules; all vertical/internal/diagonal borders are nil and fill is white."
+    },
+    {
+      "id": "R04",
+      "status": "met",
+      "evidence": "All five P01 canonical pages were inspected at original detail. No clipping, overlap, missing glyphs, blank continuation page, or excessive row-keep pagination gap was observed."
+    },
+    {
+      "id": "R05",
+      "status": "met",
+      "evidence": "P01 page 1 keeps the caption with the table start. Page 5 places the note immediately below the final rule and then the NORMAL-END-88421 sentinel. PDF extraction confirms caption on page 1 and note/sentinel on page 5."
+    },
+    {
+      "id": "R06",
+      "status": "met",
+      "evidence": "P02 explicitly justifies the splitting exception for a single body row taller than one page. XML confirms the repeating header is unsplittable and the body row is splittable. The four-page render preserves all 180 tokens plus the final note and sentinel."
+    },
+    {
+      "id": "R07",
+      "status": "met",
+      "evidence": "The P02 log limits visual PASS to all four original-resolution pages, which were independently inspected. PDF extraction finds TOKEN-001 through TOKEN-180 exactly once and in order across page ranges 001-044, 045-096, 097-148, and 149-180; the sentinel appears once."
+    },
+    {
+      "id": "R08",
+      "status": "met",
+      "evidence": "P03 input explicitly identifies an author-information layout container and states its role is title-page layout only. The fresh final-bundle run safely classifies it as not applicable, identifies the required alternative workflow, makes no visual-PASS claim, preserves the expected input hash, and leaves formatted.docx absent."
+    },
+    {
+      "id": "R09",
+      "status": "met",
+      "evidence": "Each P01/P02/P03 run bundle contains exactly the four manifest-listed files and all hashes match. Independent scans find no checklist.md, __pycache__, cache/log/intermediate file, or standalone F01/F20 semantic token in any bundle."
+    },
+    {
+      "id": "R10",
+      "status": "met",
+      "evidence": "P01/P02 logs record runtime versions, exact command blocks, input/output hashes, renderer, page count, structural findings, and separate page-specific visual findings. P03 records runtime and each read-only command in full, input hash, no-output reason, and renderer/page-count/visual results as not applicable. All logs disclaim scientific, journal, and full-document certification."
+    },
+    {
+      "id": "R11",
+      "status": "met",
+      "evidence": "All criteria were decidable from the permitted raw requests, logs, outputs, manifests, structural/hash checks, and nine canonical page images without diagnosis or intended-fix material."
+    }
+  ],
+  "overall_status": "pass",
+  "limitations": [
+    "This review did not re-execute historical P01/P02 authoring commands; their command provenance comes from the supplied logs, while current hashes, structures, bundle state, PDF extraction, and renders were independently checked.",
+    "P01 and P02 are regression evidence predating the final command-recording clarification; the task statement says their algorithms and already-complete logs were unchanged. P03 is the fresh final-bundle run.",
+    "Visual conclusions apply to the supplied canonical LibreOffice/Poppler renders, not every possible Word renderer.",
+    "P03 has no output render by design; its evidence is the documented safety stop, matching input hash, read-only command record, and absence of formatted.docx."
+  ]
+}

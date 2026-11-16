@@ -42,7 +42,7 @@ python -B scripts/paired_cluster_bootstrap.py --data paired.csv --cluster-col pa
 
 ## 联动其他模块
 
-科研问题仍在选题/立项阶段时，先调用 `research-topic-selection` 核查最近邻创新性、真实数据与独立证据关口、冻结最小试点及GO/HOLD/STOP；通过关口后，再用本模块制定可识别的目标量和正式统计分析方案。选题裁决不是已完成的方法学验证。
+科研问题仍在选题/立项阶段时，先调用 `research-topic-selection` 核查最近邻创新性、真实数据与独立证据关口、冻结最小试点及GO/HOLD/STOP；通过关口后，再用本模块制定可识别的目标量和正式统计分析方案。若该模块不可用，具名记录缺失，把选题裁决标为 `NOT_RUN/HOLD`，不得伪造GO/HOLD/STOP或假定关口已通过；可以继续起草不依赖关口通过的条件性方法方案，并列出解除依赖所需输入。问题已经获授权、立项且目标固定时，此依赖不适用，不阻塞本模块。选题裁决不是已完成的方法学验证。
 
 方法学问题先解决再调用 `audit-and-polish-manuscript` 润色；用 `write-manuscript-supplement` 记录详尽方法与敏感性结果；用 `critically-read-literature` 核验方法文献和批判主张；用 `research-flow-diagrams` 绘制经过证据核验的研究流程图、技术路线和可编辑模型框架图；用 `plot-research-statistics` 保留统计结果单 panel 代码并导出 800 dpi TIFF/矢量 PDF；用 `format-academic-word` 排版。不能让润色、图形美观或可执行代码替代证据有效性。
 

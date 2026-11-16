@@ -1,0 +1,326 @@
+{
+  "assessment_type": "independent_per_check_review",
+  "grading_method": "Each frozen criterion is classified separately as met, not_met, or unclear. No weighted total is calculated.",
+  "source_scope": {
+    "public_synthetic_group": [
+      "round2/grading/rubric.json",
+      "round2/cases/cases.json",
+      "round2/baseline/output/result.md",
+      "round2/baseline/output/run-log.json",
+      "round2/candidate/output/result.md",
+      "round2/candidate/output/run-log.json"
+    ],
+    "regression_group": [
+      "round2/regression/rubric.json",
+      "round2/regression/case.json",
+      "round2/regression/old/output/result.md",
+      "round2/regression/old/output/run-log.json",
+      "round2/regression/new/output/result.md",
+      "round2/regression/new/output/run-log.json"
+    ],
+    "excluded": "Skill implementations, parent conversation, run-plan, and all other evaluation materials were not read."
+  },
+  "public_synthetic_group": {
+    "interpretive_note": "H01 itself explicitly asks for a handoff covering what is complete, what must be redone, and what independent work may continue. It is therefore suitable as a no-regression check, but it is not a blind test of whether a system spontaneously produces that behavior.",
+    "cases": {
+      "H01": [
+        {
+          "criterion": "Revised Results uses analysis-v3, B−A −0.012 and CI −0.040 to 0.016 without superiority",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "The patient-paired mean difference between Method B and Method A (B−A) was −0.012 (95% CI, −0.040 to 0.016)."},
+              {"source": "baseline/output/result.md", "quote": "并移除不受该区间支持的“outperformed”表述"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "The patient-paired mean difference between Method B and Method A (B−A) was −0.012 (95% CI, −0.040 to 0.016)."},
+              {"source": "candidate/output/result.md", "quote": "它不再声称 Method B 优于 Method A。"}
+            ]
+          }
+        },
+        {
+          "criterion": "Results is distinguished as text updated from author-designated summary, not independent analysis verification",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "仅核对请求中给出的版本、方向、点估计和区间；未独立重算"},
+              {"source": "baseline/output/result.md", "quote": "未运行分析，未查看或修改图、补充文档或全文，也未认证研究的科学有效性。"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "Results 句只对照题目给出的、作者指定的 `analysis-v3` 摘要进行了文本级保真检查"},
+              {"source": "candidate/output/result.md", "quote": "不构成独立重算、文件内容核验、视觉核验或整包科学有效性认证。"}
+            ]
+          }
+        },
+        {
+          "criterion": "Figure4-v2 and Supplement-v2 are explicitly stale/awaiting synchronization without invented inspection",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "Figure4-v2.pdf | blocked（未提供内容，未获授权更新） | unassessed | stale"},
+              {"source": "baseline/output/result.md", "quote": "Supplement-v2.docx | blocked（未提供内容，未获授权更新） | unassessed | stale"},
+              {"source": "baseline/output/result.md", "quote": "因内容不可用，本次不猜测其具体位置或内容，也不声称已更新。"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "`Figure4-v2.pdf`：`stale`"},
+              {"source": "candidate/output/result.md", "quote": "`Supplement-v2.docx`：`stale`"},
+              {"source": "candidate/output/result.md", "quote": "内容不可用，未读取、未重画、未导出、未做视觉 QA"}
+            ]
+          }
+        },
+        {
+          "criterion": "Checks to repeat are tied to the updated artifacts, including Results numeric/claim check, Figure re-export plus visual QA, and Supplement consistency/cross-reference checks",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "已逐项复核 B−A、负号、−0.012、95% CI −0.040 至 0.016，并移除不受该区间支持的“outperformed”表述"},
+              {"source": "baseline/output/result.md", "quote": "生成后重做数值与版本一致性检查、PDF 导出检查和视觉 QA"},
+              {"source": "baseline/output/result.md", "quote": "生成后重做跨材料一致性检查，并对最终文档执行适用的渲染/版面检查"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "对照指定的 v3 摘要核对配对结构、B−A 方向、点估计、区间和主张强度"},
+              {"source": "candidate/output/result.md", "quote": "再对新导出的 PDF 做导出检查与视觉 QA"},
+              {"source": "candidate/output/result.md", "quote": "核对分析版本、估计、CI、方向、正文/图/补充的一致性及相关交叉引用"}
+            ]
+          }
+        },
+        {
+          "criterion": "Acknowledgments is explicitly unaffected/current and may continue unchanged because it does not depend on analysis-v3",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "Acknowledgments（无需修改，保留原句）"},
+              {"source": "baseline/output/result.md", "quote": "已确认其为给定的当前文字且不依赖分析"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "Acknowledgments：无需修改，保留原句"},
+              {"source": "candidate/output/result.md", "quote": "致谢及其他确实不依赖 v2 结果的工作可继续。"}
+            ]
+          }
+        }
+      ],
+      "H02": [
+        {
+          "criterion": "Only the supplied punctuation is changed to ‘2026: 12:34–40’",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "Example A, Example B. Synthetic methods. 2026: 12:34–40."},
+              {"source": "baseline/output/result.md", "quote": "仅将出版年份 `2026` 后的分号改为冒号。"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "Example A, Example B. Synthetic methods. 2026: 12:34–40."},
+              {"source": "candidate/output/result.md", "quote": "确认只将 `2026;` 改为 `2026:`，并保留作者、题名、年份、卷、页码和短横线"}
+            ]
+          }
+        },
+        {
+          "criterion": "The updated line receives a bounded style check; no whole-bibliography completion is claimed",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "已对照原行确认除 `;` → `:` 外无其他字符或内容变化"},
+              {"source": "baseline/output/result.md", "quote": "未检查其余参考文献"},
+              {"source": "baseline/output/result.md", "quote": "不据此声明整份参考文献表或投稿包符合期刊格式。"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "已在修订行上实际核对"},
+              {"source": "candidate/output/result.md", "quote": "未检查其余参考文献"},
+              {"source": "candidate/output/result.md", "quote": "除该行外的全书目期刊格式合规性不在本次证据范围内。"}
+            ]
+          }
+        },
+        {
+          "criterion": "Analysis, scientific content and figures are explicitly unaffected and may remain current; prohibited reruns or files are not produced",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "未变内容：作者、题名、年份、卷、页码、文献身份和科学内容。"},
+              {"source": "baseline/output/result.md", "quote": "未运行分析、重绘图、渲染 Word 或创建任何任务产物"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "引文身份与科学内容按题设已验证且未变，无需重核"},
+              {"source": "candidate/output/result.md", "quote": "也未运行分析、重画图、修改或渲染 Word。"},
+              {"source": "candidate/output/result.md", "quote": "本次没有创建任务产物文件。"}
+            ]
+          }
+        }
+      ],
+      "H03": [
+        {
+          "criterion": "No artifact is marked stale and no completed check is repeated without a new change",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "没有任何列出的 v5 成果需要标为 stale，也没有任何已记录完成的检查必须重复。"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "没有任何成果必须标记为 `stale`，也没有任何已完成检查需要仅为产生活动而重复"}
+            ]
+          }
+        },
+        {
+          "criterion": "Submission work may continue using v5, while workflow status is not presented as independent scientific certification",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "可继续依赖这些 current 状态开展后续的包组装、行政性投稿准备"},
+              {"source": "baseline/output/result.md", "quote": "不等于独立证明科学结论正确、文件内容完好、全套期刊合规或包已可投稿。"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "可以 `analysis-v5` 及上述 current 成果为基线继续不改变其依赖的后续投稿准备或其他独立工作。"},
+              {"source": "candidate/output/result.md", "quote": "不是对底层分析正确性、全部文件内容、科学有效性、期刊合规性或可录用性的独立认证。"}
+            ]
+          }
+        },
+        {
+          "criterion": "Conclusion is tied to the supplied package record and would require reassessment if a listed dependency or requirement changes",
+          "baseline": {
+            "status": "met",
+            "evidence": [
+              {"source": "baseline/output/result.md", "quote": "在所给包记录和“自各 v5 成果生成后没有来源、方法、要求或成果发生变化”这一前提下"},
+              {"source": "baseline/output/result.md", "quote": "若以后来源、方法、估计、期刊要求或任何成果发生变化，只应沿已知依赖关系把受影响的成果和检查标为 stale 并重核"}
+            ]
+          },
+          "candidate": {
+            "status": "met",
+            "evidence": [
+              {"source": "candidate/output/result.md", "quote": "在给定的包记录范围内"},
+              {"source": "candidate/output/result.md", "quote": "若以后数据、方法、估计、期刊要求或任一成果发生变化，只需沿实际依赖关系重新判断并重做受影响检查"}
+            ]
+          }
+        }
+      ]
+    },
+    "objective_comparison": "Against the frozen criteria, baseline and candidate both meet every listed check. The candidate expresses the H01 change-impact record in a more explicit source/artifact/check/status table; the baseline conveys the same required semantics with a status table plus prose. This presentation difference does not establish higher correctness. H02 and H03 are substantively equivalent for rubric purposes."
+  },
+  "regression_group": {
+    "interpretive_note": "This is an exact regression of a previously known failure, not an unseen generalization test.",
+    "checks": [
+      {
+        "criterion": "Both revised sentences use v2 and preserve the CI crossing zero",
+        "old": {
+          "status": "met",
+          "evidence": [
+            {"source": "old/output/result.md", "quote": "In the paired analysis with patients weighted equally, the mean difference between Method A and Method B (A−B) was 0.020 (95% CI, −0.005 to 0.045)."},
+            {"source": "old/output/result.md", "quote": "In the current analysis, the estimated mean A−B difference was 0.020 (95% CI, −0.005 to 0.045)"}
+          ]
+        },
+        "new": {
+          "status": "met",
+          "evidence": [
+            {"source": "new/output/result.md", "quote": "In the paired analysis with patients weighted equally, the mean difference between Method A and Method B (A−B) was 0.020 (95% CI, −0.005 to 0.045)."},
+            {"source": "new/output/result.md", "quote": "The estimated mean difference (A−B) was 0.020 (95% CI, −0.005 to 0.045)"}
+          ]
+        }
+      },
+      {
+        "criterion": "No demonstrated superiority or clinical outcome benefit is claimed",
+        "old": {
+          "status": "met",
+          "evidence": [
+            {"source": "old/output/result.md", "quote": "this result does not establish superiority of Method A over Method B."},
+            {"source": "old/output/result.md", "quote": "nor does the supplied information support the original claim of improved clinical outcomes."}
+          ]
+        },
+        "new": {
+          "status": "met",
+          "evidence": [
+            {"source": "new/output/result.md", "quote": "Accordingly, we do not claim that Method A is superior or that it improves clinical outcomes."}
+          ]
+        }
+      },
+      {
+        "criterion": "Figure and supplement are identified as awaiting synchronization without invented inspection",
+        "old": {
+          "status": "met",
+          "evidence": [
+            {"source": "old/output/result.md", "quote": "Figure2.pdf | Known to use analysis-v1; contents unavailable"},
+            {"source": "old/output/result.md", "quote": "Supplement-v1 | Known to use analysis-v1; contents unavailable"},
+            {"source": "old/output/result.md", "quote": "Neither item was edited, regenerated, or visually checked in this task."}
+          ]
+        },
+        "new": {
+          "status": "met",
+          "evidence": [
+            {"source": "new/output/result.md", "quote": "Figure2.pdf — it is known to use analysis-v1. Regenerate it from the authorized v2 output"},
+            {"source": "new/output/result.md", "quote": "Supplement-v1 — it is known to use analysis-v1. Update every affected method description"},
+            {"source": "new/output/result.md", "quote": "No figure was generated or inspected here."}
+          ]
+        }
+      },
+      {
+        "criterion": "Author-reported summary is distinguished from independent recomputation",
+        "old": {
+          "status": "met",
+          "evidence": [
+            {"source": "old/output/result.md", "quote": "This revision uses the author-designated analysis-v2 summary"},
+            {"source": "old/output/result.md", "quote": "the estimate, interval, and claimed paired-unit fix were not independently reproduced or verified."}
+          ]
+        },
+        "new": {
+          "status": "met",
+          "evidence": [
+            {"source": "new/output/result.md", "quote": "Only the supplied summary values and the author's statement about the paired-unit fix were available."},
+            {"source": "new/output/result.md", "quote": "The v2 analysis itself was not independently verified"}
+          ]
+        }
+      },
+      {
+        "criterion": "Final handoff explicitly states that checks affected by v2 must be repeated on each updated artifact and that work proven independent of v1 may continue",
+        "old": {
+          "status": "met",
+          "evidence": [
+            {"source": "old/output/result.md", "quote": "Regenerate from analysis-v2 or replace it. Update any plotted estimate/CI, annotations, caption, analysis-unit description, and superiority language. Check the final rendered figure against v2."},
+            {"source": "old/output/result.md", "quote": "Issue a v2 supplement. Update the analysis-unit and equal-patient-weighting description, the estimate and CI, and all interpretations or cross-references based on v1."},
+            {"source": "old/output/result.md", "quote": "Items unrelated to the changed analysis do not need revision solely because v2 exists."}
+          ]
+        },
+        "new": {
+          "status": "met",
+          "evidence": [
+            {"source": "new/output/result.md", "quote": "Regenerate from v2; numerical, technical, caption, and visual QA on the new file"},
+            {"source": "new/output/result.md", "quote": "Update from v2; verify methods, numbers, claims, figures/tables, and cross-references"},
+            {"source": "new/output/result.md", "quote": "Unchanged work that may continue: authorship and affiliations, acknowledgments, funding/conflict disclosures, references unrelated to the changed analysis, and purely stylistic formatting are not made stale by this numerical/method change because no dependency on the analysis was identified."}
+          ]
+        }
+      }
+    ],
+    "objective_comparison": "Old and new both meet every frozen regression check. The new output makes per-artifact freshness and completed/not-performed status more explicit in a change-impact table. The old output already requires v2-specific regeneration and checking and permits unrelated work to continue, so this added explicitness is not a criterion-level pass/fail difference."
+  },
+  "limitations": [
+    "Longer tables, more modules read, or a larger number of self-reported checks were not treated as evidence of superior quality.",
+    "Run logs are agent self-reports, not complete tool traces; they support scope statements but cannot independently prove every claimed action or omission.",
+    "This assessment checks output conformity to the frozen synthetic rubrics. Scientific correctness, statistical validity, and artifact-level integrity still require expert and data-level review."
+  ]
+}

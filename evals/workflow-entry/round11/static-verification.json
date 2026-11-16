@@ -1,0 +1,30 @@
+{
+  "date_utc": "2026-10-12",
+  "environment": {
+    "python": "3.12.14",
+    "git": "2.51.1",
+    "skill_creator": "work-skill-creator/0.1.0"
+  },
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 evals/workflow-entry/round10/verify_round10.py",
+      "result": "PASS: 11/11 checks, 11 modules, zero missing relative links"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s research-topic-selection/tests -v",
+      "result": "PASS: 10/10 tests"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 research-topic-selection/scripts/validate_gate_ledger.py research-topic-selection/assets/gate-ledger-example.csv",
+      "result": "PASS: 18 gate rows / 3 topics"
+    },
+    {
+      "command": "quick_validate.py on every SKILL.md found at depth <=3",
+      "result": "PASS: 12/12 entrypoints (root coordinator plus 11 modules)"
+    }
+  ],
+  "combined_regression_elapsed_ns": 115847782,
+  "timing_scope": "Only the three local regression commands; excludes model execution, review, cloning, I/O outside those commands, and quick_validate.",
+  "output_sha256": "16bb560cb6b22a703f2af2386417727d77dd4ba60abf06275b85143be9285def",
+  "scientific_scope": "Static and synthetic workflow validation only; no scientific source, dataset, eligibility, or conclusion was independently verified."
+}

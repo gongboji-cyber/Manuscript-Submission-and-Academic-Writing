@@ -7,12 +7,22 @@ description: Format and audit academic Word/DOCX manuscripts, reports and journa
 
 ## 资源与依赖
 
-- 开始读取 [格式规则](references/formatting.md) 和 [20项自查](references/checklist.md)。
+- 向独立执行者、子agent或其他隔离运行环境交接任务前，先用 `scripts/stage_task_bundle.py` 建立最小资源包；不要把整个技能目录作为默认上下文。单个已定位数据表改三线表使用 `--scope local-three-line`，完整格式化、完整审计或明确要求F01—F20时使用 `--scope full-audit`。执行者只接收生成目录中的 `bundle/`；`bundle-manifest.json` 留作资源审计。范围变化时停止当前运行并重新分包，不能在局部包中自行重建缺失清单。
+- 开始按任务范围读取 [格式规则](references/formatting.md) 的必要部分。单个表、段落或其他局部格式修复只记录与授权改动及保真直接相关的结构和视觉检查；不要打开完整审计清单，也不为填表扩大读取和交付范围。
 - 涉及三线表制作、合并表头、跨页长表或表格渲染时，读取 [三线表制作与渲染验收](references/three-line-tables.md)，按其闭环执行，不以边框XML设置代替视觉验收。
 - 使用 [默认配置](assets/default-profile.json) 作为无指定规则时的内部默认，不声称是任何期刊标准。
 - 按需导入 [格式辅助函数](scripts/word_format_helpers.py) 设置正文段落、样式字体与三线表；函数不负责识别段落角色或验证期刊合规。
 - 操作DOCX时使用环境提供的documents技能及其渲染工作流。在其他环境可用等效工具，但仍须实际渲染检查；本skill不强制特定机器路径。
 - 同时授权润色与排版时，先用audit-and-polish-manuscript（正文）或draft-journal-cover-letter（附信）完成语言编辑及保真，再以锁定副本排版；缺少其他skill时按授权完成等效编辑。只要求格式时保持原文。排版后的内容对照须以已核对的润色稿为基准，保留作者查询与修订，不把语言变化归因于格式处理。
+
+最小分包命令（输出目录必须尚不存在）：
+
+```bash
+python scripts/stage_task_bundle.py --source-root . \
+  --scope local-three-line --output /path/to/staged-word-task
+```
+
+命令仅复制白名单文件，使用标准库生成稳定清单，不安装依赖、不读取稿件、不覆盖既有目录。先核验清单再交接；分包控制的是可见技能资源，不代替对输入DOCX、渲染工具和用户授权范围的检查。
 
 ## 1. 确认适用规则
 
@@ -46,4 +56,4 @@ description: Format and audit academic Word/DOCX manuscripts, reports and journa
 
 ## 5. 交付
 
-交付格式副本、F01—F20已填清单及格式参数来源/例外。清单用通过/部分通过/不通过/不适用/无法核实，逐项给位置、依据、动作和复核状态；不总分认证。默认只交付用户请求的DOCX与报告，不交付QA中间图片。按环境保存规则保存文件；skill的公开仓库不承载未经授权的研究稿件或患者信息。
+完整格式化、完整审计或用户明确要求清单时，才读取 [20项自查](references/checklist.md)，交付格式副本、F01—F20已填清单及格式参数来源/例外。清单用通过/部分通过/不通过/不适用/无法核实，逐项给位置、依据、动作和复核状态；不总分认证。局部任务只交付用户请求的副本与直接相关检查结果，不读取或输出完整清单。默认不交付QA中间图片。按环境保存规则保存文件；skill的公开仓库不承载未经授权的研究稿件或患者信息。

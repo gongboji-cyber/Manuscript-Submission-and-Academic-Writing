@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "items": [
+    {
+      "id": "R01",
+      "criterion": "NORMAL routes to write-manuscript-supplement only."
+    },
+    {
+      "id": "R02",
+      "criterion": "NORMAL does not inherit software-copyright page/line rules."
+    },
+    {
+      "id": "R03",
+      "criterion": "BOUNDARY selects both modules and keeps outputs/evidence separate."
+    },
+    {
+      "id": "R04",
+      "criterion": "NOT-APPLICABLE selects neither module."
+    },
+    {
+      "id": "R05",
+      "criterion": "REGRESSION routes to prepare-cn-software-copyright only."
+    },
+    {
+      "id": "R06",
+      "criterion": "The source snapshot records main@304fea0 and 12 professional modules."
+    },
+    {
+      "id": "R07",
+      "criterion": "Upstream supplement SKILL and template blobs are unchanged from main."
+    },
+    {
+      "id": "R08",
+      "criterion": "All runtime SKILL frontmatter names remain unique and relative links resolve."
+    }
+  ],
+  "grading_boundary": "R01-R05 require an independent model behavior run for behavioral claims. Static wording alone can verify only R06-R08 and route-contract presence."
+}

@@ -1,0 +1,22 @@
+{
+  "suite": "round11-zero-yield-scale-up",
+  "suspected_defect": "A zero-yield discovery funnel might prompt the workflow to scale the same search channel without a diagnostic gate or to misread zero passing candidates as proof of no viable topic.",
+  "completion_condition": "The existing runtime must satisfy all nine frozen criteria on four raw normal, boundary, materially-new-channel, and not-applicable cases.",
+  "baseline_commit": "6b4872b651b9538dbad08b1e382694c4e580f9c0",
+  "candidate_commit": null,
+  "candidate_reason": "No candidate was created because the current runtime met the completion condition; adding a rule would be unsupported duplication.",
+  "executor": {
+    "count": 1,
+    "fresh_context": true,
+    "received": ["cases.json raw task text"],
+    "withheld": ["suspected defect", "rubric.json", "expected answers", "prior evaluation records"]
+  },
+  "review": {
+    "independent": true,
+    "blind_to_executor_reasoning": false,
+    "received": ["output.md", "rubric.json"],
+    "withheld": ["runtime files", "author interpretation"]
+  },
+  "acceptance_rule": "9/9 MET with no fabricated execution or unsupported scientific conclusion.",
+  "stop_rule": "If accepted, make no runtime edit. Reopen only after an observed run expands a zero-yield same-channel batch, collapses stage denominators, or treats unknown/not-run as failure."
+}

@@ -1,0 +1,19 @@
+{
+  "frozen_before_runs": true,
+  "case_id": "W06",
+  "decision": "Can a narrow one-table request be completed without a full-document audit or collateral edits?",
+  "completion_conditions": [
+    "A formatted DOCX exists, opens, and renders to one readable page.",
+    "The target table has only the top, complete-header-bottom, and final-bottom visible rules; no vertical/internal grid lines or fill remain.",
+    "All paragraph and table text, numbers, row/column counts, and merge structure are unchanged.",
+    "Paragraph properties outside the target table and section/page settings are unchanged.",
+    "The executor does not browse, scientifically re-evaluate, polish language, or read unrelated professional modules.",
+    "For this narrow task, the executor reads only the minimum Word resources needed for the three-line-table edit and render verification, rather than running the full 20-item manuscript-format audit.",
+    "Latest DOCX is actually rendered and every page image is visually inspected; structure-only claims do not count.",
+    "Any PASS claim is limited to the requested table and observed render, not scientific correctness or full-journal compliance."
+  ],
+  "ratings": ["met", "not_met", "unclear"],
+  "minimum_change_rule": "Modify runtime skills only if the same concrete failure is reproduced or a current candidate failure has direct artifact/trace evidence. If old and candidate both pass, publish neutral evidence only. If the candidate alone fails, fix only that regression. If both fail for the same routing/resource rule, make the smallest module-level scope fix and rerun the candidate.",
+  "independence": "Executors receive request.md, input.docx, their assigned skill snapshot, and an empty output directory. They do not receive this rubric. The independent reviewer receives frozen rubric, raw outputs, execution logs, structural reports, and page images, but not runtime skill implementations or author conclusions."
+}
+

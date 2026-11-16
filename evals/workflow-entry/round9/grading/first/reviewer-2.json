@@ -1,0 +1,165 @@
+{
+  "reviewer": "grader-2",
+  "blind_review": true,
+  "scope": {
+    "assessed": ["R01", "R02", "R03", "R04", "R05", "R06", "R07", "R08", "R09"],
+    "not_assessed": ["R10"],
+    "scientific_correctness_certified": false,
+    "note": "判定仅针对 rubric 与给定输出；未使用总分，也不据此认证科学正确性。"
+  },
+  "grading_rule": "当 rubric 明确要求把具名模块列为首选时，只有相似内容而没有明确模块路由不足以满足该条。",
+  "versions": {
+    "version-a": {
+      "criteria": {
+        "R01": {
+          "verdict": "fail",
+          "locations": ["T01 L3-L23"],
+          "reason": "T01 实质上安排了选题审计、最近邻核查和条件性试点，但没有把 `research-topic-selection` 明确列为首选，也没有把具名文献/方法模块写成有条件的后续交接。L8、L10、L21、L23 清楚声明检索/试验尚未完成，这一子要求满足，但不足以补齐明确模块路由。"
+        },
+        "R02": {
+          "verdict": "pass",
+          "locations": ["T01 L3", "T01 L16-L21"],
+          "reason": "L3 给出与证据相称的唯一主裁决 `EXPLORE_ONLY`；L18-L21 分别给出转 `STOP`、`HOLD_NEED_EVIDENCE`、`HOLD_DATA_ACCESS`、`GO_MINIMAL_PILOT`/后续 `GO_FULL_STUDY` 的条件。"
+        },
+        "R03": {
+          "verdict": "fail",
+          "locations": ["T02 L27-L80"],
+          "reason": "L27 明确尊重冻结范围并拒绝重启选题、创新性和许可审计，后文确实进入 SAP；但全文没有把 `guide-research-methods-statistics` 明确列为首选模块，未完整满足具名路由要求。"
+        },
+        "R04": {
+          "verdict": "pass",
+          "locations": ["T02 L35-L41", "T02 L43-L53", "T02 L55-L65", "T02 L67-L80"],
+          "reason": "依次包含 estimand、独立单位、主分析 A01、敏感性/补充分析；L27、L32、L53、L80 又把上游批准、待补字段、阻断项和未执行状态分开，没有把立项通过说成方法学已经验证。"
+        },
+        "R05": {
+          "verdict": "pass",
+          "locations": ["T03 L84-L96", "T03 L98-L100"],
+          "reason": "L91 明确以 `research-topic-selection` 审计原创性与重做价值，L92-L96 将文献、方法、实施和稿件模块置于证据关口之后；L84、L96、L98 明确补代码和润色不能替代创新性/独立证据。L90 的事实拆解只是定位拒稿意见，不是越过选题关口进入方法或润色。"
+        },
+        "R06": {
+          "verdict": "pass",
+          "locations": ["T03 L91-L100"],
+          "reason": "L91、L93-L96、L100 给出 `STOP`、保持/转入各类 hold、解锁至 `GO_MINIMAL_PILOT` 以及只有实际过关才考虑 `GO_FULL_STUDY` 的条件；L100 明确没有新实验时不能升级为原创研究已可行。"
+        },
+        "R07": {
+          "verdict": "pass",
+          "locations": ["T04 L104-L106"],
+          "reason": "只做区间连接号的局部语言/排版处理，并明确未扩展审查其他内容；没有调用或重新展开选题、全文或方法学审查。"
+        },
+        "R08": {
+          "verdict": "pass",
+          "locations": ["T04 L104-L106"],
+          "reason": "保留 `12%`、`95% CI, 2%–20%`、关联性措辞 `was associated with`、限定语 `observed risk`，且 `[12]` 仍紧接句末，科学含义未改变。"
+        },
+        "R09": {
+          "verdict": "pass",
+          "locations": ["T01 L3-L23", "T02 L27-L33", "T02 L53", "T02 L80", "T03 L84-L100", "T04 L106"],
+          "reason": "T01 区分待核与未运行，T02 区分上游已批准、待填/阻断和未执行，T03 区分拒稿事实、待核证据、未运行试点与条件升级，T04 限定为已完成的局部排版；没有把流程完成当作科学认证。"
+        },
+        "R10": {
+          "verdict": "not_assessed",
+          "locations": [],
+          "reason": "按任务要求由父级静态检查。"
+        }
+      },
+      "boundary_checks": {
+        "T02_wrongly_returned_to_topic_audit": {
+          "verdict": "no",
+          "locations": ["T02 L27"],
+          "reason": "明确写明不重新做选题、创新性或数据许可审计，并直接进入 SAP。"
+        },
+        "T04_wrongly_returned_to_topic_audit": {
+          "verdict": "no",
+          "locations": ["T04 L104-L106"],
+          "reason": "仅处理一个句子的区间连接号，无选题审计。"
+        },
+        "T04_fidelity": {
+          "verdict": "preserved",
+          "locations": ["T04 L104"],
+          "details": {
+            "number": "12%",
+            "interval": "95% CI, 2%–20%",
+            "association_wording": "was associated with ... lower observed risk",
+            "citation_position": "[12] immediately before the final period"
+          }
+        }
+      }
+    },
+    "version-b": {
+      "criteria": {
+        "R01": {
+          "verdict": "fail",
+          "locations": ["T01 L5-L20"],
+          "reason": "T01 内容上执行了选题卡、最近邻、数据关口与条件性试点安排，但没有把 `research-topic-selection` 明确列为首选，也没有把具名文献/方法模块写成条件性后续交接。L14、L20 明确未运行试点/检索/数据核验，这一子要求满足。"
+        },
+        "R02": {
+          "verdict": "pass",
+          "locations": ["T01 L5", "T01 L18"],
+          "reason": "L5 给出唯一主裁决 `EXPLORE_ONLY`，L18 给出 G0-G4 解锁要求及 `STOP`、`HOLD_NEED_EVIDENCE`、`HOLD_DATA_ACCESS`、`GO_MINIMAL_PILOT` 分支，并强调每次只保留一个主裁决。"
+        },
+        "R03": {
+          "verdict": "fail",
+          "locations": ["T02 L24-L75"],
+          "reason": "L24 明确接受已冻结立项、不重做选题/创新性/许可审计，整体进入 SAP 骨架；但没有把 `guide-research-methods-statistics` 明确列为首选模块，未完整满足具名路由要求。"
+        },
+        "R04": {
+          "verdict": "pass",
+          "locations": ["T02 L32-L43", "T02 L45-L54", "T02 L56-L62", "T02 L64-L75"],
+          "reason": "完整覆盖 estimand、独立单位、唯一主分析 A01、敏感性与补充分析；L24、L29-L30、L43、L54、L75 清楚区分批准输入、待补字段、阻断项和未执行状态，不把立项通过视为方法学已验证。"
+        },
+        "R05": {
+          "verdict": "fail",
+          "locations": ["T03 L79-L99"],
+          "reason": "流程实质上先做“选题与立项”并用证据关口控制方法、试点和润色，且明确补代码/润色不能修复创新性；但与 rubric 的具名要求相比，L85 只写通用标签“选题与立项”，未明确路由到 `research-topic-selection`。"
+        },
+        "R06": {
+          "verdict": "pass",
+          "locations": ["T03 L79-L99"],
+          "reason": "L85-L89、L97 给出 `STOP`、hold、`GO_MINIMAL_PILOT` 和条件性考虑 `GO_FULL_STUDY` 的门槛；L79、L93、L97、L99 明确证据不足、试点未运行且没有新实验，未声称问题已解决。"
+        },
+        "R07": {
+          "verdict": "pass",
+          "locations": ["T04 L103-L105"],
+          "reason": "仅做局部区间标点统一，并明确未扩展为全文、选题或方法学审查。"
+        },
+        "R08": {
+          "verdict": "pass",
+          "locations": ["T04 L103-L105"],
+          "reason": "保留 `12%`、`95% CI, 2%–20%`、`was associated with`、`observed risk` 和句末 `[12]`，没有改变方向、强度或引文位置。"
+        },
+        "R09": {
+          "verdict": "pass",
+          "locations": ["T01 L5-L20", "T02 L24-L30", "T02 L43", "T02 L54", "T02 L75", "T03 L79-L99", "T04 L105"],
+          "reason": "四个案例分别标示已批准输入、待核/blocked/pending、未执行分析/试点与已完成的局部编辑；没有把流程或上游批准包装成科学认证。"
+        },
+        "R10": {
+          "verdict": "not_assessed",
+          "locations": [],
+          "reason": "按任务要求由父级静态检查。"
+        }
+      },
+      "boundary_checks": {
+        "T02_wrongly_returned_to_topic_audit": {
+          "verdict": "no",
+          "locations": ["T02 L24"],
+          "reason": "明确不重做选题、创新性或许可审计，并保持 SAP 交接边界。"
+        },
+        "T04_wrongly_returned_to_topic_audit": {
+          "verdict": "no",
+          "locations": ["T04 L103-L105"],
+          "reason": "明确未扩展为选题审查。"
+        },
+        "T04_fidelity": {
+          "verdict": "preserved",
+          "locations": ["T04 L103"],
+          "details": {
+            "number": "12%",
+            "interval": "95% CI, 2%–20%",
+            "association_wording": "was associated with ... lower observed risk",
+            "citation_position": "[12] immediately before the final period"
+          }
+        }
+      }
+    }
+  }
+}

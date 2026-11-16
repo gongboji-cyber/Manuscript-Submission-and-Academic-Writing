@@ -1,0 +1,49 @@
+{
+  "baseline": {
+    "root": "/tmp/msaw-round9-o2uxIJ/snapshots/baseline-merged",
+    "module_count": 11,
+    "module_entries": [
+      "Word文档格式/SKILL.md",
+      "cover letter书写/SKILL.md",
+      "research-flow-diagrams/SKILL.md",
+      "research-topic-selection/SKILL.md",
+      "专利书写规范/SKILL.md",
+      "批判性阅读文献/SKILL.md",
+      "文献/指南阅读板块/SKILL.md",
+      "方法学/统计学指导/SKILL.md",
+      "科研统计学作图/SKILL.md",
+      "补充材料书写skill/SKILL.md",
+      "论文投稿前的自检/SKILL.md"
+    ],
+    "topic_route_count": 0,
+    "topic_target_exists": true,
+    "source_snapshot_current": false
+  },
+  "candidate": {
+    "root": "/tmp/msaw-round9-o2uxIJ/snapshots/candidate-v2",
+    "module_count": 11,
+    "module_entries": [
+      "Word文档格式/SKILL.md",
+      "cover letter书写/SKILL.md",
+      "research-flow-diagrams/SKILL.md",
+      "research-topic-selection/SKILL.md",
+      "专利书写规范/SKILL.md",
+      "批判性阅读文献/SKILL.md",
+      "文献/指南阅读板块/SKILL.md",
+      "方法学/统计学指导/SKILL.md",
+      "科研统计学作图/SKILL.md",
+      "补充材料书写skill/SKILL.md",
+      "论文投稿前的自检/SKILL.md"
+    ],
+    "topic_route_count": 1,
+    "topic_target_exists": true,
+    "source_snapshot_current": true
+  },
+  "checks": {
+    "baseline_reproduces_missing_route": true,
+    "candidate_has_one_topic_route": true,
+    "candidate_target_resolves": true,
+    "candidate_has_eleven_modules": true,
+    "candidate_source_snapshot_current": true
+  }
+}

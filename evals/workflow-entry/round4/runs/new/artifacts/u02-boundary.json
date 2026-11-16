@@ -1,0 +1,17 @@
+{
+  "format": "MEDFMTX 1.2",
+  "records": [
+    {
+      "id": "LOW",
+      "value": 0
+    },
+    {
+      "id": "HIGH",
+      "value": 100
+    },
+    {
+      "id": "MISSING",
+      "value": null
+    }
+  ]
+}

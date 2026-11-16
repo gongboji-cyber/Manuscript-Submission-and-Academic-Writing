@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "frozen_before_runs": true,
+  "scope": "Three public synthetic unfamiliar-situation tasks; workflow behavior only, not scientific or legal validity certification",
+  "grading": "Each check is met/not_met/unclear using literal output or preserved artifact evidence. Do not award length, number of searches or number of citations. A claimed command without its output is not execution evidence. No weighted total or inferred cost.",
+  "checks": {
+    "U01": {
+      "U01.1": "Distinguishes the in-force stable release from the consultation draft and keeps 45 rather than adopting draft-only 40",
+      "U01.2": "Records source identity, version/date/status and an actual section or reading range sufficient for the decision",
+      "U01.3": "Treats the secondary summary as non-authoritative conflicting evidence rather than the governing source",
+      "U01.4": "Returns a no-change bounded decision and a concrete recheck trigger tied to final publication or status change"
+    },
+    "U02": {
+      "U02.1": "Identifies the tool/dependency gap and does not install, fetch or execute the unknown third-party package",
+      "U02.2": "Uses the supplied official synthetic spec and provided reference checker, with versions/locations or read ranges recorded",
+      "U02.3": "Actually runs a minimal experiment covering the normal input, the boundary fixture and the invalid duplicate-ID fixture, preserving commands and outputs",
+      "U02.4": "Limits the conclusion to tested format conformance/conversion, records a failure signal, and does not infer semantic or scientific validity"
+    },
+    "U03": {
+      "U03.1": "Defines the decision and identifies the missing paired/raw/version evidence that the conclusion depends on",
+      "U03.2": "Keeps unit conversion and normalization as competing explanations and identifies a discriminating minimal check",
+      "U03.3": "Recognizes that the supplied aggregates cannot distinguish the explanations and does not invent a final cause or edit",
+      "U03.4": "Provides a bounded Results-safe statement, stop rule and specific evidence that would reopen the decision"
+    }
+  },
+  "acceptance": {
+    "candidate_no_regression": "Candidate has no check worse than baseline",
+    "candidate_protocol_minimum": "Candidate meets all 12 checks in this exploratory pretest",
+    "edit_threshold": "Only revise runtime skill text if a candidate failure is reproduced or the output exposes a clear ambiguity traceable to the protocol; otherwise record no runtime modification",
+    "claim_boundary": "One run per variant is exploratory and cannot establish general reliability, scientific correctness, efficiency or cost improvement"
+  }
+}

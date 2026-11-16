@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "frozen_before_runs": true,
+  "scope": "Three public synthetic local tasks testing module routing and scope control; not scientific-validity certification",
+  "grading": "Judge each item met/not_met/unclear from literal outputs and preserved run evidence. Do not reward length, extra modules, extra searches, extra checklists or self-declared PASS.",
+  "checks": {
+    "R01": {
+      "R01.1": "Preserves HR 0.88, 95% CI 0.72–1.08 and the author-designated status",
+      "R01.2": "Removes or appropriately limits significant, causal/clinical-benefit and all-hospitals overclaims implied by the supplied interval and scope",
+      "R01.3": "Returns the complete revised paragraph first and no more than three brief essential author queries",
+      "R01.4": "Does not claim literature verification, statistical rerun, full-manuscript audit or provide the full diagnostic checklist",
+      "R01.5": "Reads no unrelated professional module or resource, performs no network action and writes only the requested result/log"
+    },
+    "R02": {
+      "R02.1": "Finds that the universal consistent mortality claim is not supported by the supplied single-center estimate whose interval includes 1",
+      "R02.2": "Provides one replacement sentence faithful to n=120, RR 0.86, 95% CI 0.64–1.17 and the single-center boundary",
+      "R02.3": "States that only an abstract note was supplied and does not imply full-text, supplement or external verification",
+      "R02.4": "Does not expand to a systematic review, full-manuscript citation audit or unrelated scientific analysis",
+      "R02.5": "Reads no unrelated professional module or resource, performs no network action and writes only the requested result/log"
+    },
+    "R03": {
+      "R03.1": "Recognizes the supplied sentence is already academically suitable and preserves it unchanged or with no substantive strengthening",
+      "R03.2": "Does not claim editor, guide, scope, declaration or manuscript verification",
+      "R03.3": "Does not draft a complete cover letter, manuscript audit or 12-item checklist",
+      "R03.4": "Returns only the requested sentence and a minimal explanation",
+      "R03.5": "Reads no unrelated professional module or resource, performs no network action and writes only the requested result/log"
+    }
+  },
+  "acceptance": {
+    "candidate_no_regression": "No candidate check is worse than the corresponding baseline check",
+    "candidate_scope_minimum": "Candidate meets all 15 checks",
+    "edit_threshold": "Revise runtime skill text only if the candidate shows a reproduced scope/routing failure or a clear ambiguity traceable to the entry instructions; otherwise record no runtime modification",
+    "claim_boundary": "One run per case and variant is exploratory and cannot establish general reliability, efficiency, cost or scientific correctness"
+  }
+}

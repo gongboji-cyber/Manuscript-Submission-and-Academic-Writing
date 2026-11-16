@@ -1,0 +1,112 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "scope": "converter replay only",
+  "results": [
+    {
+      "variant": "a",
+      "csv_rows": [
+        {
+          "id": "01",
+          "value_cm": "1"
+        },
+        {
+          "id": "02",
+          "value_cm": "NA"
+        },
+        {
+          "id": "03",
+          "value_cm": "2.5"
+        }
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-B",
+            "/tmp/workflow-entry-replay-_oux5nun/a/output/convert_unitrows.py",
+            "/tmp/workflow-entry-replay-_oux5nun/a/materials/input.unitrows",
+            "/tmp/workflow-entry-replay-_oux5nun/a/output/input.csv"
+          ],
+          "exit_code": 0,
+          "stdout": "Converted 3 rows to /tmp/workflow-entry-replay-_oux5nun/a/output/input.csv\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-B",
+            "/tmp/workflow-entry-replay-_oux5nun/a/output/convert_unitrows.py",
+            "/tmp/workflow-entry-replay-_oux5nun/a/materials/duplicate.unitrows",
+            "/tmp/workflow-entry-replay-_oux5nun/a/output/duplicate.csv"
+          ],
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "ERROR: line 4: duplicate ID '01'\n"
+        },
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-B",
+            "/tmp/workflow-entry-replay-_oux5nun/a/output/check_conversion.py"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"checks_passed\": 19, \"checks_failed\": 0, \"main_csv\": [[\"id\", \"value_cm\"], [\"01\", \"1\"], [\"02\", \"NA\"], [\"03\", \"2.5\"]]}\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "variant": "b",
+      "csv_rows": [
+        {
+          "id": "01",
+          "value_cm": "1.0"
+        },
+        {
+          "id": "02",
+          "value_cm": "NA"
+        },
+        {
+          "id": "03",
+          "value_cm": "2.5"
+        }
+      ],
+      "commands": [
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-B",
+            "/tmp/workflow-entry-replay-_oux5nun/b/output/convert_unitrows.py",
+            "/tmp/workflow-entry-replay-_oux5nun/b/materials/input.unitrows",
+            "/tmp/workflow-entry-replay-_oux5nun/b/output/input.csv"
+          ],
+          "exit_code": 0,
+          "stdout": "Converted 3 rows to input.csv\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-B",
+            "/tmp/workflow-entry-replay-_oux5nun/b/output/convert_unitrows.py",
+            "/tmp/workflow-entry-replay-_oux5nun/b/materials/duplicate.unitrows",
+            "/tmp/workflow-entry-replay-_oux5nun/b/output/duplicate.csv"
+          ],
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "ERROR: line 4: duplicate ID '01'\n"
+        },
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+            "-B",
+            "/tmp/workflow-entry-replay-_oux5nun/b/output/check_unitrows.py"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"passed\": 22, \"failed\": 0, \"checks\": [{\"check\": \"CSV header and exactly 3 rows\", \"status\": \"passed\"}, {\"check\": \"leading zero IDs preserved\", \"status\": \"passed\"}, {\"check\": \"10 mm equals 1 cm and 25 mm equals 2.5 cm\", \"status\": \"passed\"}, {\"check\": \"NA remains NA, distinct from zero\", \"status\": \"passed\"}, {\"check\": \"duplicate CLI did not create output\", \"status\": \"passed\"}, {\"check\": \"zero, negative, fractional, exponent and CSV quoting\", \"status\": \"passed\"}, {\"check\": \"long decimal is converted without float rounding\", \"status\": \"passed\"}, {\"check\": \"reject wrong version and preserve existing output\", \"status\": \"passed\", \"error\": \"invalid UNITROWS/1 header\"}, {\"check\": \"reject wrong column header and preserve existing output\", \"status\": \"passed\", \"error\": \"invalid UNITROWS/1 header\"}, {\"check\": \"reject too many columns and preserve existing output\", \"status\": \"passed\", \"error\": \"line 3: expected exactly two columns\"}, {\"check\": \"reject too few columns and preserve existing output\", \"status\": \"passed\", \"error\": \"line 3: expected exactly two columns\"}, {\"check\": \"reject blank row and preserve existing output\", \"status\": \"passed\", \"error\": \"line 3: expected exactly two columns\"}, {\"check\": \"reject empty ID and preserve existing output\", \"status\": \"passed\", \"error\": \"line 3: empty ID\"}, {\"check\": \"reject duplicate ID and preserve existing output\", \"status\": \"passed\", \"error\": \"line 4: duplicate ID '01'\"}, {\"check\": \"reject NaN and preserve existing output\", \"status\": \"passed\", \"error\": \"line 3: expected finite real or exact NA\"}, {\"check\": \"reject infinity and preserve existing output\", \"status\": \"passed\", \"error\": \"line 3: expected finite real or exact NA\"}, {\"check\": \"reject negative infinity and preserve existing output\", \"status\": \"passed\", \"error\": \"line 3: expected finite real or exact NA\"}, {\"check\": \"reject lowercase missing and preserve existing output\", \"status\": \"passed\", \"error\": \"line 3: expected finite real or exact NA\"}, {\"check\": \"reject padded missing and preserve existing output\", \"status\": \"passed\", \"error\": \"line 3: expected finite real or exact NA\"}, {\"check\": \"reject empty value and preserve existing output\", \"status\": \"passed\", \"error\": \"line 3: expected finite real or exact NA\"}, {\"check\": \"input overwrite forbidden\", \"status\": \"passed\"}, {\"check\": \"supplied inputs unchanged during boundary checks\", \"status\": \"passed\"}]}\n",
+          "stderr": ""
+        }
+      ]
+    }
+  ]
+}

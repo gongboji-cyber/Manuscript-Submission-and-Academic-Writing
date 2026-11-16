@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "source_version": "304fea0148c630d2c36b5dcb07551e12bd1c2c00",
+  "cases": [
+    {
+      "id": "R15-NORMAL",
+      "category": "normal",
+      "input": "请把论文分析代码整理成英文 Source Code Supplement，形式可借鉴软著源程序鉴别材料，供编辑和审稿人核查。"
+    },
+    {
+      "id": "R15-BOUNDARY",
+      "category": "boundary",
+      "input": "同一冻结版本既要准备SCI投稿的英文代码附录，也要准备中国软件著作权源程序鉴别材料；请分别交付。"
+    },
+    {
+      "id": "R15-NOT-APPLICABLE",
+      "category": "not_applicable",
+      "input": "请重写项目GitHub README的安装示例，不制作投稿附件，也不申请软件著作权。"
+    },
+    {
+      "id": "R15-REGRESSION",
+      "category": "regression",
+      "input": "我要申请中国软件著作权，请生成源程序鉴别材料并核查前后连续页。"
+    }
+  ]
+}

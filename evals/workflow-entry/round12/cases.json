@@ -1,0 +1,23 @@
+{
+  "suite": "round12-patent-handoff-readiness",
+  "input_policy": "The executor receives only the four raw tasks and the current skill path.",
+  "cases": [
+    {
+      "id": "P1",
+      "task": "We have two narrowed claim-set candidates. D1 was read in full and charted; D2 was identified as potentially important, but its original publication and claims could not be retrieved. Our project note says D2 verification is a mandatory precondition because it may cover the remaining differentiating feature. No performance numbers were invented. Give one current decision, say whether the package is ready to hand to a patent agent, and state the next action."
+    },
+    {
+      "id": "P2",
+      "task": "The invention-fact ledger is complete, all P0 items are resolved or explicitly accepted by the inventor, the independent claim has specification and embodiment support, one reproducible prior-art search plus claim chart is complete, medical subject-matter and AI sufficiency were separately assessed, and the abstract, claims, description, and figures were rechecked on the current version. Give the current handoff decision and its boundary."
+    },
+    {
+      "id": "P3",
+      "task": "Please only rewrite claim 7 into clearer Chinese without changing scope. I have supplied claim 7 and its supporting paragraph. I am not asking for a filing-readiness audit or prior-art search. Return the revised claim and describe the status of this local deliverable."
+    },
+    {
+      "id": "P4",
+      "task": "A commercial search report summarizes a Chinese patent as disclosing our full method, but gives no claim text, publication PDF, legal-status record, or exact locations. Based only on that summary, decide whether our draft can be called verified against that reference and ready for filing."
+    }
+  ],
+  "executor_note_for_P3": "The actual claim text was intentionally absent; the executor was told to handle that absence without fabricating text."
+}
