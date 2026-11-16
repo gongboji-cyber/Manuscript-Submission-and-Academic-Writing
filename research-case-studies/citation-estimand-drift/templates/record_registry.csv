@@ -1,0 +1,2 @@
+record_id,openalex_id,doi,title,year,frames,duplicate,prior_known_case,status
+R0001,,10.25259/NMJI_843_2023,Example prior known case,2025,A:known_example,False,True,PRIOR_KNOWN_CASE

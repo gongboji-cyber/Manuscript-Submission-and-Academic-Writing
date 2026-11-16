@@ -1,0 +1,18 @@
+[
+  {
+    "openalex_id": "https://openalex.org/SYN1",
+    "doi": "https://doi.org/10.0000/syn1",
+    "title": "Synthetic preserved Condition A incidence citation",
+    "publication_year": 2025,
+    "abstract_inverted_index": {"Annual": [0], "incidence": [1], "was": [2], "123": [3], "events": [4], "per": [5], "10000": [6], "residents": [7], "Agency": [8], "X": [9]},
+    "_frame": "B:value"
+  },
+  {
+    "openalex_id": "https://openalex.org/SYN2",
+    "doi": "https://doi.org/10.0000/syn2",
+    "title": "Synthetic irrelevant record",
+    "publication_year": 2024,
+    "abstract_inverted_index": null,
+    "_frame": "A:cites_study_alpha"
+  }
+]
